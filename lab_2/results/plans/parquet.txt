@@ -1,0 +1,20 @@
+== Parsed Logical Plan ==
+'Aggregate ['gender, 'discharge_destination, 'readmitted_30_days], ['gender, 'discharge_destination, 'readmitted_30_days, count(1) AS count#333L, sum('length_of_stay) AS sum_stay#335, sum('bmi) AS sum_bmi#337]
++- Relation [patient_id#296L,age#297L,gender#298,blood_pressure#299,cholesterol#300L,bmi#301,diabetes#302,hypertension#303,medication_count#304L,length_of_stay#305L,discharge_destination#306,readmitted_30_days#307] parquet
+
+== Analyzed Logical Plan ==
+gender: string, discharge_destination: string, readmitted_30_days: string, count: bigint, sum_stay: bigint, sum_bmi: double
+Aggregate [gender#298, discharge_destination#306, readmitted_30_days#307], [gender#298, discharge_destination#306, readmitted_30_days#307, count(1) AS count#333L, sum(length_of_stay#305L) AS sum_stay#335L, sum(bmi#301) AS sum_bmi#337]
++- Relation [patient_id#296L,age#297L,gender#298,blood_pressure#299,cholesterol#300L,bmi#301,diabetes#302,hypertension#303,medication_count#304L,length_of_stay#305L,discharge_destination#306,readmitted_30_days#307] parquet
+
+== Optimized Logical Plan ==
+Aggregate [gender#298, discharge_destination#306, readmitted_30_days#307], [gender#298, discharge_destination#306, readmitted_30_days#307, count(1) AS count#333L, sum(length_of_stay#305L) AS sum_stay#335L, sum(bmi#301) AS sum_bmi#337]
++- Project [gender#298, bmi#301, length_of_stay#305L, discharge_destination#306, readmitted_30_days#307]
+   +- Relation [patient_id#296L,age#297L,gender#298,blood_pressure#299,cholesterol#300L,bmi#301,diabetes#302,hypertension#303,medication_count#304L,length_of_stay#305L,discharge_destination#306,readmitted_30_days#307] parquet
+
+== Physical Plan ==
+*(2) HashAggregate(keys=[gender#298, discharge_destination#306, readmitted_30_days#307], functions=[count(1), sum(length_of_stay#305L), sum(bmi#301)], output=[gender#298, discharge_destination#306, readmitted_30_days#307, count#333L, sum_stay#335L, sum_bmi#337])
++- Exchange hashpartitioning(gender#298, discharge_destination#306, readmitted_30_days#307, 200), ENSURE_REQUIREMENTS, [plan_id=155]
+   +- *(1) HashAggregate(keys=[gender#298, discharge_destination#306, readmitted_30_days#307], functions=[partial_count(1), partial_sum(length_of_stay#305L), partial_sum(bmi#301)], output=[gender#298, discharge_destination#306, readmitted_30_days#307, count#348L, sum#349L, sum#350])
+      +- *(1) ColumnarToRow
+         +- FileScan parquet [gender#298,bmi#301,length_of_stay#305L,discharge_destination#306,readmitted_30_days#307] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.parquet], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...

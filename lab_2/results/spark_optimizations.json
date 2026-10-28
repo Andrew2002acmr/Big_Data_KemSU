@@ -1,0 +1,1561 @@
+{
+  "case": "1gb",
+  "runs": 3,
+  "profiles": {
+    "baseline": {
+      "config": {
+        "shuffle": 200,
+        "aqe": false,
+        "format": "csv"
+      },
+      "runs": [
+        {
+          "cpu_seconds": 57.5,
+          "read_count": 16081,
+          "write_count": 310,
+          "read_bytes": 1000740323,
+          "write_bytes": 61028,
+          "seconds": 13.47025609999946,
+          "peak_rss_bytes": 805257216,
+          "cpu_percent_machine": 53.35830251958081,
+          "stages": [
+            {
+              "stageId": 2,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 46527,
+              "executorCpuTime": 45312500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6189.0,
+                "max": 6916
+              }
+            },
+            {
+              "stageId": 3,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 1253,
+              "executorCpuTime": 953125000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 20.0,
+                "max": 30
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 54.828125,
+          "read_count": 16035,
+          "write_count": 308,
+          "read_bytes": 1000649797,
+          "write_bytes": 60864,
+          "seconds": 13.002528099999836,
+          "peak_rss_bytes": 1207169024,
+          "cpu_percent_machine": 52.709100663278605,
+          "stages": [
+            {
+              "stageId": 38,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 46801,
+              "executorCpuTime": 45890625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6253.5,
+                "max": 6612
+              }
+            },
+            {
+              "stageId": 39,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 646,
+              "executorCpuTime": 531250000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 9.5,
+                "max": 12
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 53.46875,
+          "read_count": 16035,
+          "write_count": 309,
+          "read_bytes": 1000649797,
+          "write_bytes": 60946,
+          "seconds": 12.85579179999877,
+          "peak_rss_bytes": 1077714944,
+          "cpu_percent_machine": 51.98897006095447,
+          "stages": [
+            {
+              "stageId": 55,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 46277,
+              "executorCpuTime": 45406250000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6208.5,
+                "max": 6514
+              }
+            },
+            {
+              "stageId": 56,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 590,
+              "executorCpuTime": 640625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 9.0,
+                "max": 11
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        }
+      ],
+      "median_seconds": 13.002528099999836,
+      "median_cpu_seconds": 54.828125,
+      "max_peak_rss_bytes": 1207169024
+    },
+    "shuffle8": {
+      "config": {
+        "shuffle": 8,
+        "aqe": false,
+        "format": "csv"
+      },
+      "runs": [
+        {
+          "cpu_seconds": 48.953125,
+          "read_count": 15635,
+          "write_count": 148,
+          "read_bytes": 1000643504,
+          "write_bytes": 26262,
+          "seconds": 11.797835700001087,
+          "peak_rss_bytes": 903487488,
+          "cpu_percent_machine": 51.86663707309838,
+          "stages": [
+            {
+              "stageId": 4,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 12423,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 43233,
+              "executorCpuTime": 42359375000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 5749.5,
+                "max": 5967
+              }
+            },
+            {
+              "stageId": 5,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 12423,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 94,
+              "executorCpuTime": 46875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 11.5,
+                "max": 15
+              }
+            }
+          ],
+          "shuffle_write_bytes": 12423,
+          "shuffle_read_bytes": 12423,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 49.359375,
+          "read_count": 15635,
+          "write_count": 150,
+          "read_bytes": 1000643504,
+          "write_bytes": 26426,
+          "seconds": 12.674805599999672,
+          "peak_rss_bytes": 1155469312,
+          "cpu_percent_machine": 48.67863121309063,
+          "stages": [
+            {
+              "stageId": 21,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 12423,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 46652,
+              "executorCpuTime": 45750000000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6247.5,
+                "max": 6348
+              }
+            },
+            {
+              "stageId": 22,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 12423,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 75,
+              "executorCpuTime": 93750000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 9.0,
+                "max": 11
+              }
+            }
+          ],
+          "shuffle_write_bytes": 12423,
+          "shuffle_read_bytes": 12423,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 48.25,
+          "read_count": 15635,
+          "write_count": 149,
+          "read_bytes": 1000643504,
+          "write_bytes": 26344,
+          "seconds": 12.018357099999776,
+          "peak_rss_bytes": 1303060480,
+          "cpu_percent_machine": 50.183647813228255,
+          "stages": [
+            {
+              "stageId": 57,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 12423,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 44592,
+              "executorCpuTime": 43953125000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 5947.5,
+                "max": 6257
+              }
+            },
+            {
+              "stageId": 58,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 12423,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 68,
+              "executorCpuTime": 62500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 8.5,
+                "max": 9
+              }
+            }
+          ],
+          "shuffle_write_bytes": 12423,
+          "shuffle_read_bytes": 12423,
+          "stage_count": 2
+        }
+      ],
+      "median_seconds": 12.018357099999776,
+      "median_cpu_seconds": 48.953125,
+      "max_peak_rss_bytes": 1303060480
+    },
+    "repartition8": {
+      "config": {
+        "shuffle": 200,
+        "aqe": false,
+        "format": "csv",
+        "repartition": true
+      },
+      "runs": [
+        {
+          "cpu_seconds": 66.84375,
+          "read_count": 86821,
+          "write_count": 4873,
+          "read_bytes": 1145054931,
+          "write_bytes": 288735958,
+          "seconds": 16.27950719999899,
+          "peak_rss_bytes": 913743872,
+          "cpu_percent_machine": 51.32507174418965,
+          "stages": [
+            {
+              "stageId": 6,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 144366984,
+              "shuffleWriteRecords": 15192583,
+              "executorRunTime": 49488,
+              "executorCpuTime": 48687500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6560.0,
+                "max": 6855
+              }
+            },
+            {
+              "stageId": 7,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 144366984,
+              "shuffleReadRecords": 15192583,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 10715,
+              "executorCpuTime": 9750000000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 1146.0,
+                "max": 2581
+              }
+            }
+          ],
+          "shuffle_write_bytes": 144366984,
+          "shuffle_read_bytes": 144366984,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 58.0,
+          "read_count": 86789,
+          "write_count": 4870,
+          "read_bytes": 1144984245,
+          "write_bytes": 288735712,
+          "seconds": 14.350649399999384,
+          "peak_rss_bytes": 1153273856,
+          "cpu_percent_machine": 50.520361817217214,
+          "stages": [
+            {
+              "stageId": 23,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 144366984,
+              "shuffleWriteRecords": 15192583,
+              "executorRunTime": 45590,
+              "executorCpuTime": 45015625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6085.5,
+                "max": 6377
+              }
+            },
+            {
+              "stageId": 24,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 144366984,
+              "shuffleReadRecords": 15192583,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 7875,
+              "executorCpuTime": 7750000000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 831.5,
+                "max": 1868
+              }
+            }
+          ],
+          "shuffle_write_bytes": 144366984,
+          "shuffle_read_bytes": 144366984,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 62.25,
+          "read_count": 86789,
+          "write_count": 4871,
+          "read_bytes": 1144984245,
+          "write_bytes": 288735794,
+          "seconds": 14.99582030000056,
+          "peak_rss_bytes": 1122844672,
+          "cpu_percent_machine": 51.88945882473471,
+          "stages": [
+            {
+              "stageId": 40,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 144366984,
+              "shuffleWriteRecords": 15192583,
+              "executorRunTime": 47234,
+              "executorCpuTime": 46265625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6303.5,
+                "max": 6648
+              }
+            },
+            {
+              "stageId": 41,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 144366984,
+              "shuffleReadRecords": 15192583,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 8653,
+              "executorCpuTime": 8218750000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 924.0,
+                "max": 2078
+              }
+            }
+          ],
+          "shuffle_write_bytes": 144366984,
+          "shuffle_read_bytes": 144366984,
+          "stage_count": 2
+        }
+      ],
+      "median_seconds": 14.99582030000056,
+      "median_cpu_seconds": 62.25,
+      "max_peak_rss_bytes": 1153273856
+    },
+    "aqe": {
+      "config": {
+        "shuffle": 200,
+        "aqe": true,
+        "format": "csv"
+      },
+      "runs": [
+        {
+          "cpu_seconds": 58.359375,
+          "read_count": 15903,
+          "write_count": 310,
+          "read_bytes": 1000877539,
+          "write_bytes": 61028,
+          "seconds": 14.481905500000721,
+          "peak_rss_bytes": 943001600,
+          "cpu_percent_machine": 50.37266591057121,
+          "stages": [
+            {
+              "stageId": 8,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 53138,
+              "executorCpuTime": 51265625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 7036.0,
+                "max": 7689
+              }
+            },
+            {
+              "stageId": 10,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 15,
+              "executorCpuTime": 15625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 15,
+                "max": 15
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 50.875,
+          "read_count": 15763,
+          "write_count": 309,
+          "read_bytes": 1000647621,
+          "write_bytes": 60946,
+          "seconds": 12.434621000000334,
+          "peak_rss_bytes": 1145184256,
+          "cpu_percent_machine": 51.14249159664641,
+          "stages": [
+            {
+              "stageId": 25,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 45949,
+              "executorCpuTime": 45046875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6121.5,
+                "max": 6389
+              }
+            },
+            {
+              "stageId": 27,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 9,
+              "executorCpuTime": 15625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 9,
+                "max": 9
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        },
+        {
+          "cpu_seconds": 54.890625,
+          "read_count": 15763,
+          "write_count": 309,
+          "read_bytes": 1000647621,
+          "write_bytes": 60946,
+          "seconds": 13.254059899998538,
+          "peak_rss_bytes": 1185849344,
+          "cpu_percent_machine": 51.76774646235571,
+          "stages": [
+            {
+              "stageId": 42,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 17436,
+              "shuffleWriteRecords": 144,
+              "executorRunTime": 48893,
+              "executorCpuTime": 47671875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6546.0,
+                "max": 6719
+              }
+            },
+            {
+              "stageId": 44,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 17436,
+              "shuffleReadRecords": 144,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 12,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 12,
+                "max": 12
+              }
+            }
+          ],
+          "shuffle_write_bytes": 17436,
+          "shuffle_read_bytes": 17436,
+          "stage_count": 2
+        }
+      ],
+      "median_seconds": 13.254059899998538,
+      "median_cpu_seconds": 54.890625,
+      "max_peak_rss_bytes": 1185849344
+    },
+    "parquet": {
+      "config": {
+        "shuffle": 200,
+        "aqe": false,
+        "format": "parquet"
+      },
+      "runs": [
+        {
+          "cpu_seconds": 18.25,
+          "read_count": 4631,
+          "write_count": 268,
+          "read_bytes": 107590123,
+          "write_bytes": 835950,
+          "seconds": 3.804431900000054,
+          "peak_rss_bytes": 1058799616,
+          "cpu_percent_machine": 59.962960567120874,
+          "stages": [
+            {
+              "stageId": 11,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 404,
+              "executorCpuTime": 15625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 12,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 8748,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 9842,
+              "executorCpuTime": 7515625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 2483.0,
+                "max": 2509
+              }
+            },
+            {
+              "stageId": 13,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 8748,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 977,
+              "executorCpuTime": 843750000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 11.0,
+                "max": 30
+              }
+            }
+          ],
+          "shuffle_write_bytes": 8748,
+          "shuffle_read_bytes": 8748,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 10.546875,
+          "read_count": 1975,
+          "write_count": 155,
+          "read_bytes": 103370859,
+          "write_bytes": 30574,
+          "seconds": 2.05669510000007,
+          "peak_rss_bytes": 1174704128,
+          "cpu_percent_machine": 64.10086623923766,
+          "stages": [
+            {
+              "stageId": 28,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 10,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 29,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 8748,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 5537,
+              "executorCpuTime": 5390625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 1395.5,
+                "max": 1458
+              }
+            },
+            {
+              "stageId": 30,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 8748,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 695,
+              "executorCpuTime": 796875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 6.5,
+                "max": 12
+              }
+            }
+          ],
+          "shuffle_write_bytes": 8748,
+          "shuffle_read_bytes": 8748,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 9.875,
+          "read_count": 1960,
+          "write_count": 155,
+          "read_bytes": 103365178,
+          "write_bytes": 30574,
+          "seconds": 2.029667700000573,
+          "peak_rss_bytes": 1019564032,
+          "cpu_percent_machine": 60.816605595076055,
+          "stages": [
+            {
+              "stageId": 45,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 13,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 46,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 8748,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 5523,
+              "executorCpuTime": 5359375000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 1391.5,
+                "max": 1468
+              }
+            },
+            {
+              "stageId": 47,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 200,
+              "numCompleteTasks": 200,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 8748,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 609,
+              "executorCpuTime": 609375000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 18,
+              "task_runtime_ms": {
+                "median": 6.0,
+                "max": 8
+              }
+            }
+          ],
+          "shuffle_write_bytes": 8748,
+          "shuffle_read_bytes": 8748,
+          "stage_count": 3
+        }
+      ],
+      "median_seconds": 2.05669510000007,
+      "median_cpu_seconds": 10.546875,
+      "max_peak_rss_bytes": 1174704128
+    },
+    "combined": {
+      "config": {
+        "shuffle": 8,
+        "aqe": true,
+        "format": "parquet"
+      },
+      "runs": [
+        {
+          "cpu_seconds": 9.453125,
+          "read_count": 1712,
+          "write_count": 74,
+          "read_bytes": 103363694,
+          "write_bytes": 13164,
+          "seconds": 1.9049493999991682,
+          "peak_rss_bytes": 1146458112,
+          "cpu_percent_machine": 62.030026886830484,
+          "stages": [
+            {
+              "stageId": 14,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 20,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 15,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 6228,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 6512,
+              "executorCpuTime": 6000000000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 1642.0,
+                "max": 1661
+              }
+            },
+            {
+              "stageId": 17,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 6228,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 8,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 8,
+                "max": 8
+              }
+            }
+          ],
+          "shuffle_write_bytes": 6228,
+          "shuffle_read_bytes": 6228,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 6.671875,
+          "read_count": 1706,
+          "write_count": 75,
+          "read_bytes": 103362197,
+          "write_bytes": 13246,
+          "seconds": 1.5635714000000007,
+          "peak_rss_bytes": 1187643392,
+          "cpu_percent_machine": 53.338426054608036,
+          "stages": [
+            {
+              "stageId": 31,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 20,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 32,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 6228,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 5142,
+              "executorCpuTime": 5062500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 1318.0,
+                "max": 1384
+              }
+            },
+            {
+              "stageId": 34,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 6228,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 5,
+              "executorCpuTime": 15625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 5,
+                "max": 5
+              }
+            }
+          ],
+          "shuffle_write_bytes": 6228,
+          "shuffle_read_bytes": 6228,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 6.578125,
+          "read_count": 1704,
+          "write_count": 75,
+          "read_bytes": 103361570,
+          "write_bytes": 13246,
+          "seconds": 1.5522144999995362,
+          "peak_rss_bytes": 1033785344,
+          "cpu_percent_machine": 52.97371110759793,
+          "stages": [
+            {
+              "stageId": 48,
+              "attemptId": 0,
+              "name": "parquet at NativeMethodAccessorImpl.java:0",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 14,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 0,
+              "task_runtime_ms": {
+                "median": 0,
+                "max": 0
+              }
+            },
+            {
+              "stageId": 49,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 4,
+              "numCompleteTasks": 4,
+              "inputBytes": 102355068,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 6228,
+              "shuffleWriteRecords": 72,
+              "executorRunTime": 5240,
+              "executorCpuTime": 4828125000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 4,
+              "task_runtime_ms": {
+                "median": 1331.0,
+                "max": 1355
+              }
+            },
+            {
+              "stageId": 51,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 1,
+              "numCompleteTasks": 1,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 6228,
+              "shuffleReadRecords": 72,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 6,
+              "executorCpuTime": 0,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 1,
+              "task_runtime_ms": {
+                "median": 6,
+                "max": 6
+              }
+            }
+          ],
+          "shuffle_write_bytes": 6228,
+          "shuffle_read_bytes": 6228,
+          "stage_count": 3
+        }
+      ],
+      "median_seconds": 1.5635714000000007,
+      "median_cpu_seconds": 6.671875,
+      "max_peak_rss_bytes": 1187643392
+    },
+    "salt4": {
+      "config": {
+        "shuffle": 8,
+        "aqe": false,
+        "format": "csv",
+        "salt": true
+      },
+      "runs": [
+        {
+          "cpu_seconds": 61.515625,
+          "read_count": 15906,
+          "write_count": 248,
+          "read_bytes": 1000781724,
+          "write_bytes": 76376,
+          "seconds": 15.052271300000939,
+          "peak_rss_bytes": 1163259904,
+          "cpu_percent_machine": 51.08500220162468,
+          "stages": [
+            {
+              "stageId": 18,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 30927,
+              "shuffleWriteRecords": 576,
+              "executorRunTime": 54257,
+              "executorCpuTime": 52296875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 7123.0,
+                "max": 8304
+              }
+            },
+            {
+              "stageId": 19,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 30927,
+              "shuffleReadRecords": 576,
+              "shuffleWriteBytes": 5927,
+              "shuffleWriteRecords": 56,
+              "executorRunTime": 739,
+              "executorCpuTime": 250000000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 93.5,
+                "max": 121
+              }
+            },
+            {
+              "stageId": 20,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 5927,
+              "shuffleReadRecords": 56,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 173,
+              "executorCpuTime": 46875000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 21.0,
+                "max": 39
+              }
+            }
+          ],
+          "shuffle_write_bytes": 36854,
+          "shuffle_read_bytes": 36854,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 51.203125,
+          "read_count": 15842,
+          "write_count": 247,
+          "read_bytes": 1000682411,
+          "write_bytes": 76294,
+          "seconds": 12.65326720000121,
+          "peak_rss_bytes": 1168961536,
+          "cpu_percent_machine": 50.58290893437695,
+          "stages": [
+            {
+              "stageId": 35,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 30927,
+              "shuffleWriteRecords": 576,
+              "executorRunTime": 46349,
+              "executorCpuTime": 45437500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6155.5,
+                "max": 6579
+              }
+            },
+            {
+              "stageId": 36,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 30927,
+              "shuffleReadRecords": 576,
+              "shuffleWriteBytes": 5927,
+              "shuffleWriteRecords": 56,
+              "executorRunTime": 316,
+              "executorCpuTime": 187500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 41.5,
+                "max": 47
+              }
+            },
+            {
+              "stageId": 37,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 5927,
+              "shuffleReadRecords": 56,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 83,
+              "executorCpuTime": 93750000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 8.5,
+                "max": 16
+              }
+            }
+          ],
+          "shuffle_write_bytes": 36854,
+          "shuffle_read_bytes": 36854,
+          "stage_count": 3
+        },
+        {
+          "cpu_seconds": 54.578125,
+          "read_count": 15842,
+          "write_count": 248,
+          "read_bytes": 1000682411,
+          "write_bytes": 76376,
+          "seconds": 13.472569100000328,
+          "peak_rss_bytes": 1031671808,
+          "cpu_percent_machine": 50.63819360926369,
+          "stages": [
+            {
+              "stageId": 52,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 1000458717,
+              "inputRecords": 15192583,
+              "shuffleReadBytes": 0,
+              "shuffleReadRecords": 0,
+              "shuffleWriteBytes": 30927,
+              "shuffleWriteRecords": 576,
+              "executorRunTime": 49130,
+              "executorCpuTime": 47140625000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 6586.0,
+                "max": 6724
+              }
+            },
+            {
+              "stageId": 53,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 30927,
+              "shuffleReadRecords": 576,
+              "shuffleWriteBytes": 5927,
+              "shuffleWriteRecords": 56,
+              "executorRunTime": 360,
+              "executorCpuTime": 109375000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 43.0,
+                "max": 62
+              }
+            },
+            {
+              "stageId": 54,
+              "attemptId": 0,
+              "name": "collect at D:\\big_data\\Big_Data_KemSU\\lab_2\\spark_optimize.py:96",
+              "numTasks": 8,
+              "numCompleteTasks": 8,
+              "inputBytes": 0,
+              "inputRecords": 0,
+              "shuffleReadBytes": 5927,
+              "shuffleReadRecords": 56,
+              "shuffleWriteBytes": 0,
+              "shuffleWriteRecords": 0,
+              "executorRunTime": 61,
+              "executorCpuTime": 62500000,
+              "memoryBytesSpilled": 0,
+              "diskBytesSpilled": 0,
+              "nonempty_tasks": 8,
+              "task_runtime_ms": {
+                "median": 8.0,
+                "max": 9
+              }
+            }
+          ],
+          "shuffle_write_bytes": 36854,
+          "shuffle_read_bytes": 36854,
+          "stage_count": 3
+        }
+      ],
+      "median_seconds": 13.472569100000328,
+      "median_cpu_seconds": 54.578125,
+      "max_peak_rss_bytes": 1168961536
+    }
+  },
+  "hash8_load_estimate": {
+    "before": {
+      "records": [
+        6366,
+        7258,
+        1761,
+        1515,
+        1240,
+        6257,
+        4444,
+        1159
+      ],
+      "cv": 0.6523866065795989,
+      "max_to_mean": 1.9354666666666667
+    },
+    "salt4": {
+      "records": [
+        1472,
+        1108,
+        4511,
+        6051,
+        5700,
+        1875,
+        7525,
+        1758
+      ],
+      "cv": 0.6223966866521347,
+      "max_to_mean": 2.006666666666667
+    }
+  },
+  "metrics_source": "Spark status REST API and psutil; no fabricated stage/shuffle counts",
+  "verified": true
+}

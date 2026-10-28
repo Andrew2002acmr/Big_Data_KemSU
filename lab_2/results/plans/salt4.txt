@@ -1,0 +1,28 @@
+== Parsed Logical Plan ==
+'Aggregate ['gender, 'discharge_destination, 'readmitted_30_days], ['gender, 'discharge_destination, 'readmitted_30_days, sum('count) AS count#485, sum('sum_stay) AS sum_stay#487, sum('sum_bmi) AS sum_bmi#489]
++- Aggregate [gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L], [gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L, count(1) AS count#465L, sum(length_of_stay#421L) AS sum_stay#467L, sum(bmi#417) AS sum_bmi#469]
+   +- Project [patient_id#412L, age#413L, gender#414, blood_pressure#415, cholesterol#416L, bmi#417, diabetes#418, hypertension#419, medication_count#420L, length_of_stay#421L, discharge_destination#422, readmitted_30_days#423, pmod(patient_id#412L, cast(4 as bigint)) AS _salt#436L]
+      +- Relation [patient_id#412L,age#413L,gender#414,blood_pressure#415,cholesterol#416L,bmi#417,diabetes#418,hypertension#419,medication_count#420L,length_of_stay#421L,discharge_destination#422,readmitted_30_days#423] csv
+
+== Analyzed Logical Plan ==
+gender: string, discharge_destination: string, readmitted_30_days: string, count: bigint, sum_stay: bigint, sum_bmi: double
+Aggregate [gender#414, discharge_destination#422, readmitted_30_days#423], [gender#414, discharge_destination#422, readmitted_30_days#423, sum(count#465L) AS count#485L, sum(sum_stay#467L) AS sum_stay#487L, sum(sum_bmi#469) AS sum_bmi#489]
++- Aggregate [gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L], [gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L, count(1) AS count#465L, sum(length_of_stay#421L) AS sum_stay#467L, sum(bmi#417) AS sum_bmi#469]
+   +- Project [patient_id#412L, age#413L, gender#414, blood_pressure#415, cholesterol#416L, bmi#417, diabetes#418, hypertension#419, medication_count#420L, length_of_stay#421L, discharge_destination#422, readmitted_30_days#423, pmod(patient_id#412L, cast(4 as bigint)) AS _salt#436L]
+      +- Relation [patient_id#412L,age#413L,gender#414,blood_pressure#415,cholesterol#416L,bmi#417,diabetes#418,hypertension#419,medication_count#420L,length_of_stay#421L,discharge_destination#422,readmitted_30_days#423] csv
+
+== Optimized Logical Plan ==
+Aggregate [gender#414, discharge_destination#422, readmitted_30_days#423], [gender#414, discharge_destination#422, readmitted_30_days#423, sum(count#465L) AS count#485L, sum(sum_stay#467L) AS sum_stay#487L, sum(sum_bmi#469) AS sum_bmi#489]
++- Aggregate [gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L], [gender#414, discharge_destination#422, readmitted_30_days#423, count(1) AS count#465L, sum(length_of_stay#421L) AS sum_stay#467L, sum(bmi#417) AS sum_bmi#469]
+   +- Project [gender#414, bmi#417, length_of_stay#421L, discharge_destination#422, readmitted_30_days#423, pmod(patient_id#412L, 4) AS _salt#436L]
+      +- Relation [patient_id#412L,age#413L,gender#414,blood_pressure#415,cholesterol#416L,bmi#417,diabetes#418,hypertension#419,medication_count#420L,length_of_stay#421L,discharge_destination#422,readmitted_30_days#423] csv
+
+== Physical Plan ==
+*(3) HashAggregate(keys=[gender#414, discharge_destination#422, readmitted_30_days#423], functions=[sum(count#465L), sum(sum_stay#467L), sum(sum_bmi#469)], output=[gender#414, discharge_destination#422, readmitted_30_days#423, count#485L, sum_stay#487L, sum_bmi#489])
++- Exchange hashpartitioning(gender#414, discharge_destination#422, readmitted_30_days#423, 8), ENSURE_REQUIREMENTS, [plan_id=242]
+   +- *(2) HashAggregate(keys=[gender#414, discharge_destination#422, readmitted_30_days#423], functions=[partial_sum(count#465L), partial_sum(sum_stay#467L), partial_sum(sum_bmi#469)], output=[gender#414, discharge_destination#422, readmitted_30_days#423, sum#499L, sum#500L, sum#501])
+      +- *(2) HashAggregate(keys=[gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L], functions=[count(1), sum(length_of_stay#421L), sum(bmi#417)], output=[gender#414, discharge_destination#422, readmitted_30_days#423, count#465L, sum_stay#467L, sum_bmi#469])
+         +- Exchange hashpartitioning(gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L, 8), ENSURE_REQUIREMENTS, [plan_id=237]
+            +- *(1) HashAggregate(keys=[gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L], functions=[partial_count(1), partial_sum(length_of_stay#421L), partial_sum(bmi#417)], output=[gender#414, discharge_destination#422, readmitted_30_days#423, _salt#436L, count#505L, sum#506L, sum#507])
+               +- *(1) Project [gender#414, bmi#417, length_of_stay#421L, discharge_destination#422, readmitted_30_days#423, pmod(patient_id#412L, 4) AS _salt#436L]
+                  +- FileScan csv [patient_id#412L,gender#414,bmi#417,length_of_stay#421L,discharge_destination#422,readmitted_30_days#423] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<patient_id:bigint,gender:string,bmi:double,length_of_stay:bigint,discharge_destination:str...

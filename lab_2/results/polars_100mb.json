@@ -1,0 +1,235 @@
+{
+  "engine": "polars",
+  "case": "100mb",
+  "input_bytes": 99999989,
+  "rows": 1542426,
+  "startup_seconds": 1.208553700000266,
+  "runs": [
+    {
+      "cpu_seconds": 0.75,
+      "read_count": 4,
+      "write_count": 0,
+      "read_bytes": 99999993,
+      "write_bytes": 0,
+      "seconds": 0.22864509999999427,
+      "peak_rss_bytes": 260116480,
+      "cpu_percent_machine": 41.00240941091777
+    },
+    {
+      "cpu_seconds": 0.671875,
+      "read_count": 4,
+      "write_count": 0,
+      "read_bytes": 99999993,
+      "write_bytes": 0,
+      "seconds": 0.20016779999969003,
+      "peak_rss_bytes": 270356480,
+      "cpu_percent_machine": 41.95698558915573
+    },
+    {
+      "cpu_seconds": 0.796875,
+      "read_count": 4,
+      "write_count": 0,
+      "read_bytes": 99999993,
+      "write_bytes": 0,
+      "seconds": 0.22590549999949872,
+      "peak_rss_bytes": 350408704,
+      "cpu_percent_machine": 44.093381967336356
+    }
+  ],
+  "median": {
+    "cpu_seconds": 0.75,
+    "read_count": 4,
+    "write_count": 0,
+    "read_bytes": 99999993,
+    "write_bytes": 0,
+    "seconds": 0.22590549999949872,
+    "peak_rss_bytes": 270356480,
+    "cpu_percent_machine": 41.95698558915573
+  },
+  "max_peak_rss_bytes": 350408704,
+  "result": [
+    {
+      "gender": "Female",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "No",
+      "count": 318379,
+      "sum_stay": 1752948,
+      "sum_bmi": 9241664.70000001,
+      "avg_stay": 5.505853087044057,
+      "avg_bmi": 29.027243316927343
+    },
+    {
+      "gender": "Female",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "Yes",
+      "count": 34796,
+      "sum_stay": 192591,
+      "sum_bmi": 996675.100000003,
+      "avg_stay": 5.534860328773422,
+      "avg_bmi": 28.643381423152174
+    },
+    {
+      "gender": "Female",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "No",
+      "count": 41955,
+      "sum_stay": 231175,
+      "sum_bmi": 1211653.799999999,
+      "avg_stay": 5.510070313431057,
+      "avg_bmi": 28.879842688594902
+    },
+    {
+      "gender": "Female",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "Yes",
+      "count": 8892,
+      "sum_stay": 49036,
+      "sum_bmi": 259946.59999999963,
+      "avg_stay": 5.514619883040936,
+      "avg_bmi": 29.233760683760643
+    },
+    {
+      "gender": "Female",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "No",
+      "count": 86027,
+      "sum_stay": 466591,
+      "sum_bmi": 2483808.2999999826,
+      "avg_stay": 5.423773931440129,
+      "avg_bmi": 28.87242726120849
+    },
+    {
+      "gender": "Female",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "Yes",
+      "count": 17828,
+      "sum_stay": 97673,
+      "sum_bmi": 510352.80000000075,
+      "avg_stay": 5.478629122728292,
+      "avg_bmi": 28.626475207538746
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "No",
+      "count": 321668,
+      "sum_stay": 1785571,
+      "sum_bmi": 9362494.10000005,
+      "avg_stay": 5.550974918238681,
+      "avg_bmi": 29.106078627653513
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "Yes",
+      "count": 34881,
+      "sum_stay": 189221,
+      "sum_bmi": 1005882.2999999996,
+      "avg_stay": 5.424758464493564,
+      "avg_bmi": 28.837541928270394
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "No",
+      "count": 43105,
+      "sum_stay": 230124,
+      "sum_bmi": 1251753.9999999984,
+      "avg_stay": 5.338684607354136,
+      "avg_bmi": 29.039647372694546
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "Yes",
+      "count": 9561,
+      "sum_stay": 57095,
+      "sum_bmi": 275201.30000000057,
+      "avg_stay": 5.971655684551825,
+      "avg_bmi": 28.783736010877583
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "No",
+      "count": 90534,
+      "sum_stay": 500884,
+      "sum_bmi": 2627275.499999984,
+      "avg_stay": 5.532551306691409,
+      "avg_bmi": 29.01976605474169
+    },
+    {
+      "gender": "Male",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "Yes",
+      "count": 19384,
+      "sum_stay": 108057,
+      "sum_bmi": 541591.7999999997,
+      "avg_stay": 5.574546017333883,
+      "avg_bmi": 27.940146512587685
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "No",
+      "count": 325434,
+      "sum_stay": 1788686,
+      "sum_bmi": 9398927.60000005,
+      "avg_stay": 5.496309543563364,
+      "avg_bmi": 28.88120970765209
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Home",
+      "readmitted_30_days": "Yes",
+      "count": 38158,
+      "sum_stay": 207183,
+      "sum_bmi": 1107988.7000000002,
+      "avg_stay": 5.4296084700456,
+      "avg_bmi": 29.036865139682376
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "No",
+      "count": 44394,
+      "sum_stay": 249275,
+      "sum_bmi": 1283816.1000000015,
+      "avg_stay": 5.615060593773934,
+      "avg_bmi": 28.918684957426713
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Nursing_Facility",
+      "readmitted_30_days": "Yes",
+      "count": 7763,
+      "sum_stay": 36251,
+      "sum_bmi": 224642.0999999999,
+      "avg_stay": 4.66971531624372,
+      "avg_bmi": 28.937537034651537
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "No",
+      "count": 82044,
+      "sum_stay": 452755,
+      "sum_bmi": 2362337.800000013,
+      "avg_stay": 5.51844132416752,
+      "avg_bmi": 28.793547364828786
+    },
+    {
+      "gender": "Other",
+      "discharge_destination": "Rehab",
+      "readmitted_30_days": "Yes",
+      "count": 17623,
+      "sum_stay": 92742,
+      "sum_bmi": 502054.5000000011,
+      "avg_stay": 5.2625546161266525,
+      "avg_bmi": 28.488594450434153
+    }
+  ],
+  "cpu_logical": 8,
+  "ram_bytes": 17014738944,
+  "verified": true
+}

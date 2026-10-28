@@ -1,0 +1,28 @@
+== Parsed Logical Plan ==
+'Aggregate ['gender, 'discharge_destination, 'readmitted_30_days], ['gender, 'discharge_destination, 'readmitted_30_days, count(1) AS count#269L, sum('length_of_stay) AS sum_stay#271, sum('bmi) AS sum_bmi#273]
++- Relation [patient_id#232L,age#233L,gender#234,blood_pressure#235,cholesterol#236L,bmi#237,diabetes#238,hypertension#239,medication_count#240L,length_of_stay#241L,discharge_destination#242,readmitted_30_days#243] csv
+
+== Analyzed Logical Plan ==
+gender: string, discharge_destination: string, readmitted_30_days: string, count: bigint, sum_stay: bigint, sum_bmi: double
+Aggregate [gender#234, discharge_destination#242, readmitted_30_days#243], [gender#234, discharge_destination#242, readmitted_30_days#243, count(1) AS count#269L, sum(length_of_stay#241L) AS sum_stay#271L, sum(bmi#237) AS sum_bmi#273]
++- Relation [patient_id#232L,age#233L,gender#234,blood_pressure#235,cholesterol#236L,bmi#237,diabetes#238,hypertension#239,medication_count#240L,length_of_stay#241L,discharge_destination#242,readmitted_30_days#243] csv
+
+== Optimized Logical Plan ==
+Aggregate [gender#234, discharge_destination#242, readmitted_30_days#243], [gender#234, discharge_destination#242, readmitted_30_days#243, count(1) AS count#269L, sum(length_of_stay#241L) AS sum_stay#271L, sum(bmi#237) AS sum_bmi#273]
++- Project [gender#234, bmi#237, length_of_stay#241L, discharge_destination#242, readmitted_30_days#243]
+   +- Relation [patient_id#232L,age#233L,gender#234,blood_pressure#235,cholesterol#236L,bmi#237,diabetes#238,hypertension#239,medication_count#240L,length_of_stay#241L,discharge_destination#242,readmitted_30_days#243] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   *(2) HashAggregate(keys=[gender#234, discharge_destination#242, readmitted_30_days#243], functions=[count(1), sum(length_of_stay#241L), sum(bmi#237)], output=[gender#234, discharge_destination#242, readmitted_30_days#243, count#269L, sum_stay#271L, sum_bmi#273])
+   +- AQEShuffleRead coalesced
+      +- ShuffleQueryStage 0
+         +- Exchange hashpartitioning(gender#234, discharge_destination#242, readmitted_30_days#243, 200), ENSURE_REQUIREMENTS, [plan_id=120]
+            +- *(1) HashAggregate(keys=[gender#234, discharge_destination#242, readmitted_30_days#243], functions=[partial_count(1), partial_sum(length_of_stay#241L), partial_sum(bmi#237)], output=[gender#234, discharge_destination#242, readmitted_30_days#243, count#284L, sum#285L, sum#286])
+               +- FileScan csv [gender#234,bmi#237,length_of_stay#241L,discharge_destination#242,readmitted_30_days#243] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...
++- == Initial Plan ==
+   HashAggregate(keys=[gender#234, discharge_destination#242, readmitted_30_days#243], functions=[count(1), sum(length_of_stay#241L), sum(bmi#237)], output=[gender#234, discharge_destination#242, readmitted_30_days#243, count#269L, sum_stay#271L, sum_bmi#273])
+   +- Exchange hashpartitioning(gender#234, discharge_destination#242, readmitted_30_days#243, 200), ENSURE_REQUIREMENTS, [plan_id=110]
+      +- HashAggregate(keys=[gender#234, discharge_destination#242, readmitted_30_days#243], functions=[partial_count(1), partial_sum(length_of_stay#241L), partial_sum(bmi#237)], output=[gender#234, discharge_destination#242, readmitted_30_days#243, count#284L, sum#285L, sum#286])
+         +- FileScan csv [gender#234,bmi#237,length_of_stay#241L,discharge_destination#242,readmitted_30_days#243] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...

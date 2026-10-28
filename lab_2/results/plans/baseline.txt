@@ -1,0 +1,19 @@
+== Parsed Logical Plan ==
+'Aggregate ['gender, 'discharge_destination, 'readmitted_30_days], ['gender, 'discharge_destination, 'readmitted_30_days, count(1) AS count#85L, sum('length_of_stay) AS sum_stay#87, sum('bmi) AS sum_bmi#89]
++- Relation [patient_id#48L,age#49L,gender#50,blood_pressure#51,cholesterol#52L,bmi#53,diabetes#54,hypertension#55,medication_count#56L,length_of_stay#57L,discharge_destination#58,readmitted_30_days#59] csv
+
+== Analyzed Logical Plan ==
+gender: string, discharge_destination: string, readmitted_30_days: string, count: bigint, sum_stay: bigint, sum_bmi: double
+Aggregate [gender#50, discharge_destination#58, readmitted_30_days#59], [gender#50, discharge_destination#58, readmitted_30_days#59, count(1) AS count#85L, sum(length_of_stay#57L) AS sum_stay#87L, sum(bmi#53) AS sum_bmi#89]
++- Relation [patient_id#48L,age#49L,gender#50,blood_pressure#51,cholesterol#52L,bmi#53,diabetes#54,hypertension#55,medication_count#56L,length_of_stay#57L,discharge_destination#58,readmitted_30_days#59] csv
+
+== Optimized Logical Plan ==
+Aggregate [gender#50, discharge_destination#58, readmitted_30_days#59], [gender#50, discharge_destination#58, readmitted_30_days#59, count(1) AS count#85L, sum(length_of_stay#57L) AS sum_stay#87L, sum(bmi#53) AS sum_bmi#89]
++- Project [gender#50, bmi#53, length_of_stay#57L, discharge_destination#58, readmitted_30_days#59]
+   +- Relation [patient_id#48L,age#49L,gender#50,blood_pressure#51,cholesterol#52L,bmi#53,diabetes#54,hypertension#55,medication_count#56L,length_of_stay#57L,discharge_destination#58,readmitted_30_days#59] csv
+
+== Physical Plan ==
+*(2) HashAggregate(keys=[gender#50, discharge_destination#58, readmitted_30_days#59], functions=[count(1), sum(length_of_stay#57L), sum(bmi#53)], output=[gender#50, discharge_destination#58, readmitted_30_days#59, count#85L, sum_stay#87L, sum_bmi#89])
++- Exchange hashpartitioning(gender#50, discharge_destination#58, readmitted_30_days#59, 200), ENSURE_REQUIREMENTS, [plan_id=41]
+   +- *(1) HashAggregate(keys=[gender#50, discharge_destination#58, readmitted_30_days#59], functions=[partial_count(1), partial_sum(length_of_stay#57L), partial_sum(bmi#53)], output=[gender#50, discharge_destination#58, readmitted_30_days#59, count#100L, sum#101L, sum#102])
+      +- FileScan csv [gender#50,bmi#53,length_of_stay#57L,discharge_destination#58,readmitted_30_days#59] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...

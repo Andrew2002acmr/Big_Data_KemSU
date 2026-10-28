@@ -1,0 +1,8 @@
+{
+  "comparisons": 15,
+  "runs_per_case": 3,
+  "spark_optimization_runs": 21,
+  "all_keys_counts_sums_verified": true,
+  "groups": 18,
+  "source_sha256": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3"
+}

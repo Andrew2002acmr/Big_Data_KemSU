@@ -1,0 +1,29 @@
+== Parsed Logical Plan ==
+'Aggregate ['gender, 'discharge_destination, 'readmitted_30_days], ['gender, 'discharge_destination, 'readmitted_30_days, count(1) AS count#390L, sum('length_of_stay) AS sum_stay#392, sum('bmi) AS sum_bmi#394]
++- Relation [patient_id#353L,age#354L,gender#355,blood_pressure#356,cholesterol#357L,bmi#358,diabetes#359,hypertension#360,medication_count#361L,length_of_stay#362L,discharge_destination#363,readmitted_30_days#364] parquet
+
+== Analyzed Logical Plan ==
+gender: string, discharge_destination: string, readmitted_30_days: string, count: bigint, sum_stay: bigint, sum_bmi: double
+Aggregate [gender#355, discharge_destination#363, readmitted_30_days#364], [gender#355, discharge_destination#363, readmitted_30_days#364, count(1) AS count#390L, sum(length_of_stay#362L) AS sum_stay#392L, sum(bmi#358) AS sum_bmi#394]
++- Relation [patient_id#353L,age#354L,gender#355,blood_pressure#356,cholesterol#357L,bmi#358,diabetes#359,hypertension#360,medication_count#361L,length_of_stay#362L,discharge_destination#363,readmitted_30_days#364] parquet
+
+== Optimized Logical Plan ==
+Aggregate [gender#355, discharge_destination#363, readmitted_30_days#364], [gender#355, discharge_destination#363, readmitted_30_days#364, count(1) AS count#390L, sum(length_of_stay#362L) AS sum_stay#392L, sum(bmi#358) AS sum_bmi#394]
++- Project [gender#355, bmi#358, length_of_stay#362L, discharge_destination#363, readmitted_30_days#364]
+   +- Relation [patient_id#353L,age#354L,gender#355,blood_pressure#356,cholesterol#357L,bmi#358,diabetes#359,hypertension#360,medication_count#361L,length_of_stay#362L,discharge_destination#363,readmitted_30_days#364] parquet
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   *(2) HashAggregate(keys=[gender#355, discharge_destination#363, readmitted_30_days#364], functions=[count(1), sum(length_of_stay#362L), sum(bmi#358)], output=[gender#355, discharge_destination#363, readmitted_30_days#364, count#390L, sum_stay#392L, sum_bmi#394])
+   +- AQEShuffleRead coalesced
+      +- ShuffleQueryStage 0
+         +- Exchange hashpartitioning(gender#355, discharge_destination#363, readmitted_30_days#364, 8), ENSURE_REQUIREMENTS, [plan_id=192]
+            +- *(1) HashAggregate(keys=[gender#355, discharge_destination#363, readmitted_30_days#364], functions=[partial_count(1), partial_sum(length_of_stay#362L), partial_sum(bmi#358)], output=[gender#355, discharge_destination#363, readmitted_30_days#364, count#405L, sum#406L, sum#407])
+               +- *(1) ColumnarToRow
+                  +- FileScan parquet [gender#355,bmi#358,length_of_stay#362L,discharge_destination#363,readmitted_30_days#364] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.parquet], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...
++- == Initial Plan ==
+   HashAggregate(keys=[gender#355, discharge_destination#363, readmitted_30_days#364], functions=[count(1), sum(length_of_stay#362L), sum(bmi#358)], output=[gender#355, discharge_destination#363, readmitted_30_days#364, count#390L, sum_stay#392L, sum_bmi#394])
+   +- Exchange hashpartitioning(gender#355, discharge_destination#363, readmitted_30_days#364, 8), ENSURE_REQUIREMENTS, [plan_id=178]
+      +- HashAggregate(keys=[gender#355, discharge_destination#363, readmitted_30_days#364], functions=[partial_count(1), partial_sum(length_of_stay#362L), partial_sum(bmi#358)], output=[gender#355, discharge_destination#363, readmitted_30_days#364, count#405L, sum#406L, sum#407])
+         +- FileScan parquet [gender#355,bmi#358,length_of_stay#362L,discharge_destination#363,readmitted_30_days#364] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/D:/big_data/Big_Data_KemSU/lab_2/tmp/1gb.parquet], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<gender:string,bmi:double,length_of_stay:bigint,discharge_destination:string,readmitted_30_...
