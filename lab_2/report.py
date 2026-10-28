@@ -84,7 +84,7 @@ def main():
     costs='\n'.join(f"| {e} | {n((results[e,'1gb']['startup_seconds']+results[e,'1gb']['median']['seconds'])*20/3600,4)} | {n(dev[e],1)} | {n(support[e],1)} |" for e in engines)
     text=f'''# Лабораторная работа 2. Сравнение инструментов обработки данных
 
-**Вариант 6.** Датасет — [Hospital Readmission Prediction](https://www.kaggle.com/datasets/siddharth0935/hospital-readmission-predictionsynthetic-dataset), как в ЛР-1. Работа выполнена на CPU, трек A.
+**Вариант 6**
 
 ## 1. Подготовка и задача
 
@@ -177,7 +177,7 @@ RSS измерялся каждые 20 мс по процессу и потом�
 
 **Итог:** результаты всех пяти движков проверены по всем ключам, числу записей, суммам и средним; целочисленные агрегаты совпадают точно, для BMI разрешена погрешность вычислений с плавающей точкой. Измерены реальные стадии, shuffle, CPU и I/O; отрицательный эффект оптимизации сохраняется как результат.
 
-Источники: предоставленные задание ЛР-2 и лекция 2; [Spark Monitoring](https://spark.apache.org/docs/3.5.7/monitoring.html), [Spark SQL tuning](https://spark.apache.org/docs/3.5.7/sql-performance-tuning.html), [Polars](https://docs.pola.rs/api/python/stable/reference/lazyframe/api/polars.LazyFrame.collect.html), [DuckDB](https://duckdb.org/docs/stable/clients/python/overview.html). МБ = 10⁶ байт, ГБ = 10⁹, ГиБ = 2³⁰. Локальные замеры не заменяют тестирование в распределённом кластере.
+МБ = 10⁶ байт, ГБ = 10⁹, ГиБ = 2³⁰. Локальные замеры не заменяют тестирование в распределённом кластере.
 '''
     (ROOT/'report.md').write_text(text,encoding='utf-8')
     gpu=ROOT/'gpu';gpu.mkdir(exist_ok=True)
