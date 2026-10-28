@@ -1,0 +1,9 @@
+pandas==3.1.0
+numpy==2.5.4
+pyarrow==26.0.0
+fastavro==1.13.1
+great_expectations==1.24.1
+matplotlib==3.11.2
+psutil==7.2.2
+dask[dataframe]==2026.8.0
+pyspark==3.5.7

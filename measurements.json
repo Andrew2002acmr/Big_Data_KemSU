@@ -1,0 +1,173 @@
+{
+  "hospital": {
+    "rows": 30000,
+    "columns": 12,
+    "patients": 30000,
+    "memory_bytes": 3586903,
+    "arrow_bytes": 3586771,
+    "sizes": {
+      "hospital.parquet": 378584,
+      "hospital_clean.parquet": 372927,
+      "hospital_deflate.avro": 514086,
+      "hospital_etl_repeated_300k.parquet": 3346373,
+      "hospital_etl_source_30k.parquet": 372927,
+      "hospital_kaggle.zip": 416867,
+      "hospital_normalized.csv": 1541633,
+      "hospital_null.avro": 1732564,
+      "hospital_quarantine.csv": 162,
+      "hospital_readmissions_30k.csv": 1571634,
+      "hospital_stress_300k.csv": 15714953,
+      "hospital_uncompressed.parquet": 2874619
+    },
+    "original_csv_bytes": 1571634,
+    "dtypes": {
+      "str": 6,
+      "int64": 5,
+      "float64": 1
+    },
+    "missing": {
+      "patient_id": 0,
+      "age": 0,
+      "gender": 0,
+      "blood_pressure": 0,
+      "cholesterol": 0,
+      "bmi": 0,
+      "diabetes": 0,
+      "hypertension": 0,
+      "medication_count": 0,
+      "length_of_stay": 0,
+      "discharge_destination": 0,
+      "readmitted_30_days": 0
+    },
+    "duplicates": 0,
+    "duplicate_patient_ids": 0,
+    "readmitted": {
+      "No": 26326,
+      "Yes": 3674
+    },
+    "bed_days": 165087,
+    "top_20pct_beddays_share": 0.3455269039960748,
+    "abc": {
+      "A": {
+        "records": 17428,
+        "bed_days": 132072
+      },
+      "B": {
+        "records": 6985,
+        "bed_days": 24761
+      },
+      "C": {
+        "records": 5587,
+        "bed_days": 8254
+      }
+    },
+    "checks": {
+      "length_of_stay_1_10": {
+        "success": true,
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        }
+      },
+      "patient_id_unique": {
+        "success": true,
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        }
+      },
+      "readmitted_values": {
+        "success": true,
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        }
+      }
+    },
+    "examples": [
+      {
+        "patient_id": 1,
+        "blood_pressure": "130/72",
+        "systolic": 130,
+        "diastolic": 72
+      },
+      {
+        "patient_id": 2,
+        "blood_pressure": "120/92",
+        "systolic": 120,
+        "diastolic": 92
+      }
+    ],
+    "invalid_bp_format": 0,
+    "systolic_le_diastolic": 0,
+    "quarantine_rows": 0,
+    "negative_numeric": 0,
+    "ranges": {
+      "patient_id": [
+        1.0,
+        30000.0
+      ],
+      "age": [
+        18.0,
+        90.0
+      ],
+      "cholesterol": [
+        150.0,
+        300.0
+      ],
+      "bmi": [
+        18.0,
+        40.0
+      ],
+      "medication_count": [
+        0.0,
+        10.0
+      ],
+      "length_of_stay": [
+        1.0,
+        10.0
+      ]
+    }
+  },
+  "taxi": {
+    "rows": 2964624,
+    "columns": 19,
+    "valid_january": 2964606,
+    "csv_bytes": 310608360,
+    "parquet_bytes": 49961641,
+    "memory_bytes": 417980388,
+    "mean_per_hour": 3984.685483870968,
+    "mean_per_second": 1.1068570788530465,
+    "peak_5min": 878,
+    "peak_time": "2024-01-17 18:15:00",
+    "cv_5min": 0.5855138802253262,
+    "zero_distance": 60371,
+    "negative_total": 35504,
+    "wrong_pickup_month": 18,
+    "nonpositive_duration": 870
+  }
+}

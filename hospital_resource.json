@@ -1,0 +1,71 @@
+{
+  "logical_cpus_allowed": [
+    0,
+    1
+  ],
+  "memory_limit_enforced": false,
+  "machine_ram_bytes": 17014738944,
+  "startup_seconds": 6.102982899999915,
+  "pressure_probe": {
+    "input_rows": 7,
+    "clean_rows": 2,
+    "invalid_format": 4,
+    "invalid_order": 1,
+    "quarantine_rows": 5
+  },
+  "source": "synthetic Kaggle; 300k repeats source with unique synthetic IDs",
+  "results": [
+    {
+      "label": "source_30k",
+      "rows": 30000,
+      "runs": [
+        {
+          "seconds": 0.22029900000052294,
+          "cpu_seconds": 0.171875,
+          "peak_rss_bytes": 247820288
+        },
+        {
+          "seconds": 0.22038489999977173,
+          "cpu_seconds": 0.21875,
+          "peak_rss_bytes": 254615552
+        },
+        {
+          "seconds": 0.1475150999995094,
+          "cpu_seconds": 0.15625,
+          "peak_rss_bytes": 258297856
+        }
+      ],
+      "median_seconds": 0.22029900000052294,
+      "max_seconds": 0.22038489999977173,
+      "max_cpu_seconds": 0.21875,
+      "max_peak_rss_bytes": 258297856,
+      "output_bytes": 372927
+    },
+    {
+      "label": "repeated_300k",
+      "rows": 300000,
+      "runs": [
+        {
+          "seconds": 1.433690600000773,
+          "cpu_seconds": 1.515625,
+          "peak_rss_bytes": 370728960
+        },
+        {
+          "seconds": 1.4708761999991111,
+          "cpu_seconds": 1.515625,
+          "peak_rss_bytes": 446201856
+        },
+        {
+          "seconds": 1.5393823000013072,
+          "cpu_seconds": 1.546875,
+          "peak_rss_bytes": 458399744
+        }
+      ],
+      "median_seconds": 1.4708761999991111,
+      "max_seconds": 1.5393823000013072,
+      "max_cpu_seconds": 1.546875,
+      "max_peak_rss_bytes": 458399744,
+      "output_bytes": 3346373
+    }
+  ]
+}

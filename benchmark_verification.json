@@ -1,0 +1,8 @@
+{
+  "protocol_version": 2,
+  "zones_compared": 260,
+  "counts_equal": true,
+  "max_absolute_sum_error": 2.396106719970703e-05,
+  "sum_absolute_tolerance": 0.001,
+  "source_csv_sha256": "d012470ebcf28f4c084e66d940a366a1b5b7adf1a042f967ba8c2dba8611f7ec"
+}

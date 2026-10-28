@@ -1,0 +1,1318 @@
+{
+  "protocol_version": 2,
+  "engine": "dask",
+  "startup_seconds": 3.116760000000795,
+  "query_seconds": 114.9104926,
+  "seconds": 114.9104926,
+  "startup_peak_rss_bytes": 130883584,
+  "query_peak_rss_bytes": 1492041728,
+  "input_bytes": 9999999897,
+  "source_csv_sha256": "d012470ebcf28f4c084e66d940a366a1b5b7adf1a042f967ba8c2dba8611f7ec",
+  "rows": 95442475,
+  "groups": 260,
+  "total_amount_sum": 2558533174.21,
+  "by_zone": [
+    {
+      "PULocationID": 1,
+      "count": 9539,
+      "sum": 993949.5
+    },
+    {
+      "PULocationID": 2,
+      "count": 97,
+      "sum": 5761.78
+    },
+    {
+      "PULocationID": 3,
+      "count": 3379,
+      "sum": 147674.0
+    },
+    {
+      "PULocationID": 4,
+      "count": 114661,
+      "sum": 2701798.2800000003
+    },
+    {
+      "PULocationID": 6,
+      "count": 677,
+      "sum": 31193.940000000002
+    },
+    {
+      "PULocationID": 7,
+      "count": 58260,
+      "sum": 1409933.16
+    },
+    {
+      "PULocationID": 8,
+      "count": 355,
+      "sum": 31555.52
+    },
+    {
+      "PULocationID": 9,
+      "count": 1833,
+      "sum": 63723.1
+    },
+    {
+      "PULocationID": 10,
+      "count": 32196,
+      "sum": 2172604.4899999998
+    },
+    {
+      "PULocationID": 11,
+      "count": 1864,
+      "sum": 73892.75
+    },
+    {
+      "PULocationID": 12,
+      "count": 28325,
+      "sum": 883804.97
+    },
+    {
+      "PULocationID": 13,
+      "count": 510770,
+      "sum": 16092927.280000001
+    },
+    {
+      "PULocationID": 14,
+      "count": 12962,
+      "sum": 533461.46
+    },
+    {
+      "PULocationID": 15,
+      "count": 1220,
+      "sum": 49455.579999999994
+    },
+    {
+      "PULocationID": 16,
+      "count": 2603,
+      "sum": 101635.42
+    },
+    {
+      "PULocationID": 17,
+      "count": 16596,
+      "sum": 505103.69
+    },
+    {
+      "PULocationID": 18,
+      "count": 6013,
+      "sum": 243985.82
+    },
+    {
+      "PULocationID": 19,
+      "count": 2645,
+      "sum": 110838.19
+    },
+    {
+      "PULocationID": 20,
+      "count": 4179,
+      "sum": 158496.12
+    },
+    {
+      "PULocationID": 21,
+      "count": 4662,
+      "sum": 167205.26
+    },
+    {
+      "PULocationID": 22,
+      "count": 4924,
+      "sum": 185077.56
+    },
+    {
+      "PULocationID": 23,
+      "count": 129,
+      "sum": 2381.7000000000003
+    },
+    {
+      "PULocationID": 24,
+      "count": 252949,
+      "sum": 5460943.19
+    },
+    {
+      "PULocationID": 25,
+      "count": 33796,
+      "sum": 991499.62
+    },
+    {
+      "PULocationID": 26,
+      "count": 7635,
+      "sum": 262848.47
+    },
+    {
+      "PULocationID": 27,
+      "count": 192,
+      "sum": 8832.32
+    },
+    {
+      "PULocationID": 28,
+      "count": 14095,
+      "sum": 657167.9
+    },
+    {
+      "PULocationID": 29,
+      "count": 5206,
+      "sum": 222100.07
+    },
+    {
+      "PULocationID": 30,
+      "count": 96,
+      "sum": 3518.4
+    },
+    {
+      "PULocationID": 31,
+      "count": 228,
+      "sum": 12238.63
+    },
+    {
+      "PULocationID": 32,
+      "count": 4250,
+      "sum": 149247.94
+    },
+    {
+      "PULocationID": 33,
+      "count": 40385,
+      "sum": 1297782.29
+    },
+    {
+      "PULocationID": 34,
+      "count": 1991,
+      "sum": 65253.27
+    },
+    {
+      "PULocationID": 35,
+      "count": 17573,
+      "sum": 589512.1799999999
+    },
+    {
+      "PULocationID": 36,
+      "count": 10274,
+      "sum": 322240.16
+    },
+    {
+      "PULocationID": 37,
+      "count": 18080,
+      "sum": 617105.0599999999
+    },
+    {
+      "PULocationID": 38,
+      "count": 4595,
+      "sum": 208981.80000000002
+    },
+    {
+      "PULocationID": 39,
+      "count": 21645,
+      "sum": 815525.77
+    },
+    {
+      "PULocationID": 40,
+      "count": 11439,
+      "sum": 360295.01999999996
+    },
+    {
+      "PULocationID": 41,
+      "count": 220097,
+      "sum": 4582035.5
+    },
+    {
+      "PULocationID": 42,
+      "count": 101459,
+      "sum": 2485272.52
+    },
+    {
+      "PULocationID": 43,
+      "count": 1556100,
+      "sum": 33759309.67
+    },
+    {
+      "PULocationID": 44,
+      "count": 33,
+      "sum": 11689.59
+    },
+    {
+      "PULocationID": 45,
+      "count": 123187,
+      "sum": 3398578.9699999997
+    },
+    {
+      "PULocationID": 46,
+      "count": 226,
+      "sum": 9152.08
+    },
+    {
+      "PULocationID": 47,
+      "count": 5566,
+      "sum": 189907.28
+    },
+    {
+      "PULocationID": 48,
+      "count": 2463111,
+      "sum": 55345792.63
+    },
+    {
+      "PULocationID": 49,
+      "count": 16190,
+      "sum": 515766.72000000003
+    },
+    {
+      "PULocationID": 50,
+      "count": 523613,
+      "sum": 11986644.49
+    },
+    {
+      "PULocationID": 51,
+      "count": 13130,
+      "sum": 592434.61
+    },
+    {
+      "PULocationID": 52,
+      "count": 17020,
+      "sum": 486791.12
+    },
+    {
+      "PULocationID": 53,
+      "count": 1543,
+      "sum": 69143.76
+    },
+    {
+      "PULocationID": 54,
+      "count": 1992,
+      "sum": 83230.68
+    },
+    {
+      "PULocationID": 55,
+      "count": 9539,
+      "sum": 440156.22000000003
+    },
+    {
+      "PULocationID": 56,
+      "count": 8681,
+      "sum": 388231.39
+    },
+    {
+      "PULocationID": 57,
+      "count": 320,
+      "sum": 11330.88
+    },
+    {
+      "PULocationID": 58,
+      "count": 192,
+      "sum": 7426.56
+    },
+    {
+      "PULocationID": 59,
+      "count": 65,
+      "sum": 3365.02
+    },
+    {
+      "PULocationID": 60,
+      "count": 3825,
+      "sum": 125033.81999999999
+    },
+    {
+      "PULocationID": 61,
+      "count": 33620,
+      "sum": 1047007.13
+    },
+    {
+      "PULocationID": 62,
+      "count": 12305,
+      "sum": 378017.0
+    },
+    {
+      "PULocationID": 63,
+      "count": 6113,
+      "sum": 206110.24
+    },
+    {
+      "PULocationID": 64,
+      "count": 1575,
+      "sum": 65955.24
+    },
+    {
+      "PULocationID": 65,
+      "count": 44875,
+      "sum": 1460661.91
+    },
+    {
+      "PULocationID": 66,
+      "count": 22734,
+      "sum": 714195.9
+    },
+    {
+      "PULocationID": 67,
+      "count": 3314,
+      "sum": 138564.8
+    },
+    {
+      "PULocationID": 68,
+      "count": 2500726,
+      "sum": 60829179.83
+    },
+    {
+      "PULocationID": 69,
+      "count": 10950,
+      "sum": 344868.82
+    },
+    {
+      "PULocationID": 70,
+      "count": 395815,
+      "sum": 24553852.49
+    },
+    {
+      "PULocationID": 71,
+      "count": 12901,
+      "sum": 375069.86
+    },
+    {
+      "PULocationID": 72,
+      "count": 14771,
+      "sum": 482756.38
+    },
+    {
+      "PULocationID": 73,
+      "count": 1380,
+      "sum": 51360.26
+    },
+    {
+      "PULocationID": 74,
+      "count": 197852,
+      "sum": 4144824.75
+    },
+    {
+      "PULocationID": 75,
+      "count": 587540,
+      "sum": 12142759.57
+    },
+    {
+      "PULocationID": 76,
+      "count": 30164,
+      "sum": 1030768.2
+    },
+    {
+      "PULocationID": 77,
+      "count": 7877,
+      "sum": 280081.0
+    },
+    {
+      "PULocationID": 78,
+      "count": 6276,
+      "sum": 205952.78
+    },
+    {
+      "PULocationID": 79,
+      "count": 2122503,
+      "sum": 46518629.989999995
+    },
+    {
+      "PULocationID": 80,
+      "count": 21724,
+      "sum": 719285.94
+    },
+    {
+      "PULocationID": 81,
+      "count": 4088,
+      "sum": 176261.06
+    },
+    {
+      "PULocationID": 82,
+      "count": 17111,
+      "sum": 636985.96
+    },
+    {
+      "PULocationID": 83,
+      "count": 5855,
+      "sum": 246542.41
+    },
+    {
+      "PULocationID": 84,
+      "count": 64,
+      "sum": 2428.8
+    },
+    {
+      "PULocationID": 85,
+      "count": 6338,
+      "sum": 203750.8
+    },
+    {
+      "PULocationID": 86,
+      "count": 8847,
+      "sum": 461567.89
+    },
+    {
+      "PULocationID": 87,
+      "count": 389600,
+      "sum": 12326447.389999999
+    },
+    {
+      "PULocationID": 88,
+      "count": 225855,
+      "sum": 7322186.62
+    },
+    {
+      "PULocationID": 89,
+      "count": 19147,
+      "sum": 655723.96
+    },
+    {
+      "PULocationID": 90,
+      "count": 1497080,
+      "sum": 32471411.49
+    },
+    {
+      "PULocationID": 91,
+      "count": 14813,
+      "sum": 471225.02
+    },
+    {
+      "PULocationID": 92,
+      "count": 8036,
+      "sum": 322059.89
+    },
+    {
+      "PULocationID": 93,
+      "count": 16425,
+      "sum": 1129933.57
+    },
+    {
+      "PULocationID": 94,
+      "count": 2924,
+      "sum": 101046.78
+    },
+    {
+      "PULocationID": 95,
+      "count": 17494,
+      "sum": 554853.91
+    },
+    {
+      "PULocationID": 96,
+      "count": 387,
+      "sum": 18510.1
+    },
+    {
+      "PULocationID": 97,
+      "count": 36492,
+      "sum": 994184.09
+    },
+    {
+      "PULocationID": 98,
+      "count": 2445,
+      "sum": 92354.16
+    },
+    {
+      "PULocationID": 100,
+      "count": 1549752,
+      "sum": 36081801.55
+    },
+    {
+      "PULocationID": 101,
+      "count": 1798,
+      "sum": 68920.79999999999
+    },
+    {
+      "PULocationID": 102,
+      "count": 2411,
+      "sum": 78617.09999999999
+    },
+    {
+      "PULocationID": 105,
+      "count": 32,
+      "sum": 591.36
+    },
+    {
+      "PULocationID": 106,
+      "count": 5167,
+      "sum": 164800.91999999998
+    },
+    {
+      "PULocationID": 107,
+      "count": 1910767,
+      "sum": 40631601.58
+    },
+    {
+      "PULocationID": 108,
+      "count": 3829,
+      "sum": 166418.12
+    },
+    {
+      "PULocationID": 109,
+      "count": 32,
+      "sum": 3567.36
+    },
+    {
+      "PULocationID": 111,
+      "count": 33,
+      "sum": 2970.0
+    },
+    {
+      "PULocationID": 112,
+      "count": 21236,
+      "sum": 616990.5399999999
+    },
+    {
+      "PULocationID": 113,
+      "count": 1304282,
+      "sum": 28188099.04
+    },
+    {
+      "PULocationID": 114,
+      "count": 1298489,
+      "sum": 28812268.65
+    },
+    {
+      "PULocationID": 115,
+      "count": 64,
+      "sum": 3045.4399999999996
+    },
+    {
+      "PULocationID": 116,
+      "count": 70816,
+      "sum": 1868796.5699999998
+    },
+    {
+      "PULocationID": 117,
+      "count": 8016,
+      "sum": 400604.69
+    },
+    {
+      "PULocationID": 118,
+      "count": 288,
+      "sum": 30482.559999999998
+    },
+    {
+      "PULocationID": 119,
+      "count": 5572,
+      "sum": 172064.22
+    },
+    {
+      "PULocationID": 120,
+      "count": 480,
+      "sum": 24027.199999999997
+    },
+    {
+      "PULocationID": 121,
+      "count": 6020,
+      "sum": 195273.24
+    },
+    {
+      "PULocationID": 122,
+      "count": 2538,
+      "sum": 95928.5
+    },
+    {
+      "PULocationID": 123,
+      "count": 4923,
+      "sum": 168242.44
+    },
+    {
+      "PULocationID": 124,
+      "count": 4278,
+      "sum": 208725.35
+    },
+    {
+      "PULocationID": 125,
+      "count": 441152,
+      "sum": 10479548.55
+    },
+    {
+      "PULocationID": 126,
+      "count": 3377,
+      "sum": 112083.22
+    },
+    {
+      "PULocationID": 127,
+      "count": 8438,
+      "sum": 307335.68
+    },
+    {
+      "PULocationID": 128,
+      "count": 707,
+      "sum": 29994.32
+    },
+    {
+      "PULocationID": 129,
+      "count": 29365,
+      "sum": 876453.5399999999
+    },
+    {
+      "PULocationID": 130,
+      "count": 24302,
+      "sum": 1138973.3099999998
+    },
+    {
+      "PULocationID": 131,
+      "count": 5532,
+      "sum": 195406.8
+    },
+    {
+      "PULocationID": 132,
+      "count": 4685153,
+      "sum": 358783653.18
+    },
+    {
+      "PULocationID": 133,
+      "count": 4112,
+      "sum": 144289.55
+    },
+    {
+      "PULocationID": 134,
+      "count": 9759,
+      "sum": 508937.7
+    },
+    {
+      "PULocationID": 135,
+      "count": 4862,
+      "sum": 190712.1
+    },
+    {
+      "PULocationID": 136,
+      "count": 4404,
+      "sum": 175232.32
+    },
+    {
+      "PULocationID": 137,
+      "count": 1061545,
+      "sum": 22511004.27
+    },
+    {
+      "PULocationID": 138,
+      "count": 2883815,
+      "sum": 187436088.43
+    },
+    {
+      "PULocationID": 139,
+      "count": 5207,
+      "sum": 223058.93
+    },
+    {
+      "PULocationID": 140,
+      "count": 2124961,
+      "sum": 46937547.88
+    },
+    {
+      "PULocationID": 141,
+      "count": 2380032,
+      "sum": 47529769.57
+    },
+    {
+      "PULocationID": 142,
+      "count": 3353371,
+      "sum": 70415713.22
+    },
+    {
+      "PULocationID": 143,
+      "count": 1145441,
+      "sum": 23656597.34
+    },
+    {
+      "PULocationID": 144,
+      "count": 825196,
+      "sum": 19198139.7
+    },
+    {
+      "PULocationID": 145,
+      "count": 88909,
+      "sum": 2483686.0
+    },
+    {
+      "PULocationID": 146,
+      "count": 48038,
+      "sum": 1129494.93
+    },
+    {
+      "PULocationID": 147,
+      "count": 3369,
+      "sum": 120667.9
+    },
+    {
+      "PULocationID": 148,
+      "count": 900218,
+      "sum": 21887827.33
+    },
+    {
+      "PULocationID": 149,
+      "count": 4054,
+      "sum": 141821.08000000002
+    },
+    {
+      "PULocationID": 150,
+      "count": 2639,
+      "sum": 112991.90000000001
+    },
+    {
+      "PULocationID": 151,
+      "count": 785634,
+      "sum": 16354496.85
+    },
+    {
+      "PULocationID": 152,
+      "count": 63290,
+      "sum": 1406264.5
+    },
+    {
+      "PULocationID": 153,
+      "count": 1576,
+      "sum": 52910.42
+    },
+    {
+      "PULocationID": 154,
+      "count": 1866,
+      "sum": 63475.99
+    },
+    {
+      "PULocationID": 155,
+      "count": 7280,
+      "sum": 284113.69
+    },
+    {
+      "PULocationID": 156,
+      "count": 130,
+      "sum": 297.0
+    },
+    {
+      "PULocationID": 157,
+      "count": 9323,
+      "sum": 432979.06
+    },
+    {
+      "PULocationID": 158,
+      "count": 763270,
+      "sum": 18392317.57
+    },
+    {
+      "PULocationID": 159,
+      "count": 9296,
+      "sum": 286701.88
+    },
+    {
+      "PULocationID": 160,
+      "count": 3114,
+      "sum": 127143.97
+    },
+    {
+      "PULocationID": 161,
+      "count": 4616750,
+      "sum": 108415856.8
+    },
+    {
+      "PULocationID": 162,
+      "count": 3433907,
+      "sum": 78565936.48
+    },
+    {
+      "PULocationID": 163,
+      "count": 2757914,
+      "sum": 63748810.6
+    },
+    {
+      "PULocationID": 164,
+      "count": 2089459,
+      "sum": 48197785.31
+    },
+    {
+      "PULocationID": 165,
+      "count": 8233,
+      "sum": 261105.12000000002
+    },
+    {
+      "PULocationID": 166,
+      "count": 444637,
+      "sum": 10091275.290000001
+    },
+    {
+      "PULocationID": 167,
+      "count": 9310,
+      "sum": 297869.29
+    },
+    {
+      "PULocationID": 168,
+      "count": 21313,
+      "sum": 643608.17
+    },
+    {
+      "PULocationID": 169,
+      "count": 6692,
+      "sum": 197525.61000000002
+    },
+    {
+      "PULocationID": 170,
+      "count": 2673420,
+      "sum": 60542101.1
+    },
+    {
+      "PULocationID": 171,
+      "count": 2541,
+      "sum": 91988.66
+    },
+    {
+      "PULocationID": 172,
+      "count": 64,
+      "sum": 6400.0
+    },
+    {
+      "PULocationID": 173,
+      "count": 2674,
+      "sum": 86334.13
+    },
+    {
+      "PULocationID": 174,
+      "count": 4563,
+      "sum": 188301.54
+    },
+    {
+      "PULocationID": 175,
+      "count": 1801,
+      "sum": 63357.06
+    },
+    {
+      "PULocationID": 176,
+      "count": 64,
+      "sum": 3937.6
+    },
+    {
+      "PULocationID": 177,
+      "count": 11371,
+      "sum": 369950.7
+    },
+    {
+      "PULocationID": 178,
+      "count": 1963,
+      "sum": 64247.36
+    },
+    {
+      "PULocationID": 179,
+      "count": 20628,
+      "sum": 541843.98
+    },
+    {
+      "PULocationID": 180,
+      "count": 3377,
+      "sum": 115090.47
+    },
+    {
+      "PULocationID": 181,
+      "count": 31574,
+      "sum": 985630.97
+    },
+    {
+      "PULocationID": 182,
+      "count": 7471,
+      "sum": 275681.56
+    },
+    {
+      "PULocationID": 183,
+      "count": 1510,
+      "sum": 62379.28
+    },
+    {
+      "PULocationID": 184,
+      "count": 64,
+      "sum": 2528.0
+    },
+    {
+      "PULocationID": 185,
+      "count": 4016,
+      "sum": 140486.5
+    },
+    {
+      "PULocationID": 186,
+      "count": 3366677,
+      "sum": 79589846.35
+    },
+    {
+      "PULocationID": 187,
+      "count": 64,
+      "sum": 7776.639999999999
+    },
+    {
+      "PULocationID": 188,
+      "count": 23125,
+      "sum": 720914.25
+    },
+    {
+      "PULocationID": 189,
+      "count": 11090,
+      "sum": 352292.26
+    },
+    {
+      "PULocationID": 190,
+      "count": 1705,
+      "sum": 49913.8
+    },
+    {
+      "PULocationID": 191,
+      "count": 8296,
+      "sum": 355960.69999999995
+    },
+    {
+      "PULocationID": 192,
+      "count": 2154,
+      "sum": 69407.14
+    },
+    {
+      "PULocationID": 193,
+      "count": 70294,
+      "sum": 722499.38
+    },
+    {
+      "PULocationID": 194,
+      "count": 3155,
+      "sum": 199674.53
+    },
+    {
+      "PULocationID": 195,
+      "count": 10631,
+      "sum": 545411.96
+    },
+    {
+      "PULocationID": 196,
+      "count": 7600,
+      "sum": 303877.37
+    },
+    {
+      "PULocationID": 197,
+      "count": 15728,
+      "sum": 667197.5599999999
+    },
+    {
+      "PULocationID": 198,
+      "count": 6748,
+      "sum": 218994.96
+    },
+    {
+      "PULocationID": 199,
+      "count": 64,
+      "sum": 652.8
+    },
+    {
+      "PULocationID": 200,
+      "count": 3153,
+      "sum": 127677.12
+    },
+    {
+      "PULocationID": 201,
+      "count": 2571,
+      "sum": 126261.6
+    },
+    {
+      "PULocationID": 202,
+      "count": 5369,
+      "sum": 185524.58
+    },
+    {
+      "PULocationID": 203,
+      "count": 6533,
+      "sum": 298707.12
+    },
+    {
+      "PULocationID": 204,
+      "count": 32,
+      "sum": 2486.72
+    },
+    {
+      "PULocationID": 205,
+      "count": 11005,
+      "sum": 494575.38
+    },
+    {
+      "PULocationID": 206,
+      "count": 192,
+      "sum": 8214.08
+    },
+    {
+      "PULocationID": 207,
+      "count": 6850,
+      "sum": 90813.69
+    },
+    {
+      "PULocationID": 208,
+      "count": 3801,
+      "sum": 149289.58
+    },
+    {
+      "PULocationID": 209,
+      "count": 144253,
+      "sum": 4345742.38
+    },
+    {
+      "PULocationID": 210,
+      "count": 6794,
+      "sum": 291523.64
+    },
+    {
+      "PULocationID": 211,
+      "count": 650253,
+      "sum": 15268607.42
+    },
+    {
+      "PULocationID": 212,
+      "count": 3952,
+      "sum": 131087.36
+    },
+    {
+      "PULocationID": 213,
+      "count": 9647,
+      "sum": 343926.22
+    },
+    {
+      "PULocationID": 214,
+      "count": 128,
+      "sum": 4563.52
+    },
+    {
+      "PULocationID": 215,
+      "count": 19161,
+      "sum": 1111926.8299999998
+    },
+    {
+      "PULocationID": 216,
+      "count": 23683,
+      "sum": 1332816.23
+    },
+    {
+      "PULocationID": 217,
+      "count": 5144,
+      "sum": 162190.35
+    },
+    {
+      "PULocationID": 218,
+      "count": 10834,
+      "sum": 432434.23
+    },
+    {
+      "PULocationID": 219,
+      "count": 14369,
+      "sum": 967473.55
+    },
+    {
+      "PULocationID": 220,
+      "count": 4917,
+      "sum": 256331.6
+    },
+    {
+      "PULocationID": 221,
+      "count": 128,
+      "sum": 2255.36
+    },
+    {
+      "PULocationID": 222,
+      "count": 8205,
+      "sum": 326618.04
+    },
+    {
+      "PULocationID": 223,
+      "count": 21840,
+      "sum": 947449.54
+    },
+    {
+      "PULocationID": 224,
+      "count": 119165,
+      "sum": 2731537.41
+    },
+    {
+      "PULocationID": 225,
+      "count": 18751,
+      "sum": 590627.46
+    },
+    {
+      "PULocationID": 226,
+      "count": 83625,
+      "sum": 2700438.88
+    },
+    {
+      "PULocationID": 227,
+      "count": 3279,
+      "sum": 123987.72
+    },
+    {
+      "PULocationID": 228,
+      "count": 6804,
+      "sum": 271923.96
+    },
+    {
+      "PULocationID": 229,
+      "count": 1777187,
+      "sum": 37091155.19
+    },
+    {
+      "PULocationID": 230,
+      "count": 3424289,
+      "sum": 89977623.07000001
+    },
+    {
+      "PULocationID": 231,
+      "count": 1192264,
+      "sum": 30664549.81
+    },
+    {
+      "PULocationID": 232,
+      "count": 120437,
+      "sum": 3289173.48
+    },
+    {
+      "PULocationID": 233,
+      "count": 1081143,
+      "sum": 25799637.12
+    },
+    {
+      "PULocationID": 234,
+      "count": 2449998,
+      "sum": 52582165.26
+    },
+    {
+      "PULocationID": 235,
+      "count": 8400,
+      "sum": 293629.42
+    },
+    {
+      "PULocationID": 236,
+      "count": 4389557,
+      "sum": 87792849.96
+    },
+    {
+      "PULocationID": 237,
+      "count": 4590450,
+      "sum": 89287516.02
+    },
+    {
+      "PULocationID": 238,
+      "count": 2068914,
+      "sum": 43196726.67
+    },
+    {
+      "PULocationID": 239,
+      "count": 2849792,
+      "sum": 59661058.0
+    },
+    {
+      "PULocationID": 240,
+      "count": 580,
+      "sum": 24355.14
+    },
+    {
+      "PULocationID": 241,
+      "count": 5277,
+      "sum": 199823.74
+    },
+    {
+      "PULocationID": 242,
+      "count": 6246,
+      "sum": 213676.13
+    },
+    {
+      "PULocationID": 243,
+      "count": 15933,
+      "sum": 551159.01
+    },
+    {
+      "PULocationID": 244,
+      "count": 60967,
+      "sum": 1831135.57
+    },
+    {
+      "PULocationID": 245,
+      "count": 64,
+      "sum": 0.0
+    },
+    {
+      "PULocationID": 246,
+      "count": 1626331,
+      "sum": 38235124.97
+    },
+    {
+      "PULocationID": 247,
+      "count": 10482,
+      "sum": 305498.07
+    },
+    {
+      "PULocationID": 248,
+      "count": 4566,
+      "sum": 151350.44999999998
+    },
+    {
+      "PULocationID": 249,
+      "count": 2131567,
+      "sum": 47118673.57
+    },
+    {
+      "PULocationID": 250,
+      "count": 3544,
+      "sum": 109844.26000000001
+    },
+    {
+      "PULocationID": 251,
+      "count": 161,
+      "sum": 6975.86
+    },
+    {
+      "PULocationID": 252,
+      "count": 2285,
+      "sum": 93315.33
+    },
+    {
+      "PULocationID": 253,
+      "count": 451,
+      "sum": 12534.14
+    },
+    {
+      "PULocationID": 254,
+      "count": 7418,
+      "sum": 312895.81
+    },
+    {
+      "PULocationID": 255,
+      "count": 35649,
+      "sum": 1021021.23
+    },
+    {
+      "PULocationID": 256,
+      "count": 29317,
+      "sum": 872682.42
+    },
+    {
+      "PULocationID": 257,
+      "count": 2507,
+      "sum": 86725.74
+    },
+    {
+      "PULocationID": 258,
+      "count": 5948,
+      "sum": 208850.7
+    },
+    {
+      "PULocationID": 259,
+      "count": 3824,
+      "sum": 167681.00999999998
+    },
+    {
+      "PULocationID": 260,
+      "count": 26162,
+      "sum": 809316.87
+    },
+    {
+      "PULocationID": 261,
+      "count": 415477,
+      "sum": 12984539.02
+    },
+    {
+      "PULocationID": 262,
+      "count": 1376598,
+      "sum": 29338043.03
+    },
+    {
+      "PULocationID": 263,
+      "count": 1924627,
+      "sum": 38662476.68
+    },
+    {
+      "PULocationID": 264,
+      "count": 333749,
+      "sum": 9798737.03
+    },
+    {
+      "PULocationID": 265,
+      "count": 53446,
+      "sum": 4997403.51
+    }
+  ],
+  "cpu_logical": 8,
+  "ram_total_bytes": 17014738944
+}
