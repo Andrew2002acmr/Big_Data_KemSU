@@ -77,7 +77,7 @@ def images(reuse):
     for target, nodes in IMAGES.items():
         image = f'lab6-{target}:1'
         if not reuse:
-            run('docker', 'build', '--target', target, '-t', image, '-f', 'Dockerfile', '..')
+            run('docker', 'build', '--target', target, '-t', image, '-f', str(ROOT / 'Dockerfile'), str(ROOT.parent))
         if nodes:
             run('kind', 'load', 'docker-image', image, '--name', CLUSTER, '--nodes', nodes)
 
