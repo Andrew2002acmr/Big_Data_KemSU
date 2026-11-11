@@ -1,0 +1,53 @@
+name: Лабораторная работа 5
+
+on:
+  push:
+    branches: [lab_5]
+  pull_request:
+    branches: [lab_5]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: lab_5
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: lab_5/flink/pom.xml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: lab_5/requirements.txt
+      - run: docker compose --profile spark config --quiet
+      - run: mvn -B -f flink/pom.xml package
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests
+
+  streaming:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build jobmanager model-server
+      - run: docker compose up -d --no-build jobmanager taskmanager model-server monitor prometheus grafana
+      - run: docker compose run --rm --no-deps bench python benchmark.py
+      - if: failure()
+        run: docker compose logs --tail 60 jobmanager taskmanager
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flink-linux
+          path: lab_5/tmp/results/flink.json
+      - if: always()
+        run: docker compose down

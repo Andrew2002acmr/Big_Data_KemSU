@@ -1,0 +1,21 @@
+{
+  "model": "readmission-v1",
+  "features": [
+    "age",
+    "bmi",
+    "diabetes",
+    "hypertension",
+    "length_of_stay",
+    "discharge_rehab",
+    "discharge_nursing"
+  ],
+  "rows": 30000,
+  "source_sha256": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3",
+  "onnx_sha256": "928712bfda4c8f8a0ab3c9d0003527c57fe9e1f7f758d2789d1b9f12565a863d",
+  "test_auc": 0.5764127113333463,
+  "test_ap": 0.1584810547048794,
+  "threshold": 0.22022847831249237,
+  "test_fpr": 0.006457739791073124,
+  "test_recall": 0.005442176870748299,
+  "max_onnx_difference": 8.221430307375766e-08
+}

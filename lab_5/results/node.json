@@ -1,0 +1,10 @@
+{
+  "checkpoint_before": 23,
+  "checkpoint_after": 24,
+  "kafka_lag_during_outage": 81,
+  "kafka_lag_after": 0,
+  "queued": 80,
+  "recovered": 80,
+  "lost": 0,
+  "reference_unchanged": true
+}

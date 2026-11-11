@@ -1,0 +1,40 @@
+{
+  "before_tuning": [
+    {
+      "name": "LatencySLO",
+      "phase": "normal",
+      "state": "firing",
+      "value": "4.380939750999999e+01"
+    },
+    {
+      "name": "LatencySLO",
+      "phase": "peak",
+      "state": "firing",
+      "value": "5.0138519519999996e+01"
+    },
+    {
+      "name": "FeatureDrift",
+      "phase": null,
+      "state": "firing",
+      "value": "6.548575016228387e+00"
+    },
+    {
+      "name": "LateEvents",
+      "phase": null,
+      "state": "firing",
+      "value": "5e-01"
+    }
+  ],
+  "final": [
+    {
+      "name": "FeatureDrift",
+      "state": "firing",
+      "value": "6.548575016228387e+00"
+    },
+    {
+      "name": "LateEvents",
+      "state": "firing",
+      "value": "5e-01"
+    }
+  ]
+}

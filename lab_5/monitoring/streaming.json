@@ -1,0 +1,29 @@
+{
+  "uid": "lab5",
+  "title": "Лабораторная работа 5 · Потоковая обработка",
+  "schemaVersion": 39,
+  "refresh": "5s",
+  "time": {"from": "now-15m", "to": "now"},
+  "panels": [
+    {"id": 1, "title": "Задержка p99 по фазам", "type": "stat", "gridPos": {"x": 0, "y": 0, "w": 12, "h": 7},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_latency_p99_ms", "legendFormat": "{{phase}}", "instant": true}],
+     "fieldConfig": {"defaults": {"unit": "ms", "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "red", "value": 30}]}}}},
+    {"id": 2, "title": "Kafka lag", "type": "timeseries", "gridPos": {"x": 12, "y": 0, "w": 12, "h": 7},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_kafka_lag", "legendFormat": "Сообщений"}]},
+    {"id": 3, "title": "Дрейф BMI · PSI", "type": "stat", "gridPos": {"x": 0, "y": 7, "w": 6, "h": 6},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_drift_psi", "instant": true}],
+     "fieldConfig": {"defaults": {"decimals": 3, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "red", "value": 0.2}]}}}},
+    {"id": 4, "title": "Поздние события · контрольная серия", "type": "stat", "gridPos": {"x": 6, "y": 7, "w": 6, "h": 6},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_late_fraction", "instant": true}], "fieldConfig": {"defaults": {"unit": "percentunit"}}},
+    {"id": 5, "title": "Время checkpoint", "type": "timeseries", "gridPos": {"x": 12, "y": 7, "w": 12, "h": 6},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_checkpoint_duration_seconds", "legendFormat": "Checkpoint"}], "fieldConfig": {"defaults": {"unit": "s"}}},
+    {"id": 6, "title": "Размер состояния Flink", "type": "timeseries", "gridPos": {"x": 0, "y": 13, "w": 24, "h": 6},
+     "datasource": {"type": "prometheus", "uid": "prometheus"},
+     "targets": [{"refId": "A", "expr": "lab5_state_bytes", "legendFormat": "Checkpoint state"}], "fieldConfig": {"defaults": {"unit": "bytes"}}}
+  ]
+}

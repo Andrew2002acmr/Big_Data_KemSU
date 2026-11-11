@@ -1,0 +1,33 @@
+{
+  "engine": "spark",
+  "run": "35cff9a633",
+  "latency_budget_p99_ms": 30,
+  "normal": {
+    "rows": 320,
+    "target_rate": 150,
+    "throughput_eps": 90.67170740760709,
+    "p50_ms": 1130.3234945,
+    "p95_ms": 1895.1812579000002,
+    "p99_ms": 1980.5059661399998,
+    "parity_max_delta": 0.0
+  },
+  "feature_audit": {
+    "rows": 128,
+    "target_rate": 150,
+    "throughput_eps": 56.414016558151296,
+    "p50_ms": 1228.16607,
+    "p95_ms": 1623.5674282,
+    "p99_ms": 1657.4308482,
+    "parity_max_delta": 0.0,
+    "feature_max_delta": 0.0
+  },
+  "fault": {
+    "passed": true,
+    "rows": 41,
+    "lost": 0,
+    "duplicate_result": false,
+    "injected_after_commit": true,
+    "driver_restart_count": 1
+  },
+  "latency_passed": false
+}

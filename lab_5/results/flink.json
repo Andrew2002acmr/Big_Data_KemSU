@@ -1,0 +1,209 @@
+{
+  "engine": "flink",
+  "run": "5b15487d08",
+  "latency_budget_p99_ms": 30,
+  "baseline": {
+    "rows": 1000,
+    "target_rate": 50,
+    "throughput_eps": 49.9127987094982,
+    "p50_ms": 4.680137,
+    "p95_ms": 12.940571449999998,
+    "p99_ms": 27.633820929999988,
+    "feature_us_p95": 1006.0520999999995,
+    "feature_us_p99": 2838.1603199999963,
+    "model_us_p95": 536.2579999999999,
+    "model_us_p99": 839.5720099999999,
+    "ingest_ms_p95": 5.0,
+    "ingest_ms_p99": 16.00999999999999,
+    "to_sink_ms_p95": 2.0,
+    "to_sink_ms_p99": 10.0,
+    "parity_max_delta": 7.446670530208976e-09,
+    "resources": {
+      "kafka_lag": 167,
+      "checkpoint_duration_seconds": 0.114,
+      "state_bytes": 683976,
+      "checkpoint_id": 30,
+      "task_cpu_load": 0.0696932745521058,
+      "task_heap_bytes": 217910272.0
+    }
+  },
+  "normal": {
+    "rows": 1000,
+    "target_rate": 50,
+    "throughput_eps": 49.91624228004369,
+    "p50_ms": 3.8487264999999997,
+    "p95_ms": 9.886730999999989,
+    "p99_ms": 21.250154479999996,
+    "feature_us_p95": 8.405949999999995,
+    "feature_us_p99": 12.103,
+    "model_us_p95": 522.3520499999998,
+    "model_us_p99": 1121.0630499999993,
+    "ingest_ms_p95": 4.0,
+    "ingest_ms_p99": 11.019999999999982,
+    "to_sink_ms_p95": 1.0,
+    "to_sink_ms_p99": 5.019999999999982,
+    "parity_max_delta": 7.446670530208976e-09,
+    "resources": {
+      "kafka_lag": 225,
+      "checkpoint_duration_seconds": 0.06,
+      "state_bytes": 697853,
+      "checkpoint_id": 32,
+      "task_cpu_load": 0.04878800328677075,
+      "task_heap_bytes": 76790848.0
+    }
+  },
+  "peak": {
+    "rows": 1000,
+    "target_rate": 100,
+    "throughput_eps": 99.56537826618496,
+    "p50_ms": 3.836622,
+    "p95_ms": 9.748169049999998,
+    "p99_ms": 19.56889256999999,
+    "feature_us_p95": 7.905949999999995,
+    "feature_us_p99": 21.205,
+    "model_us_p95": 511.49535,
+    "model_us_p99": 651.65,
+    "ingest_ms_p95": 5.0,
+    "ingest_ms_p99": 13.009999999999991,
+    "to_sink_ms_p95": 1.0,
+    "to_sink_ms_p99": 2.009999999999991,
+    "parity_max_delta": 7.262420664844171e-09,
+    "resources": {
+      "kafka_lag": 565,
+      "checkpoint_duration_seconds": 0.05,
+      "state_bytes": 711043,
+      "checkpoint_id": 33,
+      "task_cpu_load": 0.05565052231718898,
+      "task_heap_bytes": 127122496.0
+    }
+  },
+  "pipeline_plan": {
+    "jid": "cc06ed0dca0903b99719039196309e8e",
+    "name": "Hospital readmissions streaming",
+    "type": "STREAMING",
+    "nodes": [
+      {
+        "id": "d93f5f77dbd0b70963e51f86fc8be90b",
+        "parallelism": 2,
+        "operator": "",
+        "operator_strategy": "",
+        "description": "Sink: Redis DLQ<br/>",
+        "inputs": [
+          {
+            "num": 0,
+            "id": "15ac4fe9e3323edc25f1eb55ab3065bc",
+            "ship_strategy": "FORWARD",
+            "exchange": "pipelined_bounded"
+          },
+          {
+            "num": 1,
+            "id": "3d4f35817350df52df8b39de9a022a43",
+            "ship_strategy": "FORWARD",
+            "exchange": "pipelined_bounded"
+          }
+        ],
+        "optimizer_properties": {}
+      },
+      {
+        "id": "15ac4fe9e3323edc25f1eb55ab3065bc",
+        "parallelism": 2,
+        "operator": "",
+        "operator_strategy": "",
+        "description": "ONNX and event-time windows<br/>:- Sink: Redis predictions and windows<br/>+- Sink: Redis late<br/>",
+        "inputs": [
+          {
+            "num": 0,
+            "id": "3d4f35817350df52df8b39de9a022a43",
+            "ship_strategy": "HASH",
+            "exchange": "pipelined_bounded"
+          }
+        ],
+        "optimizer_properties": {}
+      },
+      {
+        "id": "3d4f35817350df52df8b39de9a022a43",
+        "parallelism": 2,
+        "operator": "",
+        "operator_strategy": "",
+        "description": "Source: Kafka<br/>+- Validate or DLQ<br/>   +- Event time<br/>",
+        "optimizer_properties": {}
+      }
+    ]
+  },
+  "state_and_resources": {
+    "kafka_lag": 565,
+    "checkpoint_duration_seconds": 0.05,
+    "state_bytes": 711043,
+    "checkpoint_id": 33,
+    "task_cpu_load": 0.05565052231718898,
+    "task_heap_bytes": 127122496.0
+  },
+  "drift_load": {
+    "rows": 256,
+    "target_rate": 50,
+    "throughput_eps": 49.68784399060485,
+    "p50_ms": 3.7894215,
+    "p95_ms": 7.3006725,
+    "p99_ms": 21.775633699999894,
+    "feature_us_p95": 664.5472500000001,
+    "feature_us_p99": 1516.5880499999987,
+    "model_us_p95": 419.43025,
+    "model_us_p99": 565.9104499999999,
+    "ingest_ms_p95": 3.25,
+    "ingest_ms_p99": 10.0,
+    "to_sink_ms_p95": 2.0,
+    "to_sink_ms_p99": 4.7999999999999545,
+    "parity_max_delta": 7.174301153156648e-09
+  },
+  "data_drift_psi": 6.548575016228387,
+  "late": {
+    "accepted": true,
+    "out_of_order": true,
+    "side_output": {
+      "id": "closed-late",
+      "reason": "window_closed"
+    },
+    "dlq": {
+      "id": "invalid-stay",
+      "reason": "invalid_features"
+    },
+    "window": {
+      "patient": 1,
+      "window_end": 1794414420000,
+      "count": 3,
+      "late": 1,
+      "mean_score": 0.10137954354286194
+    },
+    "duplicate_removed": true
+  },
+  "model_http_parity": true,
+  "feature_audit": {
+    "rows": 128,
+    "target_rate": 50,
+    "throughput_eps": 49.01899611940741,
+    "p50_ms": 3.3151849999999996,
+    "p95_ms": 5.712595299999999,
+    "p99_ms": 8.172036670000004,
+    "feature_us_p95": 6.730349999999998,
+    "feature_us_p99": 10.736000000000013,
+    "model_us_p95": 444.09164999999996,
+    "model_us_p99": 499.88073,
+    "ingest_ms_p95": 3.0,
+    "ingest_ms_p99": 6.190000000000012,
+    "to_sink_ms_p95": 1.0,
+    "to_sink_ms_p99": 1.0,
+    "parity_max_delta": 7.447052002840238e-09,
+    "feature_max_delta": 0.0
+  },
+  "fault": {
+    "passed": true,
+    "rows": 41,
+    "lost": 0,
+    "duplicate_result": false,
+    "injected_after_commit": true,
+    "checkpoint_before": 34,
+    "checkpoint_after": 35,
+    "checkpoint_duration_sec": 0.072
+  },
+  "latency_passed": true
+}

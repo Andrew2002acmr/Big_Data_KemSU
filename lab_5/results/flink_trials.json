@@ -1,0 +1,398 @@
+{
+  "initial_150_300": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 150,
+      "throughput_eps": 148.9400866398803,
+      "p50_ms": 26.625512,
+      "p95_ms": 337.1248664,
+      "p99_ms": 401.52428526999995,
+      "feature_us_p95": 11002.027699999999,
+      "model_us_p95": 1400.1221999999962,
+      "parity_max_delta": 7.446670530208976e-09
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 150,
+      "throughput_eps": 148.98687738929956,
+      "p50_ms": 4.3656765,
+      "p95_ms": 21.805822299999996,
+      "p99_ms": 52.94246347999999,
+      "feature_us_p95": 6.601,
+      "model_us_p95": 326.46789999999976,
+      "parity_max_delta": 7.446670530208976e-09
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 300,
+      "throughput_eps": 295.45980197317647,
+      "p50_ms": 4.096764,
+      "p95_ms": 19.665054399999985,
+      "p99_ms": 35.775797499999946,
+      "feature_us_p95": 5.401,
+      "model_us_p95": 418.6220499999999,
+      "parity_max_delta": 7.446670530208976e-09
+    }
+  },
+  "split_outputs_150_300": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 150,
+      "throughput_eps": 148.97975528303158,
+      "p50_ms": 3.9717935,
+      "p95_ms": 14.795076749999968,
+      "p99_ms": 34.47763591999999,
+      "feature_us_p95": 807.6690499999994,
+      "model_us_p95": 370.1020499999999,
+      "ingest_ms_p95": 9.0,
+      "to_sink_ms_p95": 3.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 27,
+        "checkpoint_duration_seconds": 0.053,
+        "state_bytes": 187240,
+        "checkpoint_id": 12,
+        "task_cpu_load": 0.0,
+        "task_heap_bytes": 188823136.0
+      }
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 150,
+      "throughput_eps": 148.8211255900005,
+      "p50_ms": 9.250398,
+      "p95_ms": 64.92093989999996,
+      "p99_ms": 109.32759101,
+      "feature_us_p95": 6.701,
+      "model_us_p95": 603.7359999999998,
+      "ingest_ms_p95": 55.0,
+      "to_sink_ms_p95": 11.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 155,
+        "checkpoint_duration_seconds": 0.133,
+        "state_bytes": 201322,
+        "checkpoint_id": 20,
+        "task_cpu_load": 0.14960539860459796,
+        "task_heap_bytes": 77471008.0
+      }
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 300,
+      "throughput_eps": 295.3413128302733,
+      "p50_ms": 11.9069225,
+      "p95_ms": 57.11543249999997,
+      "p99_ms": 82.82724126,
+      "feature_us_p95": 7.9,
+      "model_us_p95": 946.5099999999995,
+      "ingest_ms_p95": 42.049999999999955,
+      "to_sink_ms_p95": 16.0,
+      "parity_max_delta": 7.262420664844171e-09,
+      "resources": {
+        "kafka_lag": 197,
+        "checkpoint_duration_seconds": 0.115,
+        "state_bytes": 227416,
+        "checkpoint_id": 24,
+        "task_cpu_load": 0.14960539860459796,
+        "task_heap_bytes": 77471008.0
+      }
+    }
+  },
+  "before_kafka_tuning_100_200": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.25142497948109,
+      "p50_ms": 4.8596095,
+      "p95_ms": 20.705714999999998,
+      "p99_ms": 34.87816149999998,
+      "feature_us_p95": 1589.4722499999987,
+      "model_us_p95": 448.19399999999996,
+      "ingest_ms_p95": 11.0,
+      "to_sink_ms_p95": 3.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 109,
+        "checkpoint_duration_seconds": 0.129,
+        "state_bytes": 313751,
+        "checkpoint_id": 120,
+        "task_cpu_load": 0.17163107841378072,
+        "task_heap_bytes": 185984408.0
+      }
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.56901611117765,
+      "p50_ms": 4.236769,
+      "p95_ms": 23.489330099999997,
+      "p99_ms": 43.80939750999999,
+      "feature_us_p95": 6.8,
+      "model_us_p95": 460.76685,
+      "ingest_ms_p95": 14.0,
+      "to_sink_ms_p95": 3.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 40,
+        "checkpoint_duration_seconds": 0.042,
+        "state_bytes": 325181,
+        "checkpoint_id": 129,
+        "task_cpu_load": 0.10906193078324226,
+        "task_heap_bytes": 241558936.0
+      }
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 200,
+      "throughput_eps": 198.12919232442354,
+      "p50_ms": 3.6585599999999996,
+      "p95_ms": 13.16106949999998,
+      "p99_ms": 50.138519519999996,
+      "feature_us_p95": 6.1,
+      "model_us_p95": 407.39399999999983,
+      "ingest_ms_p95": 7.0,
+      "to_sink_ms_p95": 1.0,
+      "parity_max_delta": 7.262420664844171e-09,
+      "resources": {
+        "kafka_lag": 135,
+        "checkpoint_duration_seconds": 0.027,
+        "state_bytes": 339797,
+        "checkpoint_id": 132,
+        "task_cpu_load": 0.0841915550978373,
+        "task_heap_bytes": 47100416.0
+      }
+    }
+  },
+  "before_tcp_nodelay_100_200": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.38672130596949,
+      "p50_ms": 6.8654055,
+      "p95_ms": 30.509441249999963,
+      "p99_ms": 71.39511298,
+      "feature_us_p95": 1616.1339999999996,
+      "feature_us_p99": 4787.789089999997,
+      "model_us_p95": 499.03394999999966,
+      "model_us_p99": 1879.3519599999995,
+      "ingest_ms_p95": 21.0,
+      "ingest_ms_p99": 46.00999999999999,
+      "to_sink_ms_p95": 6.0,
+      "to_sink_ms_p99": 31.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 629,
+        "checkpoint_duration_seconds": 0.24,
+        "state_bytes": 425544,
+        "checkpoint_id": 3,
+        "task_cpu_load": 0.14690265486725662,
+        "task_heap_bytes": 215534200.0
+      }
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.57327319150934,
+      "p50_ms": 5.408253,
+      "p95_ms": 36.61133489999999,
+      "p99_ms": 60.91685815999999,
+      "feature_us_p95": 6.601,
+      "feature_us_p99": 20.716999999999988,
+      "model_us_p95": 445.8380499999998,
+      "model_us_p99": 1046.63801,
+      "ingest_ms_p95": 27.0,
+      "ingest_ms_p99": 46.0,
+      "to_sink_ms_p95": 2.0,
+      "to_sink_ms_p99": 12.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 762,
+        "checkpoint_duration_seconds": 0.131,
+        "state_bytes": 436418,
+        "checkpoint_id": 4,
+        "task_cpu_load": 0.12051150895140665,
+        "task_heap_bytes": 266914424.0
+      }
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 200,
+      "throughput_eps": 197.46186199333061,
+      "p50_ms": 12.1995015,
+      "p95_ms": 87.30643304999998,
+      "p99_ms": 124.92270536999997,
+      "feature_us_p95": 5.6059499999999955,
+      "feature_us_p99": 9.106989999999996,
+      "model_us_p95": 539.6929999999992,
+      "model_us_p99": 3021.830369999995,
+      "ingest_ms_p95": 72.04999999999995,
+      "ingest_ms_p99": 104.03999999999996,
+      "to_sink_ms_p95": 10.0,
+      "to_sink_ms_p99": 30.00999999999999,
+      "parity_max_delta": 7.262420664844171e-09,
+      "resources": {
+        "kafka_lag": 780,
+        "checkpoint_duration_seconds": 0.3,
+        "state_bytes": 458017,
+        "checkpoint_id": 5,
+        "task_cpu_load": 0.12051150895140665,
+        "task_heap_bytes": 266914424.0
+      }
+    }
+  },
+  "final_settings_100_200": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.54863933163024,
+      "p50_ms": 5.056464,
+      "p95_ms": 19.188605449999987,
+      "p99_ms": 35.04897405999996,
+      "feature_us_p95": 1132.5019999999995,
+      "feature_us_p99": 4801.318089999999,
+      "model_us_p95": 456.6649,
+      "model_us_p99": 727.8320799999991,
+      "ingest_ms_p95": 10.049999999999955,
+      "ingest_ms_p99": 26.019999999999982,
+      "to_sink_ms_p95": 3.0,
+      "to_sink_ms_p99": 9.019999999999982,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 582,
+        "checkpoint_duration_seconds": 0.109,
+        "state_bytes": 546755,
+        "checkpoint_id": 20,
+        "task_cpu_load": 0.08538438164691582,
+        "task_heap_bytes": 49839568.0
+      }
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.56513489613481,
+      "p50_ms": 3.6478634999999997,
+      "p95_ms": 9.339828199999998,
+      "p99_ms": 25.009612199999996,
+      "feature_us_p95": 7.501,
+      "feature_us_p99": 9.902,
+      "model_us_p95": 412.6099999999999,
+      "model_us_p99": 524.669,
+      "ingest_ms_p95": 5.0,
+      "ingest_ms_p99": 17.0,
+      "to_sink_ms_p95": 1.0,
+      "to_sink_ms_p99": 2.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 700,
+        "checkpoint_duration_seconds": 0.146,
+        "state_bytes": 570019,
+        "checkpoint_id": 21,
+        "task_cpu_load": 0.05347264904732637,
+        "task_heap_bytes": 100171216.0
+      }
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 200,
+      "throughput_eps": 198.10082780780988,
+      "p50_ms": 3.5441070000000003,
+      "p95_ms": 17.177791649999968,
+      "p99_ms": 60.57088306999987,
+      "feature_us_p95": 7.601,
+      "feature_us_p99": 11.301,
+      "model_us_p95": 394.6230499999998,
+      "model_us_p99": 531.9290099999998,
+      "ingest_ms_p95": 9.049999999999955,
+      "ingest_ms_p99": 57.11999999999989,
+      "to_sink_ms_p95": 1.0,
+      "to_sink_ms_p99": 7.0,
+      "parity_max_delta": 7.262420664844171e-09,
+      "resources": {
+        "kafka_lag": 632,
+        "checkpoint_duration_seconds": 0.093,
+        "state_bytes": 584291,
+        "checkpoint_id": 22,
+        "task_cpu_load": 0.05347264904732637,
+        "task_heap_bytes": 100171216.0
+      }
+    }
+  },
+  "final_50_100": {
+    "baseline": {
+      "rows": 1000,
+      "target_rate": 50,
+      "throughput_eps": 49.9127987094982,
+      "p50_ms": 4.680137,
+      "p95_ms": 12.940571449999998,
+      "p99_ms": 27.633820929999988,
+      "feature_us_p95": 1006.0520999999995,
+      "feature_us_p99": 2838.1603199999963,
+      "model_us_p95": 536.2579999999999,
+      "model_us_p99": 839.5720099999999,
+      "ingest_ms_p95": 5.0,
+      "ingest_ms_p99": 16.00999999999999,
+      "to_sink_ms_p95": 2.0,
+      "to_sink_ms_p99": 10.0,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 167,
+        "checkpoint_duration_seconds": 0.114,
+        "state_bytes": 683976,
+        "checkpoint_id": 30,
+        "task_cpu_load": 0.0696932745521058,
+        "task_heap_bytes": 217910272.0
+      }
+    },
+    "normal": {
+      "rows": 1000,
+      "target_rate": 50,
+      "throughput_eps": 49.91624228004369,
+      "p50_ms": 3.8487264999999997,
+      "p95_ms": 9.886730999999989,
+      "p99_ms": 21.250154479999996,
+      "feature_us_p95": 8.405949999999995,
+      "feature_us_p99": 12.103,
+      "model_us_p95": 522.3520499999998,
+      "model_us_p99": 1121.0630499999993,
+      "ingest_ms_p95": 4.0,
+      "ingest_ms_p99": 11.019999999999982,
+      "to_sink_ms_p95": 1.0,
+      "to_sink_ms_p99": 5.019999999999982,
+      "parity_max_delta": 7.446670530208976e-09,
+      "resources": {
+        "kafka_lag": 225,
+        "checkpoint_duration_seconds": 0.06,
+        "state_bytes": 697853,
+        "checkpoint_id": 32,
+        "task_cpu_load": 0.04878800328677075,
+        "task_heap_bytes": 76790848.0
+      }
+    },
+    "peak": {
+      "rows": 1000,
+      "target_rate": 100,
+      "throughput_eps": 99.56537826618496,
+      "p50_ms": 3.836622,
+      "p95_ms": 9.748169049999998,
+      "p99_ms": 19.56889256999999,
+      "feature_us_p95": 7.905949999999995,
+      "feature_us_p99": 21.205,
+      "model_us_p95": 511.49535,
+      "model_us_p99": 651.65,
+      "ingest_ms_p95": 5.0,
+      "ingest_ms_p99": 13.009999999999991,
+      "to_sink_ms_p95": 1.0,
+      "to_sink_ms_p99": 2.009999999999991,
+      "parity_max_delta": 7.262420664844171e-09,
+      "resources": {
+        "kafka_lag": 565,
+        "checkpoint_duration_seconds": 0.05,
+        "state_bytes": 711043,
+        "checkpoint_id": 33,
+        "task_cpu_load": 0.05565052231718898,
+        "task_heap_bytes": 127122496.0
+      }
+    }
+  }
+}

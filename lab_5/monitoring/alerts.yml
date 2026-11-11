@@ -1,0 +1,20 @@
+groups:
+  - name: streaming
+    rules:
+      - alert: HighKafkaLag
+        expr: lab5_kafka_lag > 1000
+        for: 9s
+        labels: {severity: warning}
+        annotations: {summary: 'Kafka lag above 1000. Check the consumer and TaskManager.'}
+      - alert: LatencySLO
+        expr: lab5_latency_p99_ms{phase=~"normal|peak"} >= 30
+        labels: {severity: warning}
+        annotations: {summary: 'p99 reached 30 ms. Check backlog and Redis.'}
+      - alert: FeatureDrift
+        expr: lab5_drift_psi > 0.2
+        labels: {severity: warning}
+        annotations: {summary: 'BMI PSI above 0.2. Inspect the feature snapshot.'}
+      - alert: LateEvents
+        expr: lab5_late_fraction > 0.05
+        labels: {severity: warning}
+        annotations: {summary: 'More than 5 percent late. Check producer timestamps.'}
