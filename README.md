@@ -4,6 +4,7 @@
 |---|---|---|
 | Лабораторная работа 1 | [report.md](report.md) | Инструкция ниже |
 | Лабораторная работа 2 | [lab_2/report.md](lab_2/report.md) | [lab_2/README.md](lab_2/README.md) |
+| Лабораторная работа 3 | [lab_3/report.md](lab_3/report.md) | [lab_3/README.md](lab_3/README.md) |
 
 ## Лабораторная работа 1
 

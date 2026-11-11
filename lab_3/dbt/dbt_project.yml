@@ -1,0 +1,8 @@
+name: hospital_lab
+version: '1.0.0'
+config-version: 2
+profile: hospital_lab
+
+models:
+  hospital_lab:
+    +materialized: table

@@ -1,0 +1,48 @@
+{
+  "failed_release": {
+    "accepted_share_drift_pp": 0.0,
+    "before": {
+      "accepted_share": 1.0,
+      "duration_sec": 16.391,
+      "groups": 9,
+      "readmission_rate": 0.12246666666666667,
+      "rows": 30000,
+      "version": "a02eb77cc63d"
+    },
+    "canary": {
+      "groups": 9,
+      "readmission_rate": 1.0,
+      "rows": 1000
+    },
+    "candidate": {
+      "accepted_share": 1.0,
+      "duration_sec": 12.384,
+      "groups": 9,
+      "readmission_rate": 1.0,
+      "rows": 30000,
+      "version": "98b7c80aac89"
+    },
+    "drift_alert": true,
+    "duration_change_sec": -4.006999999999998,
+    "error": "Введён сбой проверки опубликованной версии",
+    "readmission_drift_pp": 87.75333333333333,
+    "status": "rolled_back"
+  },
+  "successful_release": {
+    "before": null,
+    "canary": {
+      "groups": 9,
+      "readmission_rate": 0.138,
+      "rows": 1000
+    },
+    "candidate": {
+      "accepted_share": 1.0,
+      "duration_sec": 16.391,
+      "groups": 9,
+      "readmission_rate": 0.12246666666666667,
+      "rows": 30000,
+      "version": "a02eb77cc63d"
+    },
+    "status": "published"
+  }
+}

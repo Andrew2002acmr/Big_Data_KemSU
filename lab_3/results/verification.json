@@ -1,0 +1,421 @@
+{
+  "dlq_by_reason": {
+    "incompatible_schema": 1,
+    "invalid_pressure_format": 1
+  },
+  "dlq_error_count": 2,
+  "gx_negative_test": {
+    "failed": [
+      "expect_column_values_to_be_between"
+    ],
+    "passed": 5,
+    "total": 6
+  },
+  "history": {
+    "old_age": 74,
+    "restored_version": 3,
+    "updated_age": 75
+  },
+  "idempotent": true,
+  "incompatible_blocked": true,
+  "initial": {
+    "accepted_rows": 30000,
+    "accepted_share": 1.0,
+    "batch_id": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3",
+    "blocked": false,
+    "changed": 30000,
+    "data_quality_score": 1.0,
+    "dlq_rows": 0,
+    "duplicate_rows": 0,
+    "duration_sec": 25.386,
+    "gx_after": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "gx_before": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "input_rows": 30000,
+    "mart": [
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6870,
+        "gender": "Female",
+        "readmission_rate": 0.098544,
+        "readmitted_count": 677
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6935,
+        "gender": "Male",
+        "readmission_rate": 0.097765,
+        "readmitted_count": 678
+      },
+      {
+        "avg_length_of_stay": 5.49,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 7072,
+        "gender": "Other",
+        "readmission_rate": 0.104921,
+        "readmitted_count": 742
+      },
+      {
+        "avg_length_of_stay": 5.43,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2020,
+        "gender": "Female",
+        "readmission_rate": 0.171782,
+        "readmitted_count": 347
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2138,
+        "gender": "Male",
+        "readmission_rate": 0.176333,
+        "readmitted_count": 377
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 1938,
+        "gender": "Other",
+        "readmission_rate": 0.176987,
+        "readmitted_count": 343
+      },
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 989,
+        "gender": "Female",
+        "readmission_rate": 0.174924,
+        "readmitted_count": 173
+      },
+      {
+        "avg_length_of_stay": 5.45,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1024,
+        "gender": "Male",
+        "readmission_rate": 0.181641,
+        "readmitted_count": 186
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1014,
+        "gender": "Other",
+        "readmission_rate": 0.148915,
+        "readmitted_count": 151
+      }
+    ],
+    "raw_rows": 30000,
+    "run_id": "49728252-4db0-4efa-b163-3e97fa747290",
+    "schema": "v1",
+    "schema_drift": false,
+    "stage_seconds": {
+      "dbt": 12.336,
+      "extract": 0.077,
+      "load": 0.937,
+      "quality": 0.629,
+      "validate": 3.148
+    },
+    "version": 1,
+    "warehouse": {
+      "distinct_keys": 30000,
+      "dlq": {},
+      "rows": 30000,
+      "versions": 1
+    }
+  },
+  "injected_stages": [
+    "extract",
+    "validate",
+    "load",
+    "dbt",
+    "quality"
+  ],
+  "repaired": {
+    "accepted_rows": 30000,
+    "accepted_share": 0.9999333377774815,
+    "batch_id": "57f306e590bdbd518341f0262576a1ad48860b3f07d559d278c4d44f696ec8a7",
+    "blocked": false,
+    "changed": 1,
+    "data_quality_score": 1.0,
+    "dlq_rows": 1,
+    "duplicate_rows": 1,
+    "duration_sec": 29.929,
+    "gx_after": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "gx_before": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "input_rows": 30002,
+    "mart": [
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6870,
+        "gender": "Female",
+        "readmission_rate": 0.098544,
+        "readmitted_count": 677
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6935,
+        "gender": "Male",
+        "readmission_rate": 0.097765,
+        "readmitted_count": 678
+      },
+      {
+        "avg_length_of_stay": 5.49,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 7072,
+        "gender": "Other",
+        "readmission_rate": 0.104921,
+        "readmitted_count": 742
+      },
+      {
+        "avg_length_of_stay": 5.43,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2020,
+        "gender": "Female",
+        "readmission_rate": 0.171782,
+        "readmitted_count": 347
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2138,
+        "gender": "Male",
+        "readmission_rate": 0.176333,
+        "readmitted_count": 377
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 1938,
+        "gender": "Other",
+        "readmission_rate": 0.176987,
+        "readmitted_count": 343
+      },
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 989,
+        "gender": "Female",
+        "readmission_rate": 0.174924,
+        "readmitted_count": 173
+      },
+      {
+        "avg_length_of_stay": 5.45,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1024,
+        "gender": "Male",
+        "readmission_rate": 0.181641,
+        "readmitted_count": 186
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1014,
+        "gender": "Other",
+        "readmission_rate": 0.148915,
+        "readmitted_count": 151
+      }
+    ],
+    "raw_rows": 30000,
+    "run_id": "fd3d54a4-d6b8-4c01-b85d-733fc143cc93",
+    "schema": "v2",
+    "schema_drift": true,
+    "stage_seconds": {
+      "dbt": 21.329,
+      "extract": 1.021,
+      "load": 1.911,
+      "quality": 1.525,
+      "validate": 4.105
+    },
+    "version": 2,
+    "warehouse": {
+      "distinct_keys": 30000,
+      "dlq": {
+        "invalid_pressure_format": 1
+      },
+      "rows": 30000,
+      "versions": 2
+    }
+  },
+  "repeated": {
+    "accepted_rows": 30000,
+    "accepted_share": 1.0,
+    "batch_id": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3",
+    "blocked": false,
+    "changed": 0,
+    "data_quality_score": 1.0,
+    "dlq_rows": 0,
+    "duplicate_rows": 0,
+    "duration_sec": 14.43,
+    "gx_after": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "gx_before": {
+      "failed": [],
+      "passed": 6,
+      "total": 6
+    },
+    "input_rows": 30000,
+    "mart": [
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6870,
+        "gender": "Female",
+        "readmission_rate": 0.098544,
+        "readmitted_count": 677
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 6935,
+        "gender": "Male",
+        "readmission_rate": 0.097765,
+        "readmitted_count": 678
+      },
+      {
+        "avg_length_of_stay": 5.49,
+        "destination_id": 1,
+        "discharge_destination": "Home",
+        "encounter_count": 7072,
+        "gender": "Other",
+        "readmission_rate": 0.104921,
+        "readmitted_count": 742
+      },
+      {
+        "avg_length_of_stay": 5.43,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2020,
+        "gender": "Female",
+        "readmission_rate": 0.171782,
+        "readmitted_count": 347
+      },
+      {
+        "avg_length_of_stay": 5.54,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 2138,
+        "gender": "Male",
+        "readmission_rate": 0.176333,
+        "readmitted_count": 377
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 2,
+        "discharge_destination": "Rehab",
+        "encounter_count": 1938,
+        "gender": "Other",
+        "readmission_rate": 0.176987,
+        "readmitted_count": 343
+      },
+      {
+        "avg_length_of_stay": 5.51,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 989,
+        "gender": "Female",
+        "readmission_rate": 0.174924,
+        "readmitted_count": 173
+      },
+      {
+        "avg_length_of_stay": 5.45,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1024,
+        "gender": "Male",
+        "readmission_rate": 0.181641,
+        "readmitted_count": 186
+      },
+      {
+        "avg_length_of_stay": 5.47,
+        "destination_id": 3,
+        "discharge_destination": "Nursing_Facility",
+        "encounter_count": 1014,
+        "gender": "Other",
+        "readmission_rate": 0.148915,
+        "readmitted_count": 151
+      }
+    ],
+    "raw_rows": 30000,
+    "run_id": "24501b21-b767-4a4b-b5e0-8130ba58ce8f",
+    "schema": "v1",
+    "schema_drift": false,
+    "stage_seconds": {
+      "dbt": 10.562,
+      "extract": 0.009,
+      "load": 0.139,
+      "quality": 0.521,
+      "validate": 3.16
+    },
+    "version": 1,
+    "warehouse": {
+      "distinct_keys": 30000,
+      "dlq": {},
+      "rows": 30000,
+      "versions": 1
+    }
+  },
+  "prefect_retry_attempts": {
+    "build_models": {
+      "attempts": 2,
+      "state": "COMPLETED"
+    },
+    "extract_batch": {
+      "attempts": 2,
+      "state": "COMPLETED"
+    },
+    "load_batch": {
+      "attempts": 2,
+      "state": "COMPLETED"
+    },
+    "validate_batch": {
+      "attempts": 2,
+      "state": "COMPLETED"
+    },
+    "verify_mart": {
+      "attempts": 2,
+      "state": "COMPLETED"
+    }
+  }
+}

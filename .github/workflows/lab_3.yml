@@ -1,0 +1,54 @@
+name: Лабораторная работа 3
+
+on:
+  push:
+    branches: [lab_3]
+  pull_request:
+    branches: [lab_3]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lab-3-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: lab_3
+
+env:
+  PREFECT_SERVER_ANALYTICS_ENABLED: 'false'
+  PREFECT_SERVER_SERVICES_TELEMETRY_ENABLED: 'false'
+  DO_NOT_TRACK: '1'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: lab_3/requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+
+  staging:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: lab_3/requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - run: python release.py --work tmp/staging
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lab-3-staging
+          path: lab_3/tmp/staging/verification.json

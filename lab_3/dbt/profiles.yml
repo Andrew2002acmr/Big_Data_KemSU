@@ -1,0 +1,8 @@
+hospital_lab:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('LAB3_DB') }}"
+      schema: analytics
+      threads: 2

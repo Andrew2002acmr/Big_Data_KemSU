@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: encounters
+        description: Валидные строки выгрузки с ключом и хешем содержимого.
+
+models:
+  - name: stg_encounters
+    description: Приведение типов и разбор артериального давления.
+    columns:
+      - name: patient_id
+        data_tests: [not_null, unique]
+  - name: dim_destination
+    description: Справочник направлений выписки.
+    columns:
+      - name: destination_id
+        data_tests: [not_null, unique]
+  - name: fct_encounters
+    description: Госпитализации с привязкой к справочнику.
+    columns:
+      - name: destination_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_destination')
+                field: destination_id
+  - name: mart_readmissions
+    description: Повторные госпитализации по полу и направлению выписки.
+    columns:
+      - name: readmission_rate
+        data_tests: [not_null]
