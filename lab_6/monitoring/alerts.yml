@@ -1,0 +1,23 @@
+groups:
+  - name: lab6
+    rules:
+      - alert: HighDataDrift
+        expr: max(lab6_data_drift_psi) > 0.2
+        for: 5s
+        labels: {severity: warning}
+        annotations: {summary: 'BMI PSI above 0.2. Check the input window and freeze rollout.'}
+      - alert: InferenceSlow
+        expr: histogram_quantile(0.95, sum by (le) (rate(lab6_inference_seconds_bucket[1m]))) > 0.05
+        for: 10s
+        labels: {severity: warning}
+        annotations: {summary: 'Inference p95 above 50 ms. Check CPU throttling.'}
+      - alert: ModelUnavailable
+        expr: sum(up{job="model"}) < 1 or absent(up{job="model"})
+        for: 10s
+        labels: {severity: critical}
+        annotations: {summary: 'No healthy model scrape targets.'}
+      - alert: SparkDiskSpill
+        expr: lab6_spark_disk_spill_bytes > 1048576
+        for: 10s
+        labels: {severity: warning}
+        annotations: {summary: 'Spark disk spill exceeds 1 MiB. Inspect partitions and executor size.'}

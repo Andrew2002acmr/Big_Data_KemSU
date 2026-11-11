@@ -1,0 +1,22 @@
+{
+  "uid": "lab6", "title": "Лабораторная работа 6 · DevOps для Big Data", "schemaVersion": 39,
+  "refresh": "5s", "time": {"from": "now-10m", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "timeseries", "title": "CPU контейнеров lab6", "gridPos": {"x":0,"y":0,"w":8,"h":7},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"sum by (container) (rate(container_cpu_usage_seconds_total{namespace=\"lab6\",container!=\"\"}[1m]))","legendFormat":"{{container}}"}]},
+    {"id": 2, "type": "timeseries", "title": "Память контейнеров", "gridPos": {"x":8,"y":0,"w":8,"h":7},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"sum by (container) (container_memory_working_set_bytes{namespace=\"lab6\",container!=\"\"})","legendFormat":"{{container}}"}],"fieldConfig":{"defaults":{"unit":"bytes"}}},
+    {"id": 3, "type": "timeseries", "title": "Сетевой приём pod", "gridPos": {"x":16,"y":0,"w":8,"h":7},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"sum(rate(container_network_receive_bytes_total{namespace=\"lab6\"}[1m]))","legendFormat":"Байт/с"}],"fieldConfig":{"defaults":{"unit":"Bps"}}},
+    {"id": 4, "type": "stat", "title": "Стоимость обработки Spark", "gridPos": {"x":0,"y":7,"w":8,"h":6},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"lab6_spark_cost_usd","legendFormat":"{{profile}}","instant":true}],"fieldConfig":{"defaults":{"unit":"currencyUSD","decimals":5}}},
+    {"id": 5, "type": "stat", "title": "Flink checkpoint", "gridPos": {"x":8,"y":7,"w":8,"h":6},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"lab6_flink_checkpoint_seconds","instant":true}],"fieldConfig":{"defaults":{"unit":"s"}}},
+    {"id": 6, "type": "stat", "title": "BMI drift · PSI", "gridPos": {"x":16,"y":7,"w":8,"h":6},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"max(lab6_data_drift_psi)","instant":true}],"fieldConfig":{"defaults":{"thresholds":{"mode":"absolute","steps":[{"color":"green","value":null},{"color":"red","value":0.2}]}}}},
+    {"id": 7, "type": "timeseries", "title": "HTTP-инференс p95", "gridPos": {"x":0,"y":13,"w":12,"h":6},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"histogram_quantile(0.95,sum by (le)(rate(lab6_inference_seconds_bucket[1m])))"}],"fieldConfig":{"defaults":{"unit":"s"}}},
+    {"id": 8, "type": "stat", "title": "Соответствие схеме и spill Spark", "gridPos": {"x":12,"y":13,"w":12,"h":6},
+     "datasource":{"type":"prometheus","uid":"lab6-prom"},"targets":[{"refId":"A","expr":"lab6_schema_compliance","legendFormat":"Схема","instant":true},{"refId":"B","expr":"lab6_spark_disk_spill_bytes","legendFormat":"Spill, Б","instant":true}]}
+  ]
+}

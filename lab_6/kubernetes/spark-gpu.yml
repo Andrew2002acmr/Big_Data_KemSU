@@ -1,0 +1,30 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata: {name: hospital-gpu}
+spec:
+  type: Python
+  mode: cluster
+  image: lab6-spark-rapids:local
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work-dir/spark_etl.py
+  sparkVersion: '3.5.5'
+  restartPolicy: {type: Never}
+  sparkConf:
+    spark.plugins: com.nvidia.spark.SQLPlugin
+    spark.rapids.sql.enabled: 'true'
+    spark.executor.resource.gpu.vendor: nvidia.com
+    spark.executor.resource.gpu.discoveryScript: /opt/spark/examples/src/main/scripts/getGpusResources.sh
+    spark.task.resource.gpu.amount: '0.25'
+  driver:
+    cores: 1
+    memory: '1g'
+    serviceAccount: spark-spark-operator-spark
+    nodeSelector: {capacity: on-demand}
+  executor:
+    cores: 4
+    instances: 1
+    memory: '4g'
+    gpu: {name: nvidia.com/gpu, quantity: 1}
+    nodeSelector: {accelerator: nvidia}
+    tolerations:
+      - {key: nvidia.com/gpu, operator: Exists, effect: NoSchedule}

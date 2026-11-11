@@ -1,0 +1,143 @@
+apiVersion: v1
+kind: Service
+metadata: {name: kafka}
+spec:
+  clusterIP: None
+  publishNotReadyAddresses: true
+  selector: {app: kafka}
+  ports: [{name: kafka, port: 9092}]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: {name: kafka}
+spec:
+  serviceName: kafka
+  replicas: 1
+  selector: {matchLabels: {app: kafka}}
+  template:
+    metadata: {labels: {app: kafka}}
+    spec:
+      nodeSelector: {lab6-store: 'true'}
+      containers:
+        - name: kafka
+          image: apache/kafka:3.9.1
+          ports: [{containerPort: 9092}]
+          env:
+            - {name: CLUSTER_ID, value: MkU3OEVBNTcwNTJENDM2Qk}
+            - {name: KAFKA_NODE_ID, value: '1'}
+            - {name: KAFKA_PROCESS_ROLES, value: 'broker,controller'}
+            - {name: KAFKA_LISTENERS, value: 'PLAINTEXT://:9092,CONTROLLER://:9093'}
+            - {name: KAFKA_ADVERTISED_LISTENERS, value: 'PLAINTEXT://kafka.lab6.svc.cluster.local:9092'}
+            - {name: KAFKA_CONTROLLER_LISTENER_NAMES, value: CONTROLLER}
+            - {name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP, value: 'PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT'}
+            - {name: KAFKA_CONTROLLER_QUORUM_VOTERS, value: '1@localhost:9093'}
+            - {name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR, value: '1'}
+            - {name: KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR, value: '1'}
+            - {name: KAFKA_TRANSACTION_STATE_LOG_MIN_ISR, value: '1'}
+            - {name: KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS, value: '0'}
+            - {name: KAFKA_AUTO_CREATE_TOPICS_ENABLE, value: 'false'}
+            - {name: KAFKA_HEAP_OPTS, value: '-Xms256m -Xmx384m'}
+            - {name: KAFKA_LOG_DIRS, value: /var/lib/kafka/data}
+          readinessProbe: {tcpSocket: {port: 9092}, periodSeconds: 2}
+          resources: {requests: {cpu: 200m, memory: 480Mi}, limits: {cpu: '1', memory: 768Mi}}
+          volumeMounts: [{name: data, mountPath: /var/lib/kafka/data}]
+  volumeClaimTemplates:
+    - metadata: {name: data}
+      spec:
+        accessModes: [ReadWriteOnce]
+        resources: {requests: {storage: 512Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: redis}
+spec:
+  clusterIP: None
+  selector: {app: redis}
+  ports: [{name: redis, port: 6379}]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: {name: redis}
+spec:
+  serviceName: redis
+  replicas: 1
+  selector: {matchLabels: {app: redis}}
+  template:
+    metadata: {labels: {app: redis}}
+    spec:
+      nodeSelector: {lab6-store: 'true'}
+      containers:
+        - name: redis
+          image: redis:7.4.2-alpine
+          args: [--appendonly, 'yes']
+          readinessProbe: {tcpSocket: {port: 6379}, periodSeconds: 2}
+          resources: {requests: {cpu: 30m, memory: 32Mi}, limits: {cpu: 300m, memory: 128Mi}}
+          volumeMounts: [{name: data, mountPath: /data}]
+  volumeClaimTemplates:
+    - metadata: {name: data}
+      spec:
+        accessModes: [ReadWriteOnce]
+        resources: {requests: {storage: 128Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: model}
+spec:
+  type: NodePort
+  selector: {app: model, track: stable}
+  ports: [{name: http, port: 8000, targetPort: 8000, nodePort: 30062}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: model}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: model, track: stable}}
+  strategy:
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  template:
+    metadata: {labels: {app: model, track: stable, metrics: lab6}}
+    spec:
+      nodeSelector: {capacity: on-demand}
+      tolerations:
+        - {key: node-role.kubernetes.io/control-plane, operator: Exists, effect: NoSchedule}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector: {matchLabels: {app: model, track: stable}}
+      containers:
+        - name: model
+          image: lab6-model:1
+          imagePullPolicy: Never
+          env:
+            - {name: RELEASE_VERSION, value: v1}
+            - {name: KAFKA_WORKER, value: '1'}
+          ports: [{name: http, containerPort: 8000}]
+          readinessProbe: {httpGet: {path: /health, port: http}, periodSeconds: 2}
+          livenessProbe: {httpGet: {path: /health, port: http}, periodSeconds: 10}
+          resources: {requests: {cpu: 100m, memory: 96Mi}, limits: {cpu: 500m, memory: 256Mi}}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: {name: model}
+spec:
+  minAvailable: 1
+  selector: {matchLabels: {app: model, track: stable}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: load}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: load}}
+  template:
+    metadata: {labels: {app: load}}
+    spec:
+      nodeSelector: {lab6-store: 'true'}
+      containers:
+        - name: load
+          image: lab6-model:1
+          imagePullPolicy: Never
+          command: [sleep, infinity]
+          resources: {requests: {cpu: 30m, memory: 32Mi}, limits: {cpu: '1', memory: 256Mi}}

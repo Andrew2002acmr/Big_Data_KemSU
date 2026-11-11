@@ -1,0 +1,50 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata: {name: hospital-RESOURCE_PROFILE}
+spec:
+  type: Python
+  mode: cluster
+  image: lab6-spark:1
+  imagePullPolicy: Never
+  mainApplicationFile: 'local:///opt/spark/work-dir/spark_etl.py'
+  sparkVersion: '3.5.7'
+  restartPolicy: {type: Never}
+  sparkConf:
+    spark.dynamicAllocation.enabled: 'true'
+    spark.dynamicAllocation.shuffleTracking.enabled: 'true'
+    spark.dynamicAllocation.minExecutors: '1'
+    spark.dynamicAllocation.initialExecutors: '1'
+    spark.dynamicAllocation.maxExecutors: '2'
+    spark.dynamicAllocation.executorIdleTimeout: '30s'
+    spark.kubernetes.executor.limit.cores: EXECUTOR_LIMIT
+    spark.kubernetes.driver.limit.cores: '1'
+    spark.sql.shuffle.partitions: '4'
+    spark.ui.prometheus.enabled: 'true'
+  driver:
+    cores: 1
+    coreRequest: 350m
+    memory: '512m'
+    memoryOverhead: '384m'
+    serviceAccount: spark-spark-operator-spark
+    nodeSelector: {capacity: on-demand}
+  executor:
+    cores: EXECUTOR_CORES
+    coreRequest: EXECUTOR_REQUEST
+    instances: 1
+    memory: EXECUTOR_MEMORY
+    memoryOverhead: '384m'
+    tolerations:
+      - {key: spot, operator: Equal, value: 'true', effect: NoSchedule}
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+                - {key: capacity, operator: In, values: [spot]}
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 20
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector: {matchLabels: {spark-role: executor}}

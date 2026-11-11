@@ -1,0 +1,16 @@
+cloudProvider: aws
+awsRegion: us-east-1
+autoDiscovery:
+  clusterName: lab6-eks
+image:
+  tag: v1.33.0
+rbac:
+  serviceAccount:
+    create: false
+    name: cluster-autoscaler
+nodeSelector:
+  capacity: on-demand
+extraArgs:
+  expander: least-waste
+  balance-similar-node-groups: 'true'
+  scale-down-unneeded-time: 10m

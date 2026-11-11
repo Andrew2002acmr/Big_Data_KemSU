@@ -1,0 +1,12 @@
+{
+  "labels": {
+    "alertname": "HighDataDrift",
+    "severity": "warning"
+  },
+  "annotations": {
+    "summary": "BMI PSI above 0.2. Check the input window and freeze rollout."
+  },
+  "state": "firing",
+  "activeAt": "2026-11-11T17:28:18.920271065Z",
+  "value": "2.9453042702408947e+00"
+}

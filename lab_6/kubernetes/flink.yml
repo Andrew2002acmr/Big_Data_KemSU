@@ -1,0 +1,56 @@
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkDeployment
+metadata: {name: readmissions}
+spec:
+  image: lab6-flink:1
+  imagePullPolicy: Never
+  flinkVersion: v1_20
+  serviceAccount: flink
+  flinkConfiguration:
+    taskmanager.numberOfTaskSlots: '2'
+    taskmanager.memory.managed.fraction: '0.25'
+    execution.checkpointing.storage: filesystem
+    state.checkpoints.dir: 'file:///checkpoints'
+    kubernetes.operator.job.autoscaler.enabled: 'false'
+  podTemplate:
+    spec:
+      nodeSelector: {lab6-store: 'true'}
+      containers:
+        - name: flink-main-container
+          env:
+            - {name: CHECKPOINT_PATH, value: 'file:///checkpoints'}
+          volumeMounts: [{name: checkpoints, mountPath: /checkpoints}]
+      volumes:
+        - name: checkpoints
+          hostPath: {path: /var/local/lab6-flink, type: DirectoryOrCreate}
+  jobManager:
+    resource: {memory: '768m', cpu: 0.4}
+  taskManager:
+    resource: {memory: '1280m', cpu: 0.6}
+  job:
+    jarURI: 'local:///opt/flink/usrlib/hospital-stream.jar'
+    entryClass: lab5.StreamJob
+    parallelism: 2
+    upgradeMode: stateless
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: {name: model-kafka}
+spec:
+  scaleTargetRef: {name: model}
+  pollingInterval: 5
+  cooldownPeriod: 15
+  minReplicaCount: 2
+  maxReplicaCount: 4
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown: {stabilizationWindowSeconds: 15}
+  triggers:
+    - type: kafka
+      metadata:
+        bootstrapServers: kafka.lab6.svc.cluster.local:9092
+        consumerGroup: lab6-model
+        topic: scale-events
+        lagThreshold: '20'
+        offsetResetPolicy: earliest

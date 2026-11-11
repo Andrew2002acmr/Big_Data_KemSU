@@ -1,0 +1,7 @@
+great-expectations==1.24.1
+pandas==2.2.3
+pyarrow==19.0.1
+deltalake==1.2.1
+dvc==3.63.0
+pathspec==0.12.1
+mlflow==3.8.1

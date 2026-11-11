@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+rule_files: [alerts.yml]
+scrape_configs:
+  - job_name: kubernetes-cadvisor
+    scheme: https
+    bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+    tls_config: {ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt}
+    kubernetes_sd_configs: [{role: node}]
+    relabel_configs:
+      - {target_label: __address__, replacement: 'kubernetes.default.svc:443'}
+      - {source_labels: [__meta_kubernetes_node_name], target_label: __metrics_path__, replacement: '/api/v1/nodes/$1/proxy/metrics/cadvisor'}
+      - {source_labels: [__meta_kubernetes_node_name], target_label: node}
+  - job_name: model
+    kubernetes_sd_configs: [{role: pod, namespaces: {names: [lab6]}}]
+    relabel_configs:
+      - {source_labels: [__meta_kubernetes_pod_label_metrics, __meta_kubernetes_pod_container_port_number], regex: 'lab6;8000', action: keep}
+      - {source_labels: [__meta_kubernetes_pod_name], target_label: pod}
+  - job_name: spark-driver
+    kubernetes_sd_configs: [{role: pod, namespaces: {names: [lab6]}}]
+    metrics_path: /metrics/executors/prometheus
+    relabel_configs:
+      - {source_labels: [__meta_kubernetes_pod_label_spark_role], regex: driver, action: keep}
+      - {source_labels: [__meta_kubernetes_pod_ip], target_label: __address__, replacement: '$1:4040'}
+  - job_name: benchmark
+    honor_labels: true
+    static_configs: [{targets: ['pushgateway:9091']}]

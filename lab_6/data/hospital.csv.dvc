@@ -1,0 +1,5 @@
+outs:
+- md5: 829c2b7a343eed836b126ca75404ee6d
+  size: 1571634
+  hash: md5
+  path: hospital.csv

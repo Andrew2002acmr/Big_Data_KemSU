@@ -1,0 +1,12 @@
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: Dockerfile.tools
+    working_dir: /repo/lab_6
+    environment:
+      LAB6_IN_CONTAINER: '1'
+    volumes:
+      - ..:/repo
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: [python, deploy.py, all]

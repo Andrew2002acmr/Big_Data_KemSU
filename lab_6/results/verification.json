@@ -1,0 +1,410 @@
+{
+  "timestamp_utc": "2026-11-11T17:28:29.762569+00:00",
+  "metrics": {
+    "REQUIRED_COST_SAVINGS": 35,
+    "ACHIEVED_COST_SAVINGS": 52.55133312902236,
+    "SYSTEM_AVAILABILITY": 1.0,
+    "COST_PER_JOB": 0.0006605866666666666,
+    "DATA_DRIFT_SCORE": 8.764295106864797
+  },
+  "spark": {
+    "baseline": {
+      "rows": 720000,
+      "groups": [
+        {
+          "discharge_destination": "Home",
+          "gender": "Female",
+          "n": 164880,
+          "readmitted": 16248,
+          "stay_total": 908280
+        },
+        {
+          "discharge_destination": "Home",
+          "gender": "Male",
+          "n": 166440,
+          "readmitted": 16272,
+          "stay_total": 921816
+        },
+        {
+          "discharge_destination": "Home",
+          "gender": "Other",
+          "n": 169728,
+          "readmitted": 17808,
+          "stay_total": 931704
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Female",
+          "n": 23736,
+          "readmitted": 4152,
+          "stay_total": 130776
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Male",
+          "n": 24576,
+          "readmitted": 4464,
+          "stay_total": 134016
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Other",
+          "n": 24336,
+          "readmitted": 3624,
+          "stay_total": 133224
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Female",
+          "n": 48480,
+          "readmitted": 8328,
+          "stay_total": 263424
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Male",
+          "n": 51312,
+          "readmitted": 9048,
+          "stay_total": 284280
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Other",
+          "n": 46512,
+          "readmitted": 8232,
+          "stay_total": 254568
+        }
+      ],
+      "processing_sec": 24.467316850000316,
+      "executor_seconds": {
+        "1": 26.104
+      },
+      "total_executor_seconds": 26.104,
+      "disk_spill_bytes": 0,
+      "driver": "hospital-baseline-6be5d6-driver",
+      "instance": "m6i.xlarge",
+      "rate_usd_per_hour": 0.192,
+      "cost_per_job_usd": 0.0013922133333333332
+    },
+    "tuned": {
+      "rows": 720000,
+      "groups": [
+        {
+          "discharge_destination": "Home",
+          "gender": "Female",
+          "n": 164880,
+          "readmitted": 16248,
+          "stay_total": 908280
+        },
+        {
+          "discharge_destination": "Home",
+          "gender": "Male",
+          "n": 166440,
+          "readmitted": 16272,
+          "stay_total": 921816
+        },
+        {
+          "discharge_destination": "Home",
+          "gender": "Other",
+          "n": 169728,
+          "readmitted": 17808,
+          "stay_total": 931704
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Female",
+          "n": 23736,
+          "readmitted": 4152,
+          "stay_total": 130776
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Male",
+          "n": 24576,
+          "readmitted": 4464,
+          "stay_total": 134016
+        },
+        {
+          "discharge_destination": "Nursing_Facility",
+          "gender": "Other",
+          "n": 24336,
+          "readmitted": 3624,
+          "stay_total": 133224
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Female",
+          "n": 48480,
+          "readmitted": 8328,
+          "stay_total": 263424
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Male",
+          "n": 51312,
+          "readmitted": 9048,
+          "stay_total": 284280
+        },
+        {
+          "discharge_destination": "Rehab",
+          "gender": "Other",
+          "n": 46512,
+          "readmitted": 8232,
+          "stay_total": 254568
+        }
+      ],
+      "processing_sec": 24.18347953800003,
+      "executor_seconds": {
+        "1": 24.772
+      },
+      "total_executor_seconds": 24.772,
+      "disk_spill_bytes": 0,
+      "driver": "hospital-tuned-f547b8-driver",
+      "instance": "m6i.large",
+      "rate_usd_per_hour": 0.096,
+      "cost_per_job_usd": 0.0006605866666666666
+    }
+  },
+  "load": {
+    "normal": {
+      "requests": 1500,
+      "success": 1500,
+      "availability": 1.0,
+      "status_codes": {
+        "200": 1500
+      },
+      "p50_ms": 2.9878049999751966,
+      "p95_ms": 41.235959650566656,
+      "p99_ms": 137.01399640051932,
+      "rate": 50,
+      "throughput": 49.85280432744374,
+      "versions": {
+        "v1": 1500
+      },
+      "candidate_requests": 0,
+      "candidate_success": 0
+    },
+    "peak": {
+      "requests": 1500,
+      "success": 1500,
+      "availability": 1.0,
+      "status_codes": {
+        "200": 1500
+      },
+      "p50_ms": 2.6695564997680776,
+      "p95_ms": 36.58470989980742,
+      "p99_ms": 116.1700906499209,
+      "rate": 100,
+      "throughput": 96.86391870251775,
+      "versions": {
+        "v1": 1500
+      },
+      "candidate_requests": 0,
+      "candidate_success": 0
+    },
+    "spot_outage": {
+      "requests": 1200,
+      "success": 1200,
+      "availability": 1.0,
+      "status_codes": {
+        "200": 1200
+      },
+      "p50_ms": 1.6940725004133128,
+      "p95_ms": 6.873502650341828,
+      "p99_ms": 59.028816059208104,
+      "rate": 100,
+      "throughput": 99.96795606309543,
+      "versions": {
+        "v1": 1200
+      },
+      "candidate_requests": 0,
+      "candidate_success": 0,
+      "spot_node_stopped": true
+    }
+  },
+  "release": {
+    "accepted": {
+      "requests": 200,
+      "success": 200,
+      "availability": 1.0,
+      "status_codes": {
+        "200": 200
+      },
+      "p50_ms": 1.2700890001724474,
+      "p95_ms": 2.5291040000411154,
+      "p99_ms": 3.1460999793034694,
+      "rate": 50,
+      "throughput": 50.21703402882645,
+      "versions": {
+        "v2": 10,
+        "v1": 190
+      },
+      "candidate_requests": 10,
+      "candidate_success": 10
+    },
+    "rejected": {
+      "requests": 200,
+      "success": 190,
+      "availability": 0.95,
+      "status_codes": {
+        "503": 10,
+        "200": 190
+      },
+      "p50_ms": 1.0959440000988252,
+      "p95_ms": 1.5954984500694989,
+      "p99_ms": 2.9984353699546755,
+      "rate": 50,
+      "throughput": 50.21654294792233,
+      "versions": {
+        "v3": 10,
+        "v2": 190
+      },
+      "candidate_requests": 10,
+      "candidate_success": 0
+    },
+    "after_rollback": {
+      "requests": 100,
+      "success": 100,
+      "availability": 1.0,
+      "status_codes": {
+        "200": 100
+      },
+      "p50_ms": 1.2048350004079111,
+      "p95_ms": 2.2834420498384134,
+      "p99_ms": 3.3619436798018114,
+      "rate": 50,
+      "throughput": 50.41167634322036,
+      "versions": {
+        "v2": 100
+      },
+      "candidate_requests": 0,
+      "candidate_success": 0
+    }
+  },
+  "flink": {
+    "job_id": "549bdb438776ed108f3757b1fce829a7",
+    "prediction": {
+      "id": "probe",
+      "score": 0.18449467,
+      "model": "readmission-v1",
+      "late": false,
+      "out_of_order": false,
+      "feature_us": 1098.189,
+      "model_us": 194.134,
+      "ingest_ms": 0,
+      "to_sink_ms": 2
+    },
+    "checkpoint_duration_sec": 1.792,
+    "checkpoint_state_bytes": 10667
+  },
+  "keda": {
+    "queued": 1400,
+    "peak_desired_replicas": 4,
+    "peak_ready_replicas": 4,
+    "replica_trace": [
+      {
+        "desired": 2,
+        "ready": 2
+      },
+      {
+        "desired": 2,
+        "ready": 2
+      },
+      {
+        "desired": 4,
+        "ready": 2
+      },
+      {
+        "desired": 4,
+        "ready": 2
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 4,
+        "ready": 4
+      },
+      {
+        "desired": 2,
+        "ready": 2
+      }
+    ]
+  },
+  "monitor": {
+    "drift": 8.764295106864797,
+    "node_samples": 8,
+    "alerts": [
+      "HighDataDrift"
+    ]
+  },
+  "data": {
+    "rows": 30000,
+    "sha256": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3",
+    "validation": {
+      "passed": 5,
+      "checked": 5,
+      "invalid_rejected": true
+    },
+    "dvc_restore": true,
+    "delta": {
+      "v0_rows": 30000,
+      "v1_rows": 30001
+    }
+  },
+  "image_bytes": {
+    "builder": 768992426,
+    "runtime": 336215587
+  },
+  "model_fpr": 0.006457739791073124,
+  "targets": {
+    "cost_passed": true,
+    "load_passed": true,
+    "fpr_passed": true
+  }
+}

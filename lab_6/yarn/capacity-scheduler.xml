@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<configuration>
+  <property><name>yarn.scheduler.capacity.root.queues</name><value>production,analytics,development</value></property>
+  <property><name>yarn.scheduler.capacity.root.production.capacity</name><value>60</value></property>
+  <property><name>yarn.scheduler.capacity.root.production.maximum-capacity</name><value>100</value></property>
+  <property><name>yarn.scheduler.capacity.root.analytics.capacity</name><value>30</value></property>
+  <property><name>yarn.scheduler.capacity.root.analytics.maximum-capacity</name><value>60</value></property>
+  <property><name>yarn.scheduler.capacity.root.development.capacity</name><value>10</value></property>
+  <property><name>yarn.scheduler.capacity.root.development.maximum-capacity</name><value>25</value></property>
+  <property><name>yarn.scheduler.capacity.root.production.state</name><value>RUNNING</value></property>
+  <property><name>yarn.scheduler.capacity.root.analytics.state</name><value>RUNNING</value></property>
+  <property><name>yarn.scheduler.capacity.root.development.state</name><value>RUNNING</value></property>
+</configuration>

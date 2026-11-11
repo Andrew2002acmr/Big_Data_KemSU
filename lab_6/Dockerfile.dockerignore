@@ -1,0 +1,13 @@
+**
+!lab_5/
+!lab_5/common.py
+!lab_5/model/
+!lab_5/model/readmission.onnx
+!lab_5/flink/
+!lab_5/flink/pom.xml
+!lab_5/flink/src/
+!lab_5/flink/src/**
+!lab_6/
+!lab_6/*.py
+!lab_6/tmp/
+!lab_6/tmp/hospital.csv

@@ -1,0 +1,40 @@
+name: Лабораторная 6
+
+on:
+  push:
+    branches: [lab_6]
+    paths: ['lab_6/**', '.github/workflows/lab_6.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: lab_6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Проверка кода и данных
+        run: |
+          python -m pip install -r requirements.txt
+          python -m compileall -q .
+          python data_check.py
+          docker compose config --quiet
+      - name: Операторы, canary, отказ и измерения
+        run: docker compose run --rm --build -T bootstrap
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lab-6-results
+          path: |
+            lab_6/tmp/data.json
+            lab_6/tmp/spark.json
+            lab_6/tmp/load.json
+            lab_6/tmp/verification.json
