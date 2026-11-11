@@ -1,0 +1,589 @@
+{
+  "eda": {
+    "rows": 30000,
+    "duplicate_ids": 0,
+    "positive": 3674,
+    "negative": 26326,
+    "missing_raw": {
+      "patient_id": 0,
+      "age": 0,
+      "gender": 0,
+      "blood_pressure": 0,
+      "cholesterol": 0,
+      "bmi": 0,
+      "diabetes": 0,
+      "hypertension": 0,
+      "medication_count": 0,
+      "length_of_stay": 0,
+      "discharge_destination": 0,
+      "readmitted_30_days": 0
+    },
+    "missing_features": {
+      "age": 0,
+      "bmi": 0,
+      "systolic": 0,
+      "diastolic": 0,
+      "cholesterol": 0,
+      "medication_count": 0,
+      "length_of_stay": 0,
+      "diabetes_flag": 0,
+      "hypertension_flag": 0,
+      "discharge_rehab": 0,
+      "discharge_nursing": 0
+    },
+    "feature_target_correlation": {
+      "age": 0.00043618995601242376,
+      "bmi": -0.013471850874670994,
+      "systolic": -0.0034421362587435406,
+      "diastolic": -0.0020120319182259138,
+      "cholesterol": 0.003982986973243655,
+      "medication_count": -9.851431263665194e-05,
+      "length_of_stay": -0.006654747420337052,
+      "diabetes_flag": 0.029537523108186393,
+      "hypertension_flag": 0.02251093716807973,
+      "discharge_rehab": 0.08097529354342929,
+      "discharge_nursing": 0.04702393222152384
+    },
+    "sha256": "8bc0c352a0990d7089b1f9035aa3a50dc24711bc56a9d93c0fdf38877733daf3"
+  },
+  "feature_match": {
+    "checked": 256,
+    "max_abs_diff": 0.0,
+    "passed": true
+  },
+  "sizes": [
+    18000,
+    6000,
+    6000
+  ],
+  "models_validation": {
+    "Логистическая регрессия": {
+      "auc": 0.5513023366991621,
+      "ap": 0.1491155122699649,
+      "accuracy": 0.873,
+      "f1": 0.02056555269922879,
+      "recall": 0.010884353741496598,
+      "fpr": 0.006647673314339981,
+      "fit_sec": 0.030836999998427927,
+      "threshold": 0.22231162399646875
+    },
+    "Случайный лес": {
+      "auc": 0.5593919543125893,
+      "ap": 0.14963293348882314,
+      "accuracy": 0.8728333333333333,
+      "f1": 0.018018018018018018,
+      "recall": 0.009523809523809525,
+      "fpr": 0.006647673314339981,
+      "fit_sec": 1.0002244999996037,
+      "threshold": 0.2742277483551223
+    },
+    "Градиентный бустинг": {
+      "auc": 0.5504365240873177,
+      "ap": 0.1467140200263584,
+      "accuracy": 0.8725,
+      "f1": 0.012903225806451613,
+      "recall": 0.006802721088435374,
+      "fpr": 0.006647673314339981,
+      "fit_sec": 0.0974240000032296,
+      "threshold": 0.2702313218777138
+    }
+  },
+  "online_validation": {
+    "auc": 0.5517196736244355,
+    "ap": 0.1524570227897001,
+    "accuracy": 0.8728333333333333,
+    "f1": 0.018018018018018018,
+    "recall": 0.009523809523809525,
+    "fpr": 0.006647673314339981
+  },
+  "batch_threshold": 0.22231162399646875,
+  "online_threshold": 0.28742889890675605,
+  "final_test": {
+    "batch": {
+      "auc": 0.5765839099172432,
+      "ap": 0.15878634705224487,
+      "accuracy": 0.8713333333333333,
+      "f1": 0.017811704834605598,
+      "recall": 0.009523809523809525,
+      "fpr": 0.008357075023741691
+    },
+    "online": {
+      "auc": 0.5752851263962375,
+      "ap": 0.15711775237313175,
+      "accuracy": 0.872,
+      "f1": 0.007751937984496124,
+      "recall": 0.004081632653061225,
+      "fpr": 0.006837606837606838
+    }
+  },
+  "online_hours": [
+    {
+      "hour": 1,
+      "rows": 500,
+      "late_labels": 378,
+      "update_sec": 0.002352999999857275,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5511527155971601
+    },
+    {
+      "hour": 2,
+      "rows": 500,
+      "late_labels": 369,
+      "update_sec": 0.002349400001548929,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5511868261074611
+    },
+    {
+      "hour": 3,
+      "rows": 500,
+      "late_labels": 386,
+      "update_sec": 0.0023307000010390766,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5512777874682636
+    },
+    {
+      "hour": 4,
+      "rows": 500,
+      "late_labels": 360,
+      "update_sec": 0.0021965999985695817,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5513894218656124
+    },
+    {
+      "hour": 5,
+      "rows": 500,
+      "late_labels": 378,
+      "update_sec": 0.0021087000022816937,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5514943375260836
+    },
+    {
+      "hour": 6,
+      "rows": 500,
+      "late_labels": 374,
+      "update_sec": 0.0020980000008421484,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5515186283440251
+    },
+    {
+      "hour": 7,
+      "rows": 500,
+      "late_labels": 371,
+      "update_sec": 0.0020895000016025733,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516424081503447
+    },
+    {
+      "hour": 8,
+      "rows": 500,
+      "late_labels": 366,
+      "update_sec": 0.0022557000011147466,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516747097699479
+    },
+    {
+      "hour": 9,
+      "rows": 500,
+      "late_labels": 382,
+      "update_sec": 0.0021808999990753364,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516990005878895
+    },
+    {
+      "hour": 10,
+      "rows": 500,
+      "late_labels": 370,
+      "update_sec": 0.0020730999967781827,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.551736728879586
+    },
+    {
+      "hour": 11,
+      "rows": 500,
+      "late_labels": 382,
+      "update_sec": 0.0021998000011080876,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516677326201136
+    },
+    {
+      "hour": 12,
+      "rows": 500,
+      "late_labels": 367,
+      "update_sec": 0.002196699999331031,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5515860741257567
+    },
+    {
+      "hour": 13,
+      "rows": 500,
+      "late_labels": 354,
+      "update_sec": 0.0022888000021339394,
+      "online_accuracy": 0.8731666666666666,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516209598749281
+    },
+    {
+      "hour": 14,
+      "rows": 500,
+      "late_labels": 370,
+      "update_sec": 0.003906399997504195,
+      "online_accuracy": 0.8731666666666666,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5515796138018361
+    },
+    {
+      "hour": 15,
+      "rows": 500,
+      "late_labels": 383,
+      "update_sec": 0.002187099998991471,
+      "online_accuracy": 0.8731666666666666,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516064887493459
+    },
+    {
+      "hour": 16,
+      "rows": 500,
+      "late_labels": 362,
+      "update_sec": 0.0022016000002622604,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5516961580453644
+    },
+    {
+      "hour": 17,
+      "rows": 500,
+      "late_labels": 382,
+      "update_sec": 0.0020799999983864836,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5518191626128134
+    },
+    {
+      "hour": 18,
+      "rows": 500,
+      "late_labels": 375,
+      "update_sec": 0.0020605999998224434,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5518636096413875
+    },
+    {
+      "hour": 19,
+      "rows": 500,
+      "late_labels": 377,
+      "update_sec": 0.0020554999973683152,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5518770471151424
+    },
+    {
+      "hour": 20,
+      "rows": 500,
+      "late_labels": 380,
+      "update_sec": 0.0021919000027992297,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5518460375603232
+    },
+    {
+      "hour": 21,
+      "rows": 500,
+      "late_labels": 369,
+      "update_sec": 0.0021234000014374033,
+      "online_accuracy": 0.873,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5517961638596558
+    },
+    {
+      "hour": 22,
+      "rows": 500,
+      "late_labels": 382,
+      "update_sec": 0.0021075000004202593,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5517018431304146
+    },
+    {
+      "hour": 23,
+      "rows": 500,
+      "late_labels": 378,
+      "update_sec": 0.002047000001766719,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5517002926526736
+    },
+    {
+      "hour": 24,
+      "rows": 500,
+      "late_labels": 386,
+      "update_sec": 0.0023016000013740268,
+      "online_accuracy": 0.8728333333333333,
+      "batch_accuracy": 0.873,
+      "online_auc": 0.5517196736244355
+    }
+  ],
+  "warm_online_fit_sec": 0.007784600002196385,
+  "versions": {
+    "batch": "1",
+    "online": "2"
+  },
+  "preflight": {
+    "p95_ms": 1.3134050015651155,
+    "errors": 0
+  },
+  "interpretation": {
+    "mean_abs_shap": {
+      "age": 0.014323345457135317,
+      "bmi": 0.036152076486174925,
+      "systolic": 0.005126056752653832,
+      "diastolic": 0.012308530979263613,
+      "cholesterol": 0.02490931605367052,
+      "medication_count": 0.008406901113893117,
+      "length_of_stay": 0.01270505407981917,
+      "diabetes_flag": 0.0888429253501969,
+      "hypertension_flag": 0.09355556673572232,
+      "discharge_rehab": 0.23350891812241434,
+      "discharge_nursing": 0.10420272542434593
+    },
+    "max_logit_error": 4.440892098500626e-16,
+    "base_log_odds": -2.0164060332947473,
+    "example_log_odds": -1.9537804117525033,
+    "example_shap": {
+      "age": 0.02569669134783676,
+      "bmi": 0.022070160971771516,
+      "systolic": 0.003717285671718371,
+      "diastolic": 0.015732087221887205,
+      "cholesterol": 0.003138559053350256,
+      "medication_count": -0.006253533294079483,
+      "length_of_stay": 0.022677130345141315,
+      "diabetes_flag": 0.08942447319454626,
+      "hypertension_flag": 0.09499499050756736,
+      "discharge_rehab": -0.14881087222600486,
+      "discharge_nursing": -0.05976135125149065
+    }
+  },
+  "serving": {
+    "baseline": {
+      "requests": 240,
+      "p50_ms": 5.05065000106697,
+      "p95_ms": 5.593840000074123,
+      "p99_ms": 6.032470998070494,
+      "throughput_rps": 195.01694331574248,
+      "errors": 0,
+      "errors_per_sec": 0.0
+    },
+    "explanation": {
+      "requests": 240,
+      "p50_ms": 6.184599998960039,
+      "p95_ms": 7.7137999982369365,
+      "p99_ms": 8.568307000896302,
+      "throughput_rps": 155.6634245435902,
+      "errors": 0,
+      "errors_per_sec": 0.0
+    },
+    "candidate": {
+      "p95_ms": 5.8780799994565305,
+      "errors": 0,
+      "throughput_rps": 189.0001890000639
+    },
+    "shadow": {
+      "requests": 80,
+      "p50_ms": 6.691900001897011,
+      "p95_ms": 8.240480002496042,
+      "p99_ms": 8.449980999248508,
+      "throughput_rps": 143.9630878642404,
+      "errors": 0,
+      "errors_per_sec": 0.0
+    },
+    "canary": {
+      "requests": 240,
+      "p50_ms": 5.123750001075678,
+      "p95_ms": 5.611549999230192,
+      "p99_ms": 5.922141002083662,
+      "throughput_rps": 192.39496377322575,
+      "errors": 0,
+      "errors_per_sec": 0.0,
+      "traffic_by_version": {
+        "1": 229,
+        "2": 11
+      }
+    },
+    "naturally_approved": true,
+    "injected_rollback": true,
+    "champion_after": "1",
+    "invalid_http": 422,
+    "missing_http": 404
+  },
+  "monitoring": {
+    "champion": "1",
+    "healthy": {
+      "max_psi": 0.01356126750623786,
+      "prediction_psi": 0.009370271880159497,
+      "features": {
+        "age": {
+          "psi": 0.01356126750623786,
+          "ks_pvalue": 0.17981391873001307,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "bmi": {
+          "psi": 0.003904851116303656,
+          "ks_pvalue": 0.9997216820373293,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "systolic": {
+          "psi": 0.0052340041199832495,
+          "ks_pvalue": 0.5021741682928297,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "diastolic": {
+          "psi": 0.006714509907260743,
+          "ks_pvalue": 0.3702636589987462,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "cholesterol": {
+          "psi": 0.00639852007261906,
+          "ks_pvalue": 0.4240487870058309,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "medication_count": {
+          "psi": 0.0052244943193013515,
+          "ks_pvalue": 0.3702636589987462,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "length_of_stay": {
+          "psi": 0.007041191768392455,
+          "ks_pvalue": 0.9821931354194426,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "diabetes_flag": {
+          "psi": 0.0027746787765471678,
+          "ks_pvalue": 0.2493183739706065,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "hypertension_flag": {
+          "psi": 0.0002561449331120093,
+          "ks_pvalue": 0.999978969759152,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "discharge_rehab": {
+          "psi": 2.5126081359085392e-05,
+          "ks_pvalue": 1.0,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "discharge_nursing": {
+          "psi": 4.304903323222901e-05,
+          "ks_pvalue": 1.0,
+          "missing": 0,
+          "outside_range": 0
+        }
+      },
+      "accuracy_drop": 0.00666666666666671,
+      "auc_drop": -0.0289844531653769,
+      "alerts": [],
+      "retrain": false
+    },
+    "injected": {
+      "max_psi": 3.339592508511516,
+      "prediction_psi": 0.03629338076586273,
+      "features": {
+        "age": {
+          "psi": 3.335560393436172,
+          "ks_pvalue": 9.884994302393172e-183,
+          "missing": 0,
+          "outside_range": 1
+        },
+        "bmi": {
+          "psi": 3.339592508511516,
+          "ks_pvalue": 4.548059422341967e-183,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "systolic": {
+          "psi": 0.0052340041199832495,
+          "ks_pvalue": 0.5021741682928297,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "diastolic": {
+          "psi": 0.006714509907260743,
+          "ks_pvalue": 0.3702636589987462,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "cholesterol": {
+          "psi": 0.006261967506482395,
+          "ks_pvalue": 0.4309407526396979,
+          "missing": 3,
+          "outside_range": 0
+        },
+        "medication_count": {
+          "psi": 0.0052244943193013515,
+          "ks_pvalue": 0.3702636589987462,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "length_of_stay": {
+          "psi": 0.007041191768392455,
+          "ks_pvalue": 0.9821931354194426,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "diabetes_flag": {
+          "psi": 0.0027746787765471678,
+          "ks_pvalue": 0.2493183739706065,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "hypertension_flag": {
+          "psi": 0.0002561449331120093,
+          "ks_pvalue": 0.999978969759152,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "discharge_rehab": {
+          "psi": 2.5126081359085392e-05,
+          "ks_pvalue": 1.0,
+          "missing": 0,
+          "outside_range": 0
+        },
+        "discharge_nursing": {
+          "psi": 4.304903323222901e-05,
+          "ks_pvalue": 1.0,
+          "missing": 0,
+          "outside_range": 0
+        }
+      },
+      "accuracy_drop": 0.2326666666666667,
+      "auc_drop": 0.02581758670671086,
+      "alerts": [
+        "Сдвиг входных признаков: PSI > 0,2",
+        "Нарушены диапазоны или порог пропусков",
+        "Падение качества по полученным меткам"
+      ],
+      "retrain": true
+    },
+    "retrain_version": "3"
+  }
+}

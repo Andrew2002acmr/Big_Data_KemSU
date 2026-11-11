@@ -1,0 +1,9 @@
+project: lab4
+provider: local
+registry: registry.db
+offline_store:
+    type: file
+online_store:
+    type: sqlite
+    path: online.db
+entity_key_serialization_version: 3

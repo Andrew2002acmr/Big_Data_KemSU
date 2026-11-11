@@ -1,0 +1,335 @@
+{
+  "source_rows": 7267,
+  "hourly_gaps": 621,
+  "horizon": 12,
+  "fit_end": "2013-10-31T23:00:00",
+  "mase_denominator": 1.7470389348221174,
+  "policy": {
+    "critical": 77.2205642812,
+    "min_probability": 0.1,
+    "persistence": 4,
+    "cooldown_hours": 48,
+    "cusum_allowance": 0.3815027705810296,
+    "cusum_limit": 3.052022164648237
+  },
+  "calibration": {
+    "notifications": 6,
+    "true_notifications": 4,
+    "false_notifications": 2,
+    "precision": 0.6666666666666666,
+    "recall": 1,
+    "lead_hours": 1.0,
+    "false_per_day": 0.032809295967190705,
+    "missed_incidents": 0,
+    "false_shutdowns": 1
+  },
+  "calibration_journal": [
+    {
+      "time": "2013-11-28T05:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.25,
+      "cusum": 5.220054018181513,
+      "temperature": 77.74235688
+    },
+    {
+      "time": "2013-11-28T06:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 4.58193660844774,
+      "temperature": 76.90841346
+    },
+    {
+      "time": "2013-11-29T04:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.5,
+      "cusum": 8.052644482152964,
+      "temperature": 78.88770756
+    },
+    {
+      "time": "2013-11-29T05:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 9.330782211261678,
+      "temperature": 78.8953397
+    },
+    {
+      "time": "2013-11-29T06:00:00",
+      "action": "shutdown",
+      "risk_lower_bound": 0.25,
+      "cusum": 10.76912542346681,
+      "temperature": 78.876609
+    },
+    {
+      "time": "2013-12-14T23:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.25,
+      "cusum": 5.492270829350851,
+      "temperature": 78.19047845
+    },
+    {
+      "time": "2013-12-15T00:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 6.6740587847084925,
+      "temperature": 78.61378004
+    },
+    {
+      "time": "2013-12-15T01:00:00",
+      "action": "shutdown",
+      "risk_lower_bound": 0.25,
+      "cusum": 6.266428533204866,
+      "temperature": 77.03252890000002
+    },
+    {
+      "time": "2013-12-21T02:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.25,
+      "cusum": 7.6086322642367525,
+      "temperature": 79.4198418
+    },
+    {
+      "time": "2013-12-21T03:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 9.20255754777017,
+      "temperature": 79.04463822
+    },
+    {
+      "time": "2013-12-21T04:00:00",
+      "action": "shutdown",
+      "risk_lower_bound": 0.25,
+      "cusum": 9.942971048661157,
+      "temperature": 78.08950603
+    },
+    {
+      "time": "2013-12-23T07:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.25,
+      "cusum": 223.97422732382458,
+      "temperature": 82.62728762
+    },
+    {
+      "time": "2013-12-23T08:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 229.16605896045454,
+      "temperature": 82.6222981
+    },
+    {
+      "time": "2013-12-23T09:00:00",
+      "action": "shutdown",
+      "risk_lower_bound": 0.25,
+      "cusum": 234.0706937508672,
+      "temperature": 82.37343675
+    },
+    {
+      "time": "2013-12-25T12:00:00",
+      "action": "notify",
+      "risk_lower_bound": 0.25,
+      "cusum": 84.3790073599225,
+      "temperature": 76.84592783
+    },
+    {
+      "time": "2013-12-25T13:00:00",
+      "action": "throttle",
+      "risk_lower_bound": 0.25,
+      "cusum": 85.17755687253586,
+      "temperature": 78.29719758
+    },
+    {
+      "time": "2013-12-25T14:00:00",
+      "action": "shutdown",
+      "risk_lower_bound": 0.25,
+      "cusum": 85.68042293455764,
+      "temperature": 77.61888521
+    }
+  ],
+  "test_days": 88.125,
+  "test_incident_max": 72.2868221,
+  "test": {
+    "notifications": 0,
+    "true_notifications": 0,
+    "false_notifications": 0,
+    "precision": null,
+    "recall": 0,
+    "lead_hours": null,
+    "false_per_day": 0.0,
+    "missed_incidents": 1,
+    "false_shutdowns": 0
+  },
+  "test_journal": [],
+  "forecast": {
+    "direct": [
+      {
+        "step": 1,
+        "mae": 1.1204453555639267,
+        "mase": 0.6413396594838969,
+        "pinball_p90": 0.25224493705222617,
+        "n": 1898
+      },
+      {
+        "step": 2,
+        "mae": 1.2633720899179637,
+        "mase": 0.7231505061142782,
+        "pinball_p90": 0.2890502977290711,
+        "n": 1898
+      },
+      {
+        "step": 3,
+        "mae": 1.3959236801229298,
+        "mase": 0.7990226504397064,
+        "pinball_p90": 0.32225289441587907,
+        "n": 1898
+      },
+      {
+        "step": 4,
+        "mae": 1.5762570214444593,
+        "mase": 0.9022449299934767,
+        "pinball_p90": 0.36606195109056966,
+        "n": 1898
+      },
+      {
+        "step": 5,
+        "mae": 1.768915772078887,
+        "mase": 1.012522237954014,
+        "pinball_p90": 0.39626451240557387,
+        "n": 1898
+      },
+      {
+        "step": 6,
+        "mae": 1.8367425299935878,
+        "mase": 1.0513460767150011,
+        "pinball_p90": 0.4105094321365718,
+        "n": 1898
+      },
+      {
+        "step": 7,
+        "mae": 2.0338317390731584,
+        "mase": 1.1641593661907954,
+        "pinball_p90": 0.41704626798501365,
+        "n": 1898
+      },
+      {
+        "step": 8,
+        "mae": 2.052574454552693,
+        "mase": 1.1748876419641359,
+        "pinball_p90": 0.41918600268393297,
+        "n": 1898
+      },
+      {
+        "step": 9,
+        "mae": 2.18161883707672,
+        "mase": 1.2487522708238048,
+        "pinball_p90": 0.4140399624961113,
+        "n": 1898
+      },
+      {
+        "step": 10,
+        "mae": 2.1134216571375446,
+        "mase": 1.209716403574447,
+        "pinball_p90": 0.4142136142442006,
+        "n": 1898
+      },
+      {
+        "step": 11,
+        "mae": 2.1582783365154614,
+        "mase": 1.2353922362555796,
+        "pinball_p90": 0.4168738475288337,
+        "n": 1898
+      },
+      {
+        "step": 12,
+        "mae": 2.2449331671985857,
+        "mase": 1.2849932090535598,
+        "pinball_p90": 0.42961864106782,
+        "n": 1898
+      }
+    ],
+    "recursive": [
+      {
+        "step": 1,
+        "mae": 1.1204453555639267,
+        "mase": 0.6413396594838969,
+        "pinball_p90": 0.21091470758525313,
+        "n": 1898
+      },
+      {
+        "step": 2,
+        "mae": 1.3099823829180757,
+        "mase": 0.7498301021273217,
+        "pinball_p90": 0.25591469348915497,
+        "n": 1898
+      },
+      {
+        "step": 3,
+        "mae": 1.4763702773739207,
+        "mase": 0.845070048495653,
+        "pinball_p90": 0.3117423506946013,
+        "n": 1898
+      },
+      {
+        "step": 4,
+        "mae": 1.6246698070156835,
+        "mase": 0.9299562675064861,
+        "pinball_p90": 0.36082003114149575,
+        "n": 1898
+      },
+      {
+        "step": 5,
+        "mae": 1.7587227391287321,
+        "mase": 1.0066877755691257,
+        "pinball_p90": 0.4022413076397059,
+        "n": 1898
+      },
+      {
+        "step": 6,
+        "mae": 1.8706210492930586,
+        "mase": 1.0707380425288142,
+        "pinball_p90": 0.4330340247424391,
+        "n": 1898
+      },
+      {
+        "step": 7,
+        "mae": 1.969850071952835,
+        "mase": 1.1275364462059938,
+        "pinball_p90": 0.46398421335392676,
+        "n": 1898
+      },
+      {
+        "step": 8,
+        "mae": 2.055259423250271,
+        "mase": 1.1764245102296682,
+        "pinball_p90": 0.483288300237925,
+        "n": 1898
+      },
+      {
+        "step": 9,
+        "mae": 2.117784054833964,
+        "mase": 1.2122134273152851,
+        "pinball_p90": 0.503046635419143,
+        "n": 1898
+      },
+      {
+        "step": 10,
+        "mae": 2.167353774047347,
+        "mase": 1.240586990276794,
+        "pinball_p90": 0.5128997407140803,
+        "n": 1898
+      },
+      {
+        "step": 11,
+        "mae": 2.2129526299553217,
+        "mase": 1.266687642642975,
+        "pinball_p90": 0.5203316382300103,
+        "n": 1898
+      },
+      {
+        "step": 12,
+        "mae": 2.237290086317584,
+        "mase": 1.2806183318091784,
+        "pinball_p90": 0.5206028970370591,
+        "n": 1898
+      }
+    ]
+  }
+}
