@@ -1,0 +1,1314 @@
+{
+  "variant": 6,
+  "seed": 42,
+  "mock_tables": {
+    "clients": 15000,
+    "policies": 15000,
+    "agents": 8,
+    "claims": 3723,
+    "payments": 18172
+  },
+  "split": {
+    "train": {
+      "rows": 10500,
+      "claims": 2156
+    },
+    "test": {
+      "rows": 2250,
+      "claims": 462
+    },
+    "control": {
+      "rows": 2250,
+      "claims": 462
+    }
+  },
+  "pii": {
+    "by_type": {
+      "name": {
+        "tp": 46,
+        "fp": 2,
+        "fn": 2,
+        "residual": 0,
+        "precision": 0.9583333333333334,
+        "recall": 0.9583333333333334
+      },
+      "phone": {
+        "tp": 48,
+        "fp": 0,
+        "fn": 0,
+        "residual": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "address": {
+        "tp": 44,
+        "fp": 0,
+        "fn": 4,
+        "residual": 4,
+        "precision": 1.0,
+        "recall": 0.9166666666666666
+      },
+      "snils": {
+        "tp": 44,
+        "fp": 1,
+        "fn": 4,
+        "residual": 4,
+        "precision": 0.9777777777777777,
+        "recall": 0.9166666666666666
+      },
+      "inn": {
+        "tp": 48,
+        "fp": 0,
+        "fn": 0,
+        "residual": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "ogrn": {
+        "tp": 48,
+        "fp": 0,
+        "fn": 0,
+        "residual": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "passport": {
+        "tp": 42,
+        "fp": 0,
+        "fn": 6,
+        "residual": 6,
+        "precision": 1.0,
+        "recall": 0.875
+      }
+    },
+    "injected": 336,
+    "structured_rows": 15000,
+    "structured_pii_overlap": 0,
+    "free_text_in_release": false
+  },
+  "k": {
+    "baseline": {
+      "levels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "information_loss": 0.0,
+      "k_min": 1,
+      "singletons": 4578,
+      "groups_le_2": 6893,
+      "classes": 8520
+    },
+    "choices": [
+      {
+        "levels": [
+          2,
+          1,
+          0,
+          0
+        ],
+        "information_loss": 0.08370603354978354,
+        "k_min": 2,
+        "singletons": 0,
+        "groups_le_2": 1,
+        "classes": 504,
+        "requested_k": 2
+      },
+      {
+        "levels": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "information_loss": 0.11955881132756131,
+        "k_min": 5,
+        "singletons": 0,
+        "groups_le_2": 0,
+        "classes": 288,
+        "requested_k": 5
+      },
+      {
+        "levels": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "information_loss": 0.25,
+        "k_min": 11,
+        "singletons": 0,
+        "groups_le_2": 0,
+        "classes": 252,
+        "requested_k": 10
+      }
+    ],
+    "linkage_example": {
+      "birth_year": 2003,
+      "region": "Омск",
+      "product": "авто",
+      "policy_year": 2020,
+      "claim": 1
+    },
+    "pycanon_version": "1.3.6",
+    "pycanon_k": [
+      1,
+      2,
+      5,
+      11
+    ],
+    "quasi_identifiers": [
+      "birth_year",
+      "region",
+      "product",
+      "policy_year"
+    ]
+  },
+  "baseline": {
+    "auc": 0.7642629555381233,
+    "f1": 0.49435897435897436
+  },
+  "synthesis": {
+    "ctgan_tuning": [
+      {
+        "parameters": {
+          "epochs": 12,
+          "batch_size": 500
+        },
+        "validation_auc": 0.5452172063519425,
+        "fit_s": 35.55839660000038
+      },
+      {
+        "parameters": {
+          "epochs": 24,
+          "batch_size": 1000
+        },
+        "validation_auc": 0.524266027561414,
+        "fit_s": 19.54503449999993
+      },
+      {
+        "parameters": {
+          "epochs": 60,
+          "batch_size": 500
+        },
+        "validation_auc": 0.5369248713054624,
+        "fit_s": 76.29005640000014
+      }
+    ],
+    "models": {
+      "gaussian_copula": {
+        "fit_s": 6.593322499999886,
+        "parameters": null,
+        "tstr": {
+          "auc": 0.7607377708048849,
+          "f1": 0.48976248976248976
+        },
+        "fidelity": {
+          "overall": 0.8862933493720409,
+          "column_shapes": 0.8917316017316018,
+          "column_pair_trends": 0.88085509701248,
+          "columns": [
+            {
+              "column": "age_band",
+              "score": 0.9901904761904762
+            },
+            {
+              "column": "district",
+              "score": 0.9915238095238095
+            },
+            {
+              "column": "product",
+              "score": 0.9924761904761904
+            },
+            {
+              "column": "channel",
+              "score": 0.9955238095238095
+            },
+            {
+              "column": "status",
+              "score": 0.9971428571428572
+            },
+            {
+              "column": "tenure",
+              "score": 0.5832380952380953
+            },
+            {
+              "column": "premium",
+              "score": 0.9380952380952381
+            },
+            {
+              "column": "prior_claims",
+              "score": 0.5252380952380953
+            },
+            {
+              "column": "risk_score",
+              "score": 0.9838095238095238
+            },
+            {
+              "column": "policy_year",
+              "score": 0.8188571428571428
+            },
+            {
+              "column": "claim",
+              "score": 0.992952380952381
+            }
+          ],
+          "evaluated_pairs": 4
+        },
+        "relations": {
+          "tables": {
+            "clients": 10500,
+            "policies": 10500,
+            "agents": 8,
+            "claims": 2678,
+            "payments": 12794
+          },
+          "pii_overlap": 0,
+          "fk_errors": 0,
+          "one_policy_per_subject": true
+        }
+      },
+      "ctgan": {
+        "fit_s": 24.564344799999162,
+        "parameters": {
+          "epochs": 12,
+          "batch_size": 500
+        },
+        "tstr": {
+          "auc": 0.4011410848659171,
+          "f1": 0.012269938650306749
+        },
+        "fidelity": {
+          "overall": 0.8226226095769427,
+          "column_shapes": 0.9376103896103897,
+          "column_pair_trends": 0.7076348295434957,
+          "columns": [
+            {
+              "column": "age_band",
+              "score": 0.9874285714285714
+            },
+            {
+              "column": "district",
+              "score": 0.9692380952380952
+            },
+            {
+              "column": "product",
+              "score": 0.9866666666666667
+            },
+            {
+              "column": "channel",
+              "score": 0.9903809523809524
+            },
+            {
+              "column": "status",
+              "score": 0.971047619047619
+            },
+            {
+              "column": "tenure",
+              "score": 0.8867619047619048
+            },
+            {
+              "column": "premium",
+              "score": 0.8744761904761904
+            },
+            {
+              "column": "prior_claims",
+              "score": 0.9307619047619047
+            },
+            {
+              "column": "risk_score",
+              "score": 0.8849523809523809
+            },
+            {
+              "column": "policy_year",
+              "score": 0.884095238095238
+            },
+            {
+              "column": "claim",
+              "score": 0.9479047619047619
+            }
+          ],
+          "evaluated_pairs": 4
+        },
+        "relations": {
+          "tables": {
+            "clients": 10500,
+            "policies": 10500,
+            "agents": 8,
+            "claims": 3216,
+            "payments": 13254
+          },
+          "pii_overlap": 0,
+          "fk_errors": 0,
+          "one_policy_per_subject": true
+        }
+      }
+    }
+  },
+  "dp": {
+    "runs": [
+      {
+        "method": "opendp",
+        "requested_epsilon": 1,
+        "epsilon_upper": 1.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.7616989647190988,
+          "f1": 0.493801652892562
+        },
+        "relative_auc": 0.9966451457571706,
+        "seconds": 1.5700501000001168,
+        "details": {}
+      },
+      {
+        "method": "opendp",
+        "requested_epsilon": 3,
+        "epsilon_upper": 3.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.7644179087132108,
+          "f1": 0.4836325237592397
+        },
+        "relative_auc": 1.0002027485094818,
+        "seconds": 0.21494849999999133,
+        "details": {}
+      },
+      {
+        "method": "opendp",
+        "requested_epsilon": 10,
+        "epsilon_upper": 10.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.7635257173847777,
+          "f1": 0.5040983606557377
+        },
+        "relative_auc": 0.9990353606072317,
+        "seconds": 0.2165766000007352,
+        "details": {}
+      },
+      {
+        "method": "mwem",
+        "requested_epsilon": 1,
+        "epsilon_upper": 1.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.6652854043793641,
+          "f1": 0.29708222811671087
+        },
+        "relative_auc": 0.870492805595859,
+        "seconds": 0.050576900000123715,
+        "details": {
+          "version": "1.0.8",
+          "iterations": 8,
+          "measure_only": true,
+          "public_slots": 10500,
+          "fit_and_sample_s": 5.2018498999996154
+        }
+      },
+      {
+        "method": "mwem",
+        "requested_epsilon": 3,
+        "epsilon_upper": 3.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.7493995564465364,
+          "f1": 0.46842709529276694
+        },
+        "relative_auc": 0.980551982817064,
+        "seconds": 0.11448079999991023,
+        "details": {
+          "version": "1.0.8",
+          "iterations": 8,
+          "measure_only": true,
+          "public_slots": 10500,
+          "fit_and_sample_s": 5.438679599999887
+        }
+      },
+      {
+        "method": "mwem",
+        "requested_epsilon": 10,
+        "epsilon_upper": 10.0,
+        "delta": 0,
+        "tstr": {
+          "auc": 0.7122906921564638,
+          "f1": 0.41501564129301355
+        },
+        "relative_auc": 0.9319968827416665,
+        "seconds": 0.06537870000011026,
+        "details": {
+          "version": "1.0.8",
+          "iterations": 8,
+          "measure_only": true,
+          "public_slots": 10500,
+          "fit_and_sample_s": 4.327826800000366
+        }
+      },
+      {
+        "method": "mostlyai",
+        "requested_epsilon": 1,
+        "epsilon_upper": 1.0,
+        "delta": 1e-05,
+        "tstr": {
+          "auc": 0.7186619309102531,
+          "f1": 0.1996370235934664
+        },
+        "relative_auc": 0.9403333312213698,
+        "seconds": 0.048736599999756436,
+        "details": {
+          "version": "6.1.4",
+          "engine": "2.7.0",
+          "epochs_cap": 8,
+          "noise_multiplier": 2.5,
+          "public_replacements": 118,
+          "validation_selection_separately_accounted": false,
+          "fit_and_sample_s": 125.14439000000039
+        }
+      },
+      {
+        "method": "mostlyai",
+        "requested_epsilon": 3,
+        "epsilon_upper": 3.0,
+        "delta": 1e-05,
+        "tstr": {
+          "auc": 0.7462254375006052,
+          "f1": 0.4592074592074592
+        },
+        "relative_auc": 0.9763988063181503,
+        "seconds": 0.05150260000027629,
+        "details": {
+          "version": "6.1.4",
+          "engine": "2.7.0",
+          "epochs_cap": 8,
+          "noise_multiplier": 1.25,
+          "public_replacements": 73,
+          "validation_selection_separately_accounted": false,
+          "fit_and_sample_s": 111.29662769999959
+        }
+      },
+      {
+        "method": "mostlyai",
+        "requested_epsilon": 10,
+        "epsilon_upper": 10.0,
+        "delta": 1e-05,
+        "tstr": {
+          "auc": 0.752166923307863,
+          "f1": 0.39620081411126185
+        },
+        "relative_auc": 0.9841729444785879,
+        "seconds": 0.05139169999984006,
+        "details": {
+          "version": "6.1.4",
+          "engine": "2.7.0",
+          "epochs_cap": 8,
+          "noise_multiplier": 0.75,
+          "public_replacements": 0,
+          "validation_selection_separately_accounted": false,
+          "fit_and_sample_s": 109.98283739999988
+        }
+      }
+    ],
+    "low_volume": {
+      "train_n": 300,
+      "tstr": {
+        "auc": 0.6544834732754196,
+        "f1": 0.36531365313653136
+      }
+    },
+    "dp_sgd": {
+      "non_private": {
+        "auc": 0.7622860919840786,
+        "f1": 0.5014634146341463
+      },
+      "private": {
+        "auc": 0.764388854992882,
+        "f1": 0.39731543624161075
+      },
+      "privacy": {
+        "method": "Opacus DP-SGD",
+        "operation": "12 эпох",
+        "requested_epsilon": null,
+        "epsilon_upper": 2.642622899322276,
+        "delta": 1e-05,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "Opacus RDP"
+      },
+      "settings": {
+        "noise_multiplier": 1.2,
+        "max_grad_norm": 1,
+        "batch_size": 256,
+        "epochs": 12,
+        "secure_rng": false
+      }
+    },
+    "ledger": [
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.55,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+claim+age_band",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.07,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: product+risk_bin+premium_bin",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.12,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: claim+prior_claims+tenure",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.1,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: district+channel+status+policy_year",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.16,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 3,
+        "epsilon_upper": 1.6500000000000001,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+claim+age_band",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.21000000000000002,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: product+risk_bin+premium_bin",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.36,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: claim+prior_claims+tenure",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.30000000000000004,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: district+channel+status+policy_year",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.48,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 10,
+        "epsilon_upper": 5.5,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: risk_bin+claim+age_band",
+        "requested_epsilon": 10,
+        "epsilon_upper": 0.7000000000000001,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: product+risk_bin+premium_bin",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.2,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: claim+prior_claims+tenure",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.0,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "main: district+channel+status+policy_year",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.6,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "300 клиентов: risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.55,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "300 клиентов: risk_bin+claim+age_band",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.07,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "300 клиентов: product+risk_bin+premium_bin",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.12,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "300 клиентов: claim+prior_claims+tenure",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.1,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "OpenDP",
+        "operation": "300 клиентов: district+channel+status+policy_year",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.16,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.55,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+claim+age_band",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.07,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "product+risk_bin+premium_bin",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.12,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "claim+prior_claims+tenure",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.1,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "district+channel+status+policy_year",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.16,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 3,
+        "epsilon_upper": 1.6500000000000001,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+claim+age_band",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.21000000000000002,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "product+risk_bin+premium_bin",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.36,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "claim+prior_claims+tenure",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.30000000000000004,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "district+channel+status+policy_year",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.48,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+prior_claims+product+claim",
+        "requested_epsilon": 10,
+        "epsilon_upper": 5.5,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "risk_bin+claim+age_band",
+        "requested_epsilon": 10,
+        "epsilon_upper": 0.7000000000000001,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "product+risk_bin+premium_bin",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.2,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "claim+prior_claims+tenure",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.0,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "SmartNoise MWEM",
+        "operation": "district+channel+status+policy_year",
+        "requested_epsilon": 10,
+        "epsilon_upper": 1.6,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "замена одного слота клиента; отсутствие кодируется публичной заглушкой",
+        "accountant": "журнал MWEM × 2; чистая DP при публичном размере и фиксированных доменах"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "защита категорий",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.2,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "DP-анализ; бюджет делится между столбцами"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "учёт обучения в SDK",
+        "requested_epsilon": 1,
+        "epsilon_upper": 0.8,
+        "delta": 1e-05,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "Opacus RDP; номинальная часть совокупного max_epsilon"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "защита категорий",
+        "requested_epsilon": 3,
+        "epsilon_upper": 0.6000000000000001,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "DP-анализ; бюджет делится между столбцами"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "учёт обучения в SDK",
+        "requested_epsilon": 3,
+        "epsilon_upper": 2.4,
+        "delta": 1e-05,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "Opacus RDP; номинальная часть совокупного max_epsilon"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "защита категорий",
+        "requested_epsilon": 10,
+        "epsilon_upper": 2.0,
+        "delta": 0,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "DP-анализ; бюджет делится между столбцами"
+      },
+      {
+        "method": "MOSTLY AI TabularARGN",
+        "operation": "учёт обучения в SDK",
+        "requested_epsilon": 10,
+        "epsilon_upper": 8.0,
+        "delta": 1e-05,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "Opacus RDP; номинальная часть совокупного max_epsilon"
+      },
+      {
+        "method": "Opacus DP-SGD",
+        "operation": "12 эпох",
+        "requested_epsilon": null,
+        "epsilon_upper": 2.642622899322276,
+        "delta": 1e-05,
+        "unit": "клиент: один профиль со всеми связанными данными",
+        "neighbor": "добавление/удаление одного клиента",
+        "accountant": "Opacus RDP"
+      }
+    ],
+    "opendp_joint_budget": {
+      "epsilon": 15.0,
+      "delta": 0
+    }
+  },
+  "release": {
+    "method": "OpenDP",
+    "epsilon": 3,
+    "gates": {
+      "pii_overlap": {
+        "value": 0,
+        "passed": true
+      },
+      "rare_mapping": {
+        "value": 0,
+        "passed": true
+      },
+      "singling_out": {
+        "value": 0.156,
+        "limit": 0.2105368385348368,
+        "passed": true
+      },
+      "linkability": {
+        "value": 0.008,
+        "limit": 0.015133299495444574,
+        "passed": true
+      },
+      "inference": {
+        "value": 0.728,
+        "limit": 0.768300539302976,
+        "passed": true
+      },
+      "utility": {
+        "value": 1.0002027485094818,
+        "limit": 0.9,
+        "passed": true
+      },
+      "coverage": {
+        "value": {
+          "ages": true,
+          "districts": true,
+          "products": true,
+          "statuses": true,
+          "claims_in_every_status": true
+        },
+        "passed": true
+      },
+      "fairness": {
+        "value": 0.12494375281235937,
+        "limit": 0.2,
+        "passed": true
+      },
+      "dp_report": {
+        "value": {
+          "epsilon": 3.0,
+          "delta": 0,
+          "unit": "клиент: один профиль со всеми связанными данными",
+          "accountant": "дискретный Laplace, L1=1, последовательная композиция"
+        },
+        "passed": true
+      }
+    },
+    "passed": true,
+    "tstr": {
+      "auc": 0.7644179087132108,
+      "f1": 0.4836325237592397
+    },
+    "fairness": {
+      "groups": {
+        "18–29": {
+          "positives": 113,
+          "tpr": 0.5486725663716814
+        },
+        "30–44": {
+          "positives": 127,
+          "tpr": 0.5118110236220472
+        },
+        "45–59": {
+          "positives": 118,
+          "tpr": 0.423728813559322
+        },
+        "60–74": {
+          "positives": 104,
+          "tpr": 0.5
+        }
+      },
+      "tpr_gap": 0.12494375281235937,
+      "threshold": 0.3,
+      "limit": 0.2
+    },
+    "fidelity": {
+      "overall": 0.8664126203140641,
+      "column_shapes": 0.9867445887445886,
+      "column_pair_trends": 0.7460806518835394,
+      "columns": [
+        {
+          "column": "age_band",
+          "score": 0.9845714285714285
+        },
+        {
+          "column": "district",
+          "score": 0.9937142857142857
+        },
+        {
+          "column": "product",
+          "score": 0.9946666666666667
+        },
+        {
+          "column": "channel",
+          "score": 0.9964761904761904
+        },
+        {
+          "column": "status",
+          "score": 0.9994285714285714
+        },
+        {
+          "column": "tenure",
+          "score": 0.9922857142857143
+        },
+        {
+          "column": "premium",
+          "score": 0.9471428571428572
+        },
+        {
+          "column": "prior_claims",
+          "score": 0.9949523809523809
+        },
+        {
+          "column": "risk_score",
+          "score": 0.9621904761904762
+        },
+        {
+          "column": "policy_year",
+          "score": 0.9911428571428571
+        },
+        {
+          "column": "claim",
+          "score": 0.9976190476190476
+        }
+      ],
+      "evaluated_pairs": 4
+    },
+    "attacks": {
+      "singling_out": {
+        "n": 250,
+        "main": 0.156,
+        "baseline": 0.004,
+        "control": 0.16,
+        "main_ci95": [
+          0.11626576522540502,
+          0.20614594482746082
+        ],
+        "control_ci95": [
+          0.11975380512206552,
+          0.2105368385348368
+        ],
+        "risk": 0.0,
+        "risk_ci95": [
+          0.0,
+          0.07197397600598944
+        ]
+      },
+      "linkability": {
+        "n": 250,
+        "main": 0.008,
+        "baseline": 0.0,
+        "control": 0.0,
+        "main_ci95": [
+          0.0021966371203094217,
+          0.02869452958320804
+        ],
+        "control_ci95": [
+          8.673617379884035e-19,
+          0.015133299495444574
+        ],
+        "risk": 0.007939005276307582,
+        "risk_ci95": [
+          0.0,
+          0.023282821114110848
+        ]
+      },
+      "inference": {
+        "n": 250,
+        "main": 0.728,
+        "baseline": 0.092,
+        "control": 0.716,
+        "main_ci95": [
+          0.6696994423569462,
+          0.779399773073131
+        ],
+        "control_ci95": [
+          0.6571618753149917,
+          0.768300539302976
+        ],
+        "risk": 0.04114056488818267,
+        "risk_ci95": [
+          0.0,
+          0.3073367213626502
+        ]
+      }
+    },
+    "distances": {
+      "n_per_split": 1500,
+      "synthetic": {
+        "dcr_p05": 0.019324303305510316,
+        "dcr_median": 0.05712132652600606,
+        "nndr_median": 0.8043039242537139,
+        "exact_rows": 0
+      },
+      "control": {
+        "dcr_p05": 0.018464533939506065,
+        "dcr_median": 0.055145992474122475,
+        "nndr_median": 0.8026236130303618,
+        "exact_rows": 0
+      },
+      "membership_auc": 0.5003786666666666,
+      "membership_advantage": 0.019333333333333313
+    },
+    "relations": {
+      "tables": {
+        "clients": 10500,
+        "policies": 10500,
+        "agents": 8,
+        "claims": 2565,
+        "payments": 12689
+      },
+      "pii_overlap": 0,
+      "fk_errors": 0,
+      "one_policy_per_subject": true
+    },
+    "minimum_release_equivalence_class": 3,
+    "release_groups_le_2": 0,
+    "non_private_distances": {
+      "gaussian_copula": {
+        "n_per_split": 1500,
+        "synthetic": {
+          "dcr_p05": 0.020310414695378507,
+          "dcr_median": 0.05855506974639315,
+          "nndr_median": 0.8092991004033258,
+          "exact_rows": 0
+        },
+        "control": {
+          "dcr_p05": 0.018464533939506065,
+          "dcr_median": 0.055145992474122475,
+          "nndr_median": 0.8026236130303618,
+          "exact_rows": 0
+        },
+        "membership_auc": 0.4807093333333333,
+        "membership_advantage": 0.0026666666666666666
+      },
+      "ctgan": {
+        "n_per_split": 1500,
+        "synthetic": {
+          "dcr_p05": 0.028415835987437854,
+          "dcr_median": 0.06981237774545496,
+          "nndr_median": 0.8349504919324209,
+          "exact_rows": 0
+        },
+        "control": {
+          "dcr_p05": 0.018464533939506065,
+          "dcr_median": 0.055145992474122475,
+          "nndr_median": 0.8026236130303618,
+          "exact_rows": 0
+        },
+        "membership_auc": 0.5028537777777778,
+        "membership_advantage": 0.033333333333333326
+      }
+    }
+  },
+  "federated": {
+    "flower_version": "1.37.0",
+    "clients": [
+      3431,
+      2944,
+      4125
+    ],
+    "rounds": [
+      {
+        "round": 1,
+        "auc": 0.7501125831662743,
+        "f1": 0.43080625752105894
+      },
+      {
+        "round": 2,
+        "auc": 0.7549681861762398,
+        "f1": 0.4406779661016949
+      },
+      {
+        "round": 3,
+        "auc": 0.7589400718595349,
+        "f1": 0.47793326157158234
+      },
+      {
+        "round": 4,
+        "auc": 0.7609254094153424,
+        "f1": 0.4700665188470067
+      },
+      {
+        "round": 5,
+        "auc": 0.7624700988794949,
+        "f1": 0.463768115942029
+      },
+      {
+        "round": 6,
+        "auc": 0.7634555042273162,
+        "f1": 0.4772234273318872
+      },
+      {
+        "round": 7,
+        "auc": 0.7640668429259032,
+        "f1": 0.4890738813735692
+      },
+      {
+        "round": 8,
+        "auc": 0.7642702189682054,
+        "f1": 0.48760330578512395
+      },
+      {
+        "round": 9,
+        "auc": 0.764830713656217,
+        "f1": 0.49009384775808135
+      },
+      {
+        "round": 10,
+        "auc": 0.7648609779482263,
+        "f1": 0.49326424870466323
+      },
+      {
+        "round": 11,
+        "auc": 0.7648464510880617,
+        "f1": 0.49272349272349275
+      },
+      {
+        "round": 12,
+        "auc": 0.7649554025392951,
+        "f1": 0.4969574036511156
+      }
+    ],
+    "final": {
+      "round": 12,
+      "auc": 0.7649554025392951,
+      "f1": 0.4969574036511156
+    },
+    "message": "параметры + число локальных примеров",
+    "network": "in-process",
+    "formal_dp": false
+  }
+}
