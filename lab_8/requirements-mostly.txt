@@ -1,0 +1,8 @@
+mostlyai[local]==6.1.4
+mostlyai-engine==2.7.0
+torch==2.13.0
+torchaudio==2.11.1
+torchvision==0.28.0
+numpy==2.5.4
+pandas==2.3.3
+Faker==40.39.0

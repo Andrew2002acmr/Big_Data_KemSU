@@ -1,0 +1,9 @@
+smartnoise-synth==1.0.8
+opacus==0.14.0
+torch==2.15.0
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.7.2
+pyarrow==21.0.0
+Faker==40.39.0
