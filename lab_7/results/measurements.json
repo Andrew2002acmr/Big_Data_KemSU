@@ -1,0 +1,406 @@
+{
+  "source_revision": "8262c16bf297c87a9cd88c51997c4758ed7a8ba2",
+  "model_revision": "c28f2883575e590e04d3146ff0713c2448d691ba",
+  "runtime": {
+    "platform": "Windows",
+    "python": "3.12.14",
+    "provider": "CPUExecutionProvider"
+  },
+  "dataset": {
+    "source_rows": {
+      "dev": 10203,
+      "test": 10203
+    },
+    "unique_candidates": 20358,
+    "class_candidates": {
+      "0": 19270,
+      "1": 1088
+    },
+    "selected_rows": 1000,
+    "speakers": 706,
+    "missing_age": 498,
+    "missing_gender": 501
+  },
+  "embeddings": {
+    "rows": 1000,
+    "dimensions": 512,
+    "batch_size": 8,
+    "threads": 4,
+    "preprocess_s": 48.195453800000905,
+    "encode_s": 126.7807434000033,
+    "sample_rows": 64,
+    "sample_preprocess_s": 3.2692339999998694,
+    "norm_max_error": 1.1920928955078125e-07,
+    "cache_hit": true,
+    "cache_read_s": 0.020754799999849638
+  },
+  "quality": {
+    "pca_explained_variance": [
+      0.157215416431427,
+      0.12491859495639801
+    ],
+    "n_queries": 40,
+    "neighbor_precision_at_5": 0.63,
+    "examples": [
+      {
+        "query": "1437af743c",
+        "label": "не вопрос",
+        "neighbors": [
+          {
+            "label": "не вопрос",
+            "cosine": 0.9095682501792908
+          },
+          {
+            "label": "не вопрос",
+            "cosine": 0.8979154825210571
+          },
+          {
+            "label": "не вопрос",
+            "cosine": 0.897659957408905
+          },
+          {
+            "label": "не вопрос",
+            "cosine": 0.8959523439407349
+          },
+          {
+            "label": "вопрос",
+            "cosine": 0.8942947387695312
+          }
+        ]
+      },
+      {
+        "query": "a047cde50f",
+        "label": "вопрос",
+        "neighbors": [
+          {
+            "label": "вопрос",
+            "cosine": 0.9214906692504883
+          },
+          {
+            "label": "не вопрос",
+            "cosine": 0.8929703235626221
+          },
+          {
+            "label": "вопрос",
+            "cosine": 0.8918851017951965
+          },
+          {
+            "label": "вопрос",
+            "cosine": 0.8895969390869141
+          },
+          {
+            "label": "вопрос",
+            "cosine": 0.8880987167358398
+          }
+        ]
+      }
+    ],
+    "text_queries": [
+      {
+        "prompt": "A speaker reads a statement aloud in Russian with declarative intonation.",
+        "expected": "не вопрос",
+        "precision_at_5": 1.0,
+        "top_labels": [
+          "не вопрос",
+          "не вопрос",
+          "не вопрос",
+          "не вопрос",
+          "не вопрос"
+        ],
+        "cosine": [
+          0.6306425929069519,
+          0.5928922891616821,
+          0.5882711410522461,
+          0.584348201751709,
+          0.5825652480125427
+        ]
+      },
+      {
+        "prompt": "A speaker asks a question aloud in Russian with interrogative intonation.",
+        "expected": "вопрос",
+        "precision_at_5": 0.4,
+        "top_labels": [
+          "не вопрос",
+          "не вопрос",
+          "вопрос",
+          "не вопрос",
+          "вопрос"
+        ],
+        "cosine": [
+          0.6587463021278381,
+          0.6585710048675537,
+          0.6567355394363403,
+          0.6458714008331299,
+          0.644386887550354
+        ]
+      }
+    ]
+  },
+  "classification": [
+    {
+      "seed": 42,
+      "train": 804,
+      "test": 196,
+      "test_questions": 99,
+      "train_speakers": 567,
+      "test_speakers": 139,
+      "models": {
+        "table": {
+          "roc_auc": 0.7583046964490263,
+          "accuracy": 0.6938775510204082,
+          "f1": 0.7115384615384616
+        },
+        "audio": {
+          "roc_auc": 0.7003019889617826,
+          "accuracy": 0.6479591836734694,
+          "f1": 0.6270270270270271
+        },
+        "both": {
+          "roc_auc": 0.7420597729876081,
+          "accuracy": 0.6887755102040817,
+          "f1": 0.6871794871794872
+        }
+      },
+      "gain_over_best_single": -0.01624492346141826,
+      "word_boundary_from_train": 7.0,
+      "segments": {
+        "table": {
+          "short": {
+            "n": 99,
+            "roc_auc": 0.6887052341597797
+          },
+          "long": {
+            "n": 97,
+            "roc_auc": 0.71875
+          }
+        },
+        "audio": {
+          "short": {
+            "n": 99,
+            "roc_auc": 0.6363636363636365
+          },
+          "long": {
+            "n": 97,
+            "roc_auc": 0.6126893939393939
+          }
+        },
+        "both": {
+          "short": {
+            "n": 99,
+            "roc_auc": 0.6827364554637282
+          },
+          "long": {
+            "n": 97,
+            "roc_auc": 0.6737689393939393
+          }
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "train": 797,
+      "test": 203,
+      "test_questions": 102,
+      "train_speakers": 563,
+      "test_speakers": 143,
+      "models": {
+        "table": {
+          "roc_auc": 0.8133857503397399,
+          "accuracy": 0.7192118226600985,
+          "f1": 0.7373271889400922
+        },
+        "audio": {
+          "roc_auc": 0.7405358182877111,
+          "accuracy": 0.6995073891625616,
+          "f1": 0.7109004739336493
+        },
+        "both": {
+          "roc_auc": 0.7901378373131431,
+          "accuracy": 0.7093596059113301,
+          "f1": 0.6974358974358974
+        }
+      },
+      "gain_over_best_single": -0.02324791302659679,
+      "word_boundary_from_train": 7.0,
+      "segments": {
+        "table": {
+          "short": {
+            "n": 100,
+            "roc_auc": 0.8192959001782532
+          },
+          "long": {
+            "n": 103,
+            "roc_auc": 0.759950248756219
+          }
+        },
+        "audio": {
+          "short": {
+            "n": 100,
+            "roc_auc": 0.6653297682709447
+          },
+          "long": {
+            "n": 103,
+            "roc_auc": 0.6803482587064676
+          }
+        },
+        "both": {
+          "short": {
+            "n": 100,
+            "roc_auc": 0.7281639928698752
+          },
+          "long": {
+            "n": 103,
+            "roc_auc": 0.7927031509121061
+          }
+        }
+      }
+    }
+  ],
+  "features": {
+    "table": 4,
+    "audio": 512,
+    "both": 516
+  },
+  "retrieval": {
+    "gallery": 804,
+    "queries": 40,
+    "duration_boundary_s": 4.536,
+    "index": "IVF_FLAT",
+    "partitions": 8,
+    "nprobes": 4,
+    "unfiltered": {
+      "median_ms": 6.276099999922735,
+      "p95_ms": 7.998720000045978,
+      "semantic_precision_at_5": 0.645,
+      "joint_precision_at_5": 0.5050000000000001,
+      "ann_recall_at_5": 0.985
+    },
+    "prefiltered": {
+      "median_ms": 7.646199999953751,
+      "p95_ms": 9.90871000012703,
+      "semantic_precision_at_5": 0.62,
+      "joint_precision_at_5": 0.62,
+      "ann_recall_at_5": 0.99
+    },
+    "examples": [
+      {
+        "query": "1437af743c",
+        "label": "не вопрос",
+        "duration_band": "long",
+        "unfiltered": [
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.9095683097839355
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8979156613349915
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8976600766181946
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.895952582359314
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "long",
+            "cosine": 0.8942947387695312
+          }
+        ],
+        "prefiltered": [
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.9095683097839355
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8979156613349915
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8976600766181946
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.895952582359314
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "long",
+            "cosine": 0.8942947387695312
+          }
+        ]
+      },
+      {
+        "query": "a047cde50f",
+        "label": "вопрос",
+        "duration_band": "long",
+        "unfiltered": [
+          {
+            "label": "вопрос",
+            "duration_band": "short",
+            "cosine": 0.9214907884597778
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8929704427719116
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "short",
+            "cosine": 0.8918850421905518
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "short",
+            "cosine": 0.8895971775054932
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "long",
+            "cosine": 0.8880987763404846
+          }
+        ],
+        "prefiltered": [
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8929704427719116
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "long",
+            "cosine": 0.8880987763404846
+          },
+          {
+            "label": "вопрос",
+            "duration_band": "long",
+            "cosine": 0.8867329359054565
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8823369145393372
+          },
+          {
+            "label": "не вопрос",
+            "duration_band": "long",
+            "cosine": 0.8766325116157532
+          }
+        ]
+      }
+    ]
+  }
+}

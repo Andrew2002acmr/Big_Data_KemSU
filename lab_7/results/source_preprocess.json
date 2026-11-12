@@ -1,0 +1,40 @@
+{
+  "scope": [
+    "dev",
+    "test"
+  ],
+  "rows": 20406,
+  "skipped": 0,
+  "workers": 4,
+  "wall_seconds": 370.7133310999998,
+  "parts": [
+    {
+      "split": "dev",
+      "partition": 0,
+      "rows": 5102,
+      "skipped": 0,
+      "seconds": 351.4384599
+    },
+    {
+      "split": "dev",
+      "partition": 1,
+      "rows": 5101,
+      "skipped": 0,
+      "seconds": 350.2395676000001
+    },
+    {
+      "split": "test",
+      "partition": 0,
+      "rows": 5102,
+      "skipped": 0,
+      "seconds": 354.5122685000001
+    },
+    {
+      "split": "test",
+      "partition": 1,
+      "rows": 5101,
+      "skipped": 0,
+      "seconds": 354.95098700000017
+    }
+  ]
+}
